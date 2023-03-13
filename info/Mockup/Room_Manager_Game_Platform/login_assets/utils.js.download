@@ -1,0 +1,959 @@
+"use strict";
+
+function setLocalStorage(key, value) {
+    localStorage.setItem(key, value);
+};
+
+function delLocalStorage(key) {
+    localStorage.removeItem(key);
+};
+
+function getLocalStorage(key) {
+    return localStorage.getItem(key);
+};
+
+function setSession(key, value) {
+    sessionStorage.setItem(key, value);
+};
+
+function delSession(key) {
+    sessionStorage.removeItem(key);
+};
+
+function getSession(key) {
+    return sessionStorage.getItem(key);
+};
+
+function fillZero(number) {
+    return number < 10 ? "0" + number : number;
+};
+
+function getDay(date, dates) {
+    var time = new Date(date.getTime() + dates * 24 * 3600 * 1000);
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    m = fillZero(m);
+    d = fillZero(d);
+    var str = y + "-" + m + "-" + d;
+    return {
+        beginTime: str + " 00:00:00",
+        endTime: str + " 23:59:59"
+    };
+};
+
+function getSevenDays(date) {
+    var endTime = new Date(date.getTime());
+    var beginTime = new Date(date.getTime() - 6 * 24 * 3600 * 1000);
+    var y = beginTime.getFullYear();
+    var m = beginTime.getMonth() + 1;
+    var d = beginTime.getDate();
+    m = fillZero(m);
+    d = fillZero(d);
+    var endY = endTime.getFullYear();
+    var endM = endTime.getMonth() + 1;
+    var endD = endTime.getDate();
+    endM = fillZero(endM);
+    endD = fillZero(endD);
+    return {
+        beginTime: y + "-" + m + "-" + d + " 00:00:00",
+        endTime: endY + "-" + endM + "-" + endD + " 23:59:59"
+    };
+};
+
+function toastShow(msg, timer) {
+    var toastDom = $("#toast-wrap");
+    if (toastDom) {
+        toastDom.remove();
+    }
+    var winW = $(window).width();
+    var winH = $(window).height();
+    msg = msg ? msg : "";
+    timer = timer ? timer * 1000 : 300000;
+    $('body').append('<div id="toast-wrap" style="-moz-box-sizing: border-box; -webkit-box-sizing: border-box;box-sizing: border-box;position: fixed;padding: 10px 40px;background: rgba(0,0,0,.7);border-radius: 100px;color: white;box-shadow:#f4424a 0px 0px 10px;font-family:微软雅黑;display: none;font-size: 20px;border:1px solid #f4424a;z-index: 100000">' + msg + '</div>');
+    var toastDom = $("#toast-wrap");
+    toastDom.fadeIn('fast');
+    toastDom.css({ "left": (winW - toastDom.width()) / 2 - 40 + "px", "top": (winH - toastDom.height()) / 2 + "px" });
+    setTimeout(function () {
+        toastDom.fadeOut(1000);
+    }, timer);
+}
+
+function removeToast(toastDom) {
+    toastDom.remove();
+}
+
+function getScreenSize() {
+    var ua = navigator.userAgent,
+        isWindowsPhone = /(?:Windows Phone)/.test(ua),
+        isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+        isAndroid = /(?:Android)/.test(ua),
+        isFireFox = /(?:Firefox)/.test(ua),
+        isChrome = /(?:Chrome|CriOS)/.test(ua),
+        isTablet = /(?:iPad|PlayBook)/.test(ua) || isAndroid && !/(?:Mobile)/.test(ua) || isFireFox && /(?:Tablet)/.test(ua),
+        isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+        isPc = !isPhone && !isAndroid && !isSymbian;
+    return {
+        isSymbian: isSymbian,
+        isAndroid: isAndroid,
+        isFireFox: isFireFox,
+        isChrome: isChrome,
+        isTablet: isTablet,
+        isPhone: isPhone,
+        isPc: isPc
+    };
+};
+
+function post(url, params, token, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    if (token) xhr.setRequestHeader('token', token);
+    xhr.send(JSON.stringify(params));
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var xhrText = JSON.parse(xhr.responseText);
+                callback(xhrText);
+            } else {
+                handleError(xhr.status);
+            }
+            ;
+        }
+        ;
+    };
+};
+
+function get(url, parmas, success) {
+    var xhr = new XMLHttpRequest();
+    var str = '';
+    for (var key in parmas) {
+        str += "&" + key + "=" + parmas[key];
+    }
+    ;
+    parmas = str.replace(/&/, '');
+    xhr.open('GET', url + "?" + parmas, true);
+    xhr.send(null);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) success(xhr.responseText); else handleError(xhr.status);
+        }
+    };
+};
+
+function handleError(error) {
+    console.log('error:', error);
+};
+
+var apiService = {
+    // 验证码
+    getCodeImgBase: function getCodeImgBase(callback) {
+        var token = md5(Math.random().toString());
+        get(website().baseurl + "code", {
+            token: token
+        }, function (response) {
+            setSession('token', token);
+            callback(response);
+        });
+    },
+    // 检查登入
+    checkStatus: function checkStatus(callback) {
+        post(website().baseurl + "check", {}, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 修改密码
+    changePsd: function changePsd(params, callback) {
+        post(website().baseurl + "password", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 获取报表
+    getReport: function getReport(params, callback) {
+        post(website().baseurl + "report", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 登录
+    getLogin: function getLogin(params, callback) {
+        post(website().baseurl + "login", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 登出
+    logoff: function logoff(callback) {
+        post(website().baseurl + "logout", {}, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 余额
+    getBalance: function getBalance(params, callback) {
+        post(website().baseurl + "balance", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 注册
+    getRegister: function getRegister(params, callback) {
+        post(website().baseurl + "web/register", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+    // 获取logo
+    getLogo: function getLogo(params, callback) {
+        post(website().baseurl + "logo", params, getSession('token'), function (response) {
+            callback(response);
+        });
+    },
+};
+
+var group = {
+    // fc
+    fc_3d: { gameName: '福彩3D', gameType: 1, tableId: 70101 },
+    pl_3: { gameName: '排列三', gameType: 1, tableId: 70102 },
+
+    // pk10
+    bj_pk_10: { gameName: '北京PK10', gameType: 2, tableId: 70201 },
+    pk10_2: { gameName: '极速PK10', gameType: 2, tableId: 70202 },
+    pk10_3: { gameName: '朱雀PK10', gameType: 2, tableId: 70203 },
+    pk10_4: { gameName: '三分PK10', gameType: 2, tableId: 70204 },
+    pk10_5: { gameName: '五分PK10', gameType: 2, tableId: 70205 },
+    xyft: { gameName: '幸运飞艇', gameType: 2, tableId: 70206 },
+    xysc: { gameName: '幸运赛车', gameType: 2, tableId: 70207 },
+    jsft: { gameName: '极速飞艇', gameType: 2, tableId: 70208 },
+    jssc2: { gameName: '极速赛车', gameType: 2, tableId: 70209 },
+    mssc: { gameName: '秒速赛车', gameType: 2, tableId: 70210 },
+    azxy10: { gameName: '澳洲幸运10', gameType: 2, tableId: 70211 },
+
+    dm_kl: { gameName: '丹麦快乐彩', gameType: 3, tableId: 70301 },
+    bj_kl8: { gameName: '北京快乐8', gameType: 3, tableId: 70302 },
+    jnd_bs: { gameName: '加拿大卑斯', gameType: 3, tableId: 70303 },
+
+    // ssc
+    cq_ss: { gameName: '重庆时时彩', gameType: 4, tableId: 70401 },
+    tj_ss: { gameName: '天津时时彩', gameType: 4, tableId: 70402 },
+    xj_ss: { gameName: '新疆时时彩', gameType: 4, tableId: 70403 },
+    ss_4: { gameName: '极速时时彩', gameType: 4, tableId: 70404 },
+    ss_5: { gameName: '朱雀时时彩', gameType: 4, tableId: 70405 },
+    ss_6: { gameName: '腾讯分分彩', gameType: 4, tableId: 70406 },
+    ss_7: { gameName: '极速两分彩', gameType: 4, tableId: 70407 },
+    ss_8: { gameName: '朱雀两分彩', gameType: 4, tableId: 70408 },
+    ss_9: { gameName: '三分时时彩', gameType: 4, tableId: 70409 },
+    ss_10: { gameName: '五分时时彩', gameType: 4, tableId: 70410 },
+    msss: { gameName: '秒速时时彩', gameType: 4, tableId: 70411 },
+
+    cq_kl10: { gameName: '重庆快乐十分', gameType: 5, tableId: 70501 },
+    gd_kl10: { gameName: '广东快乐十分', gameType: 5, tableId: 70502 },
+
+    // k3
+    js_ks: { gameName: '江苏快三', gameType: 6, tableId: 70601 },
+    gx_ks: { gameName: '广西快三', gameType: 6, tableId: 70602 },
+    ah_ks: { gameName: '安徽快三', gameType: 6, tableId: 70603 },
+    ks_4: { gameName: '极速快三', gameType: 6, tableId: 70604 },
+    ks_5: { gameName: '朱雀快三', gameType: 6, tableId: 70605 },
+    ks_6: { gameName: '两分快三', gameType: 6, tableId: 70606 },
+    ks_7: { gameName: '三分快三', gameType: 6, tableId: 70607 },
+    ks_8: { gameName: '五分快三', gameType: 6, tableId: 70608 },
+
+    // x5
+    gd_11_5: { gameName: '广东11选5', gameType: 7, tableId: 70701 },
+    sd_11_5: { gameName: '山东11选5', gameType: 7, tableId: 70702 },
+    jx_11_5: { gameName: '江西11选5', gameType: 7, tableId: 70703 },
+    '11_5_4': { gameName: '极速11选5', gameType: 7, tableId: 70704 },
+    '11_5_5': { gameName: '朱雀11选5', gameType: 7, tableId: 70705 },
+    '11_5_6': { gameName: '两分11选5', gameType: 7, tableId: 70706 },
+    '11_5_7': { gameName: '三分11选5', gameType: 7, tableId: 70707 },
+    '11_5_8': { gameName: '五分11选5', gameType: 7, tableId: 70708 },
+
+    // lucky
+    bj_pk_28: { gameName: '北京PK28', gameType: 8, tableId: 70801 },
+    pc_dd: { gameName: 'PC蛋蛋', gameType: 8, tableId: 70802 },
+    '28_4': { gameName: '极速28', gameType: 8, tableId: 70804 },
+    '28_5': { gameName: '朱雀28', gameType: 8, tableId: 70805 },
+    '28_6': { gameName: '两分28', gameType: 8, tableId: 70806 },
+
+    // lhc
+    lh_cai: { gameName: '六合彩', gameType: 9, tableId: 70901 },
+    lh_2: { gameName: '极速六合彩', gameType: 9, tableId: 70902 },
+    lh_3: { gameName: '朱雀六合彩', gameType: 9, tableId: 70903 },
+    lh_4: { gameName: '三分六合彩', gameType: 9, tableId: 70904 },
+    lh_5: { gameName: '五分六合彩', gameType: 9, tableId: 70905 },
+
+    // pl5
+    pl5: { gameName: '排列5', gameType: 10, tableId: 71001 },
+    pl5_5: { gameName: '五分排列5', gameType: 10, tableId: 71002 },
+
+    // qxc
+    qxc: { gameName: '七星彩', gameType: 11, tableId: 71101 }
+};
+
+var checkStatusTimer = null;
+var reportTime = getSevenDays(new Date());
+var nowPage = 1;
+var totalPage = 1;
+var gameId = 602;
+var isRevocation = '';
+var kfUrl = "";
+var kfFlag = 0;
+
+// 分割线
+
+// (function () {
+//     // *判断用户设备 1 pc 5 phone
+//     var equipment = getScreenSize();
+//     if (equipment.isAndroid || equipment.isPhone || equipment.isTablet) {
+//         $('body').css('background', '#ededed url("./imgs/wap_bg.png") no-repeat center');
+//         $('.loginbox-modal').css('margin-left', 0).css('box-shadow', 'none');
+//         $('.login-title-wap').css('display', 'block');
+//     } else {
+//         $('body').css('background', '#ededed url("./imgs/bg2.jpg") no-repeat center');
+//         $('.loginbox-modal').css('margin-left', '50vw');
+//         $('.login-title-pc').css('display', 'block');
+//     }
+//     ;
+// })();
+
+(function () {
+    // *判断用户设备 1 pc 5 phone
+    var equipment = getScreenSize();
+    if (equipment.isAndroid || equipment.isPhone || equipment.isTablet) {
+        $('body').css('background', '#ededed url("./imgs/wap_bg.png") no-repeat center');
+        $('.loginbox-modal').css('margin-left', 0).css('box-shadow', 'none');
+        $('.login-title-wap').css('display', 'block');
+    } else {
+        $('body').css('background', '#ededed url("./imgs/bg2.jpg") no-repeat center');
+        $('.loginbox-modal').css('margin-left', '50vw');
+        $('.login-title-pc').css('display', 'block');
+    };
+})();
+
+function login() {
+    $('.piccodenumber').blur();
+    var _ref = [$('.user').val(), $('.password').val(), $('.piccodenumber').val()],
+        username = _ref[0],
+        password = _ref[1],
+        codeNumber = _ref[2];
+
+    if (!username) {
+        toastShow('用户名不能为空', 1);
+        return;
+    }
+    if (!password) {
+        toastShow('密码不能为空', 1);
+        return;
+    }
+    if (password.length < 6 || password.length > 11) {
+        toastShow('密码为6-11位英文数字组合', 1);
+        return;
+    }
+    if (!codeNumber) {
+        toastShow('验证码不能为空', 1);
+        return;
+    }
+
+    window.location.href="./Home.html";
+    apiService.getLogin({
+        device: 1,
+        username: username,
+        password: md5(password),
+        code: codeNumber
+    }, function (res) {
+        $('.load').fadeIn();
+        if (res.codeId === 0 || res.codeId === 125) {
+            setSession('isLogin', true);
+            setSession('member', JSON.stringify(res.object));
+            checkStatusTimer = setInterval(function () {
+                apiService.checkStatus(function (res) {
+                    if (res.codeId !== 0) logout();
+                });
+                apiService.getBalance({}, function (res) {
+                    if (res.codeId === 0) $('.sysBalance').html(res.object.toFixed(2));
+                });
+            }, 5000);
+            if (res.codeId === 0) {
+                window.location.href = location.origin + "/game.html?gameId=602&tableId=";
+            } else {
+                $('.mask-layer').show();
+                $('.before-login').hide();
+                $('.after-login').show();
+                $('.memberAccount').html(res.object.username);
+                $('.sysBalance').html(res.object.balance.toFixed(2));
+            }
+            $('.load').fadeOut();
+        } else {
+            $('.load').fadeOut();
+            toastShow(errCode["code.id." + res.codeId], 1);
+            $('#checkcodeimg').click();
+        }
+    });
+}
+
+function register() {
+    $('.piccodenumber').blur();
+    var _ref = [$('.user').val(), $('.password').val(), $('.code').val()],
+        username = _ref[0],
+        password = _ref[1],
+        code = _ref[2];
+
+    if (!username) {
+        toastShow('用户名不能为空', 1);
+        return;
+    }
+    let patt1 = new RegExp("^[A-Za-z0-9]{4,14}$");//3到14位字母和数字组成
+    let right = patt1.test(username);
+    if (!right) {
+        toastShow('用户名为4-14位英文数字组合', 1);
+        return;
+    }
+    if (!password) {
+        toastShow('密码不能为空', 1);
+        return;
+    }
+    if (password.length < 6 || password.length > 11) {
+        toastShow('密码为6-11位英文数字组合', 1);
+        return;
+    }
+    if (!code) {
+        toastShow('邀请码不能为空', 1);
+        return;
+    }
+    apiService.getRegister({
+        object: {
+            username: username,
+            password: md5(password),
+            code: code
+        }
+    }, function (res) {
+        $('.load').fadeIn();
+        if (res.codeId === 0 || res.codeId === 125) {
+            setSession('isLogin', true);
+            setSession('member', JSON.stringify(res.object));
+            checkStatusTimer = setInterval(function () {
+                apiService.checkStatus(function (res) {
+                    if (res.codeId !== 0) logout();
+                });
+                apiService.getBalance({}, function (res) {
+                    if (res.codeId === 0) $('.sysBalance').html(res.object.toFixed(2));
+                });
+            }, 5000);
+            if (res.codeId === 0) {
+                window.location.href = location.origin + "/game.html?gameId=602&tableId=";
+            } else {
+                $('.mask-layer').show();
+                $('.before-login').hide();
+                $('.after-login').show();
+                $('.memberAccount').html(res.object.username);
+                $('.sysBalance').html(res.object.balance.toFixed(2));
+            }
+            $('.load').fadeOut();
+        } else {
+            $('.load').fadeOut();
+            toastShow(errCode["code.id." + res.codeId], 1);
+            $('#checkcodeimg').click();
+        }
+    });
+}
+
+function logout() {
+    delSession('isLogin');
+    delSession('member');
+    $('.after-login').hide();
+    $('.before-login').show();
+    clearInterval(checkStatusTimer);
+    checkStatusTimer = null;
+    window.location.reload();
+}
+
+function transferRevocation(isRevocation) {
+    switch (isRevocation) {
+        case 0:
+            return '未结算';
+        case 1:
+            return '已结算';
+        case 2:
+            return '已撤销';
+    }
+}
+
+function clearPassword() {
+    $('.old-val').val('');
+    $('.new-val').val('');
+    $('.check-val').val('');
+}
+
+function filp(number) {
+    if (number + nowPage <= totalPage && number + nowPage > 0) {
+        nowPage += number;
+        $('.load').fadeIn();
+        renderReport();
+    } else {
+        toastShow('超过页码范围', 1);
+    }
+}
+
+function renderWeek(index) {
+    var date = new Date(new Date().getTime() - index * 7 * 24 * 3600 * 1000);
+    nowPage = 1;
+    $('.load').fadeIn();
+    apiService.getReport({
+        betDetail: {
+            beginTime: reportTime.beginTime,
+            endTime: reportTime.endTime,
+            gameId: gameId,
+            isRevocation: isRevocation
+        },
+        pageView: {
+            pageNow: nowPage,
+            pageSize: 8
+        }
+    }, function (res) {
+        $('.week-bet').html(res.object.count.betPoints.toFixed(2));
+        $('.week-availBet').html(res.object.count.availableBet.toFixed(2));
+        $('.week-win').html((res.object.count.memberWin + res.object.count.availableBet).toFixed(2));
+        if (res.object.count.memberWin + res.object.count.availableBet > 0) {
+            $('.week-win').css('color', 'green');
+        } else {
+            $('.week-win').css('color', '#f58084');
+        }
+        for (var i = 0; i < 7; i++) {
+            var time = getDay(date, 0 - i).beginTime.split(' ')[0];
+            $(".search-day-" + (i + 1)).html(time);
+            if ($(".search-day-" + (i + 1)).hasClass('active')) $(".search-day-" + (i + 1)).removeClass('active');
+        }
+        $('.search-day-1').addClass('active');
+        reportTime = getDay(date, 0);
+        renderReport();
+    });
+}
+
+function transferGameName(gameCode) {
+    switch (gameCode) {
+        case 'FC3D':
+            return '福彩3D';
+        case 'PL3':
+            return '排列三';
+        case 'BJPK10':
+            return '北京PK10';
+        case 'PK102':
+            return '极速PK10';
+        case 'PK103':
+            return '朱雀PK10';
+        case 'PK104':
+            return '三分PK10';
+        case 'PK105':
+            return '五分PK10';
+        case 'XYFT':
+            return '幸运飞艇';
+        case 'XYSC':
+            return '幸运赛车';
+        case 'JSFT':
+            return '极速飞艇';
+        case 'JSSC2':
+            return '极速赛车';
+        case 'MSSC':
+            return '秒速赛车';
+        case 'AZXY10':
+            return '澳洲幸运10';
+        case 'DMKL':
+            return '丹麦快乐彩';
+        case 'BJKL8':
+            return '北京快乐8';
+        case 'JNDBS':
+            return '加拿大卑斯';
+        case 'CQSS':
+            return '重庆时时彩';
+        case 'TJSS':
+            return '天津时时彩';
+        case 'XJSS':
+            return '新疆时时彩';
+        case 'SS4':
+            return '极速时时彩';
+        case 'SS5':
+            return '朱雀时时彩';
+        case 'SS6':
+            return '腾讯分分彩';
+        case 'SS7':
+            return '极速两分彩';
+        case 'SS8':
+            return '朱雀两分彩';
+        case 'SS9':
+            return '三分时时彩';
+        case 'SS10':
+            return '五分时时彩';
+        case 'MSSS':
+            return '秒速时时彩';
+        case 'CQKL10':
+            return '重庆快乐十分';
+        case 'GDKL10':
+            return '广东快乐十分';
+        case 'JSKS':
+            return '江苏快三';
+        case 'GXKS':
+            return '广西快三';
+        case 'AHK3':
+            return '安徽快三';
+        case 'KS4':
+            return '极速快三';
+        case 'KS5':
+            return '朱雀快三';
+        case 'KS6':
+            return '两分快三';
+        case 'KS7':
+            return '三分快三';
+        case 'KS8':
+            return '五分快三';
+        case 'GD115':
+            return '广东11选5';
+        case 'SD115':
+            return '山东11选5';
+        case 'JX115':
+            return '江西11选5';
+        case '1154':
+            return '极速11选5';
+        case '1155':
+            return '朱雀11选5';
+        case '1156':
+            return '两分11选5';
+        case '1157':
+            return '三分11选5';
+        case '1158':
+            return '五分11选5';
+        case 'BJPK28':
+            return '北京PK28';
+        case 'PCDD':
+            return 'PC蛋蛋';
+        case '284':
+            return '极速28';
+        case '285':
+            return '朱雀28';
+        case '286':
+            return '两分28';
+        case 'LHCAI':
+            return '六合彩';
+        case 'LH2':
+            return '极速六合彩';
+        case 'LH3':
+            return '朱雀六合彩';
+        case 'LH4':
+            return '三分六合彩';
+        case 'LH5':
+            return '五分六合彩';
+        case 'PL5':
+            return '排列5';
+        case 'PL55':
+            return '五分排列5';
+        case 'QXC':
+            return '七星彩';
+    }
+}
+
+function renderReport() {
+    apiService.getReport({
+        betDetail: {
+            beginTime: reportTime.beginTime,
+            endTime: reportTime.endTime,
+            gameId: gameId,
+            isRevocation: isRevocation
+        },
+        pageView: {
+            pageNow: nowPage,
+            pageSize: 8
+        }
+    }, function (res) {
+        totalPage = res.object.pageView.pageCount === 0 ? 1 : res.object.pageView.pageCount;
+        $('.now-page').html(nowPage);
+        $('.total-page').html(totalPage);
+        $('.total-bet').html(res.object.count.betPoints.toFixed(2));
+        $('.total-availBet').html(res.object.count.availableBet.toFixed(2));
+        $('.total-win').html(res.object.count.winOrLoss.toFixed(2));
+        $('.row-number').html(res.object.count.ticketId);
+        if (res.object.count.winOrLoss > 0) {
+            $('.total-win').css('color', 'green');
+        } else {
+            $('.total-win').css('color', '#f58084');
+        }
+        if (res.object.pageView.records) {
+            res.object.pageView.records.some(function (item, index) {
+                $(".report-table-row-" + (index + 1)).html("\n                    <p class=\"flex-1\">" + (index + 1 + (nowPage - 1) * 8) + "</p>\n                    <p class=\"flex-2\">" + transferGameName(item.ext.split('#')[0]) + "</p>\n                    <p class=\"flex-4\">" + item.ext + "</p>\n                    <p class=\"flex-2\">" + item.betPoints.toFixed(2) + "</p>\n                    <p class=\"flex-2\">" + item.availableBet.toFixed(2) + "</p>\n                    <p class=\"flex-2\">" + transferRevocation(item.isRevocation) + "</p>\n                    <p class=\"flex-2\" style=\"" + (item.winOrLoss - item.availableBet > 0 ? 'color: green' : 'color: #f58084') + "\">" + (item.winOrLoss - item.availableBet).toFixed(2) + "</p>\n                    <p class=\"flex-4\">" + item.calTime + "</p>\n                ");
+            });
+            if (res.object.pageView.records.length < 8) {
+                for (var i = 0; i < 8 - res.object.pageView.records.length; i++) {
+                    $(".report-table-row-" + (8 - i)).html('');
+                }
+            }
+        } else {
+            for (var _i = 0; _i < 8; _i++) {
+                $(".report-table-row-" + (_i + 1)).html('');
+            }
+        }
+        $('.load').fadeOut();
+    });
+}
+
+/**
+     * JS  修改 網站 icon
+     * @param {Object} url 自定義 的 icon url
+     */
+function selfSetIcon(url) {
+    var links = document.getElementsByTagName('link') // 獲取所有 link 元素
+    let partte = 'shortcut icon';
+    for (var i = 0; i < links.length; i++) { //遍歷 link 元素
+        var link = links[i]
+        var rel = link.rel; // rel 表示 link 的類型  icon 對應 shortcut icon
+        rel = rel.toLowerCase(); // 部分網站 會 大寫. 統一轉成小寫
+        if (partte.indexOf(rel) > -1) { // 當連接中存在 shortcut icon 字眼
+            link.href = url // 修改 網站icon
+            break;
+        }
+    }
+}
+function resetLogo() {
+    apiService.getLogo({
+        object: document.domain
+    }, function (res) {
+        if (res.object) {
+            //重置logo图片
+            let style = res.object.style;
+            let logoUrl = website().fileUrl + `imgs/${style}/logo.png`;
+            $("img.logo-img").attr("src", logoUrl);
+            // //重置网站icon
+            let iconUrl = website().fileUrl + `imgs/${style}/favicon.ico`;
+            selfSetIcon(iconUrl);
+            //设置客服连接
+            initKfWindow(res.object);
+        }
+    });
+}
+
+function initKfWindow(obj) {
+    if (obj && obj.kfFlag === 1) {
+        kfFlag = obj.kfFlag;
+    }
+    if (obj.kfFlag && obj.kfFlag == 1) {
+        kfFlag = obj.kfFlag;
+        kfUrl = obj.kfUrl;
+        $('#ukefu-point').css('display', 'block');
+        // $('div.fixed-menu').css('display', 'block');
+    } else {
+        kfFlag = 0;
+        kfUrl = "";
+        $('#ukefu-point').css('display', 'none');
+        // $('div.fixed-menu').css('display', 'none');
+    }
+
+}
+
+
+// 分割线----------------------------------------------------------------------------------------------
+$(document).ready(function () {
+    //根据域名重置logo
+    resetLogo();
+    if (getSession('isLogin') && getSession('isLogin') === 'true') {
+        $('.after-login').show();
+        var member = JSON.parse(getSession('member'));
+        $('.memberAccount').html(member.username);
+        $('.sysBalance').html(member.balance.toFixed(2));
+        checkStatusTimer = setInterval(function () {
+            apiService.checkStatus(function (res) {
+                if (res.codeId !== 0) logout();
+            });
+            apiService.getBalance({}, function (res) {
+                if (res.codeId === 0) $('.sysBalance').html(res.object.toFixed(2));
+            });
+        }, 5000);
+    } else {
+        $('.before-login').show();
+        apiService.getCodeImgBase(function (res) {
+            $('#checkcodeimg').attr('src', "data:image/jpeg;base64," + res);
+        });
+    }
+
+    $('.user').focus(function () {
+        $('.user').val('');
+    });
+    $('.password').focus(function () {
+        $('.password').val('');
+    });
+    $('.search-num').focus(function () {
+        $('.search-num').val('');
+    });
+    $('#checkcodeimg').click(function () {
+        $('.piccodenumber').val('');
+        apiService.getCodeImgBase(function (res) {
+            $('#checkcodeimg').attr('src', "data:image/jpeg;base64," + res);
+        });
+    });
+    $('.login-btn').click(function () {
+        login();
+    });
+    $('.logon-btn').click(function () {
+        window.location.href = location.origin + "/register.html";
+    });
+    $('.cancel-btn').click(function () {
+        window.location.href = location.origin + "/index.html";
+    });
+    $('.register-btn').click(function () {
+        register();
+    });
+
+    $('.logout-btn').click(function () {
+        apiService.logoff(function () {
+            logout();
+        });
+    });
+    $('.refresh-btn').click(function () {
+        var _this = $(this);
+        if (!_this.hasClass('active')) {
+            _this.addClass('active');
+            apiService.getBalance({}, function (res) {
+                if (res.codeId === 0) {
+                    $('#sysBalance').html(res.object.toFixed(2));
+                } else {
+                    toastShow(errCode["code.id." + res.codeId], 1);
+                }
+                setTimeout(function () {
+                    _this.removeClass('active');
+                }, 2000);
+            });
+        } else {
+            toastShow('请勿频繁操作', 1);
+        }
+    });
+    $('.search-btn').click(function () {
+        var filpNumber = Number($('.search-num').val());
+        if (filpNumber <= totalPage && filpNumber > 0) {
+            nowPage = filpNumber;
+            $('.load').fadeIn();
+            renderReport();
+        } else {
+            toastShow('超过页码范围', 1);
+        }
+    });
+    $('.old-val').bind('input propertychange', function () {
+        $(this).val($(this).val().replace(/[\W]/g, ''));
+    });
+    $('.new-val').bind('input propertychange', function () {
+        $(this).val($(this).val().replace(/[\W]/g, ''));
+    });
+    $('.check-val').bind('input propertychange', function () {
+        $(this).val($(this).val().replace(/[\W]/g, ''));
+    });
+    $('.search-num').bind('input propertychange', function () {
+        $(this).val($(this).val().replace(/[^\d]/g, ''));
+    });
+    $('.exchange-btn').click(function () {
+        $('.mask-layer').fadeIn();
+    });
+    $('.change-password').click(function () {
+        var _ref2 = [$('.old-val').val(), $('.new-val').val(), $('.check-val').val()],
+            oldVal = _ref2[0],
+            newVal = _ref2[1],
+            checkVal = _ref2[2];
+
+        if (!oldVal) {
+            toastShow('原密码不能为空', 1);
+            return;
+        }
+        if (oldVal.length < 6 || oldVal.length > 11) {
+            toastShow('原密码应为6-11位英文数字组合', 1);
+            return;
+        }
+        if (!newVal) {
+            toastShow('新密码不能为空', 1);
+            return;
+        }
+        if (newVal.length < 6 || newVal.length > 11) {
+            toastShow('新密码应为6-11位英文数字组合', 1);
+            return;
+        }
+        if (!checkVal) {
+            toastShow('确认新密码不能为空', 1);
+            return;
+        }
+        if (checkVal.length < 6 || checkVal.length > 11) {
+            toastShow('确认新密码应为6-11位英文数字组合', 11);
+            return;
+        }
+        if (newVal !== checkVal) {
+            toastShow('两次密码不一致', 1);
+            return;
+        }
+        apiService.changePsd({
+            oldPassword: oldVal,
+            password: checkVal
+        }, function (res) {
+            if (res.codeId === 0) {
+                clearPassword();
+                window.location.href = location.origin + "/game.html?gameId=602&tableId=";
+                // toastShow('修改密码成功', 1);
+                $('.mask-layer').fadeOut();
+            } else {
+                toastShow(errCode["code.id." + res.codeId], 1);
+            }
+        });
+    });
+    $('.close-mask').click(function () {
+        clearPassword();
+        $('.mask-layer').fadeOut();
+    });
+    $('.report-btn').click(function () {
+        $('.member').fadeIn();
+        $('.search-time').children().eq(0).addClass('active').siblings().removeClass('active');
+        reportTime = getSevenDays(new Date());
+        renderWeek(0);
+    });
+    $('.close-member').click(function () {
+        $('.member').fadeOut();
+    });
+    $('.report-game li').click(function () {
+        var _this = $(this);
+        _this.addClass('active').siblings().removeClass('active');
+        gameId = _this.attr('data-gameid');
+        nowPage = 1;
+        $('.load').fadeIn();
+        renderReport();
+    });
+    $('.report-state').change(function () {
+        isRevocation = $(this).children('option:selected').val();
+        nowPage = 1;
+        $('.load').fadeIn();
+        renderReport();
+    });
+    $('.search-time li').click(function () {
+        var _this = $(this);
+        _this.addClass('active').siblings().removeClass('active');
+        if (_this.index() === 0) {
+            reportTime = getSevenDays(new Date());
+        } else if (_this.index() === 1) {
+            reportTime = getSevenDays(new Date(new Date().getTime() - 7 * 24 * 3600 * 1000));
+        }
+        nowPage = 1;
+        renderWeek(_this.index());
+    });
+    $('.search-day li').on('click', function () {
+        var _this = $(this);
+        _this.addClass('active').siblings().removeClass('active');
+        reportTime = {
+            beginTime: _this.text() + " 00:00:00",
+            endTime: _this.text() + " 23:59:59"
+        };
+        nowPage = 1;
+        $('.load').fadeIn();
+        renderReport();
+    });
+    $('.join-btn').click(function () {
+        // window.open(`${location.origin}/game.html?gameId=602&tableId=`, 'newWin');
+        window.location.href = location.origin + "/game.html?gameId=602&tableId=";
+    });
+    $("#ukefu-point").click(function () {
+        openKfWin();
+    });
+});
+
+function openKfWin() {
+    if (kfFlag === 1) {
+        window.open(kfUrl, "newwindow", "height=600,width=800,top=50,left=100,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+    } else {
+        alert("客服功能已经关闭");
+    }
+}
+

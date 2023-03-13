@@ -1,0 +1,5 @@
+window.apiHostSettings = {
+    SOCKET_URL: 'wss://ws6006.k155.vip:8443',
+    API: location.origin + '/data8234/api/',
+    HOST_URL: location.search
+};

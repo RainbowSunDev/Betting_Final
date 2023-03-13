@@ -1,0 +1,240 @@
+/*************************************/
+//$(function () {
+//    $(".head-nav .nav-ul li").click(function () {
+//        $(this).addClass("active").siblings().removeClass("active");
+//        var resId = $(this).attr("resid");
+//        $(".subNav-wrap ul").addClass("hide");
+//        $(".subNav-wrap ul#ul_" + resId).removeClass("hide");
+//    });
+//});
+/*************************************/
+//$(function () {
+//    $(".subNav-wrap li").click(function () {
+//        $(this).addClass("active").siblings().removeClass("active");
+//        var index = $(this).index();
+//    });
+//});
+/**************************************/
+
+function submitForm(callback) {
+    if (!$("#form1").valid()) {
+        return;
+    }
+    parent.isSubmitForm = 1;
+    layer.load(0, {shade: false});
+    $.ajax({
+        type: "POST",
+        url: $("#form1").attr("action"),
+        data: $("#form1").serialize(),
+        success: function (json) {
+            layer.closeAll();
+            if (json.codeId === 0) {
+                layer.alert($.i18n.prop("fenye.success"), {
+                    offset: '100px',
+                    title: $.i18n.prop("fenye.notice"),
+                    btn: [$.i18n.prop("fenye.confirm.btn.yes")],
+                    yes: function () {
+                        parent.layer.closeAll();
+                        callback ? callback() : location.reload();
+                    },
+                    success: function () {
+                        $(document).on('keydown', function () {
+                            if (event.keyCode == 13) {
+                                parent.layer.closeAll();
+                                callback ? callback() : location.reload();
+                            }
+                        });
+                    }
+                });
+            } else {
+                layer.alert($.i18n.prop("code.id." + json.codeId), {
+                    offset: '100px',
+                    title: $.i18n.prop("fenye.notice"),
+                    btn: [$.i18n.prop("fenye.confirm.btn.yes")],
+                    yes: function () {
+                        parent.layer.closeAll();
+                    },
+                    success: function () {
+                        $(document).on('keydown', function () {
+                            if (event.keyCode == 13) {
+                                parent.layer.closeAll();
+                            }
+                        });
+                    }
+                });
+            }
+        },
+        error: function (data) {
+            layer.closeAll();
+            layer.alert($.i18n.prop("fenye.fail"), {
+                offset: '100px',
+                title: $.i18n.prop("fenye.notice"),
+                btn: [$.i18n.prop("fenye.confirm.btn.yes")],
+                yes: function () {
+                    parent.layer.closeAll();
+                },
+                success: function () {
+                    $(document).on('keydown', function () {
+                        if (event.keyCode == 13) {
+                            parent.layer.closeAll();
+                        }
+                    });
+                }
+            });
+        },
+        dataType: "json"
+    });
+}
+
+function submitAdd() {
+    submitForm(function () {
+        location.href = document.referrer;
+    });
+}
+
+function submitList(form) {
+    valiateSession();
+    if (form) {
+        if ($(form).valid()) {
+            $(form).submit();
+        }
+        return;
+    }
+    $("#fenye,#form1").submit();
+}
+
+function doPost(url, data, success, error) {
+    parent.isSubmitForm = 1;
+    layer.load(0, {shade: false});
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: data, success: success ? success : function (json) {
+            if (json) {
+                layer.closeAll();
+                layer.alert($.i18n.prop("code.id." + json.codeId), {
+                    offset: '100px',
+                    title: $.i18n.prop("fenye.notice"),
+                    btn: [$.i18n.prop("fenye.confirm.btn.yes")],
+                    yes: function () {
+                        parent.layer.closeAll();
+                        location.reload();
+                    },
+                    success: function () {
+                        $(document).on('keydown', function () {
+                            if (event.keyCode == 13) {
+                                parent.layer.closeAll();
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            }
+        },
+        error: error ? error : function (data) {
+            layer.closeAll();
+            layer.alert($.i18n.prop("fenye.fail"), {
+                offset: '100px',
+                title: $.i18n.prop("fenye.notice"),
+                btn: [$.i18n.prop("fenye.confirm.btn.yes")],
+                yes: function () {
+                    parent.layer.closeAll();
+                },
+                success: function () {
+                    $(document).on('keydown', function () {
+                        if (event.keyCode == 13) {
+                            parent.layer.closeAll();
+                        }
+                    });
+                }
+            });
+        }, dataType: "json"
+    });
+}
+
+function RandomUserName() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var len = Math.floor((Math.random() * (11 - 5)) + 5);
+    for (var i = 0; i < len; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    $("#username").val(text);
+    $("#username").valid();
+}
+
+function randomPassword() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var len = Math.floor((Math.random() * (11 - 5)) + 6);
+    for (var i = 0; i < len; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    $("#password").val(text);
+    $("#password").valid();
+}
+
+function openWind(url, params) {
+    if (navigator.userAgent.indexOf("Chrome") > 0) {
+        //var winOption = "height=" + height + ",width=" + width + ",top=50,left=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=0";
+        return  window.open(url, window, params);
+    } else {
+        return window.showModalDialog(url, window, params);
+    }
+}
+
+function openIframe(url, wd, hg) {
+    var width = '780px';
+    var height = '60%';
+    if (wd)
+        width = wd;
+    if (hg)
+        height = hg;
+    parent.layer.open({
+        type: 2,
+        title: false,
+        shadeClose: true,
+        scrollbar: false,
+        shade: 0.8,
+        area: [width, height],
+        offset: '100px',
+        content: url //iframe?url
+    });
+}
+
+function changeRate(change) {
+    $("select#change").val(change);
+    submitList();
+}
+//function clearNoNum(obj) {
+//    obj.value = obj.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符  
+//    obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的  
+//    obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+//    obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数  
+//    if (obj.value.indexOf(".") < 0 && obj.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额 
+//        obj.value = parseFloat(obj.value);
+//    }
+//}
+
+function clearNoNum(obj) {
+    obj.value = obj.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符
+    obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+    obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+    obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数
+    if (obj.value.indexOf(".") < 0 && obj.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+        obj.value = parseFloat(obj.value);
+    }
+    //千位符号隔开
+    var formatV = obj.value;
+    var array = new Array();
+    array = formatV.split(".");
+    var re = /(-?\d+)(\d{3})/;
+    while (re.test(array[0])) {
+        array[0] = array[0].replace(re, "$1,$2")
+    }
+    var returnV = array[0];
+    for (var i = 1; i < array.length; i++) {
+        returnV += "." + array[i];
+    }
+    obj.value = returnV;
+}

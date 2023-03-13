@@ -1,0 +1,303 @@
+/* global layer, Event, HTMLElement, basePath, language */
+
+$.i18n.properties({
+    name: 'strings', //资源文件名称
+    path: basePath + '/js/i18n/', //资源文件路径
+    mode: 'map', //用Map的方式使用资源文件中的值
+    language: language,
+    callback: function () {//加载成功后设置显示内容
+//            console.log("load ok!",language);
+    }
+});
+
+
+if (window.addEventListener) {
+    FixPrototypeForGecko();
+}
+function FixPrototypeForGecko() {
+    HTMLElement.prototype.__defineGetter__("runtimeStyle", element_prototype_get_runtimeStyle);
+    window.constructor.prototype.__defineGetter__("event", window_prototype_get_event);
+    Event.prototype.__defineGetter__("srcElement", event_prototype_get_srcElement);
+    Event.prototype.__defineGetter__("fromElement", element_prototype_get_fromElement);
+    Event.prototype.__defineGetter__("toElement", element_prototype_get_toElement);
+}
+function element_prototype_get_runtimeStyle() {
+    return this.style;
+}
+function window_prototype_get_event() {
+    return SearchEvent();
+}
+function event_prototype_get_srcElement() {
+    return this.target;
+}
+function element_prototype_get_fromElement() {
+    var node;
+    if (this.type === "mouseover")
+        node = this.relatedTarget;
+    else if (this.type === "mouseout")
+        node = this.target;
+    if (!node)
+        return;
+    while (node.nodeType !== 1)
+        node = node.parentNode;
+    return node;
+}
+function element_prototype_get_toElement() {
+    var node;
+    if (this.type === "mouseout")
+        node = this.relatedTarget;
+    else if (this.type === "mouseover")
+        node = this.target;
+    if (!node)
+        return;
+    while (node.nodeType !== 1)
+        node = node.parentNode;
+    return node;
+}
+function SearchEvent() {
+    if (document.all) {
+        return window.event;
+    }
+    func = SearchEvent.caller;
+    while (func !== null) {
+        var arg0 = func.arguments[0];
+        if (arg0 instanceof Event) {
+            return arg0;
+        }
+        func = func.caller;
+    }
+    return null;
+}
+function iFrameHeight(id, name) {
+    var ifm = document.getElementById(id);
+    var subWeb = document.frames ? document.frames[name].document : ifm.contentDocument;
+    if (ifm !== null && subWeb !== null) {
+        ifm.height = subWeb.body.scrollHeight;
+    }
+}
+var highlightcolor = '#c1ebff';
+var clickcolor = '#51b2f6';
+function changeto() {
+    source = event.srcElement;
+    if (source.tagName === "TR" || source.tagName === "TABLE") {
+        return;
+    }
+    while (source.tagName !== "TD")
+        source = source.parentElement;
+    source = source.parentElement;
+    cs = source.children;
+    if (cs[1].style.backgroundColor !== highlightcolor && source.id !== "nc" && cs[1].style.backgroundColor !== clickcolor)
+        for (i = 0; i < cs.length; i++) {
+            cs[i].style.backgroundColor = highlightcolor;
+        }
+}
+//点击删除时是否有勾选
+function result() {
+    var checks = document.getElementsByName("check");
+    for (var i = 0; i < checks.length; i++) {
+        if (checks[i].checked) {
+            return false;
+        }
+    }
+}
+function del() {
+    var f = $("#fenye").attr("action"); //获取表单action的属性值
+    f = f.substring(0, f.lastIndexOf("/") + 1);
+    if (result() !== false) {
+        layer.alert($.i18n.prop("fenye.pls.selected.delete"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+    } else {
+        layer.confirm($.i18n.prop("fenye.delete.confirm"), {
+            title: $.i18n.prop("fenye.confirm.title"),
+            btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+        }, function (index) {
+            document.fenye.action = f + "del.html";
+            submitList();
+            layer.closeAll();
+        });
+    }
+}
+function delAnnouncement(id){
+    layer.confirm($.i18n.prop("fenye.delete.confirm"), {
+            title: $.i18n.prop("fenye.confirm.title"),
+            btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+        }, function () {
+            location.href="ag/announcement/del.html?id="+id;
+        });
+}
+
+function addUserLink(name) {
+    var f = $("#fenye").attr("action"); //获取表单action的属性值        
+    var data = {linkUrl: f, linkName: encodeURI(name), taget: 0};
+    layer.confirm($.i18n.prop("fenye.link.confirm"), {
+        title: $.i18n.prop("fenye.confirm.title"),
+        btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+    }, function (index) {
+        $.ajax({
+            type: "POST",
+            url: "/background/user/link/add.html",
+            data: data,
+            success: function (edata) {
+                var o = $.parseJSON(edata);
+                if (o.status === 0) {
+                    layer.alert($.i18n.prop("fenye.link.success"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                } else if (o.status === -1) {
+                    layer.alert($.i18n.prop("fenye.link.fail"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                }
+            },
+            dataType: "json"
+        });
+        layer.closeAll();
+    });
+}
+function removeUserLink(ids) {
+    var data = {id: ids};
+    layer.confirm($.i18n.prop("fenye.link.delete.confirm"), {
+        title: $.i18n.prop("fenye.confirm.title"),
+        btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+    }, function (index) {
+        $.ajax({
+            type: "GET",
+            url: "/background/user/link/del.html",
+            data: data,
+            success: function (edata) {
+                var o = $.parseJSON(edata);
+                if (o.status === 0) {
+                    layer.alert($.i18n.prop("fenye.link.success"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                    window.location.reload();
+                } else if (o.status === -1) {
+                    layer.alert($.i18n.prop("fenye.link.fail"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                }
+            },
+            dataType: "json"
+        });
+        layer.closeAll();
+    });
+}
+
+function exportCVS(name) {
+    if (name === undefined || name === '') {
+        name = "exportCVS";
+    }
+    var f = $("#fenye").attr("action"); //获取表单action的属性值
+    var newurl = f.substring(0, f.lastIndexOf("/") + 1);
+    layer.confirm($.i18n.prop("fenye.exportcvs.confirm"), {
+        title: $.i18n.prop("fenye.confirm.title"),
+        btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+    }, function (index) {
+        document.fenye.action = newurl + name + ".html";
+        document.fenye.submit();
+        $("#fenye").attr({"action": f});
+        layer.closeAll();
+    });
+}
+function deleteId(url) {
+    layer.confirm($.i18n.prop("fenye.delete.confirm"), {
+        title: $.i18n.prop("fenye.confirm.title"),
+        btn: [$.i18n.prop("fenye.confirm.btn.yes"), $.i18n.prop("fenye.confirm.btn.no")]//按钮
+    }, function () {
+        location.href = url;
+//        layer.closeAll();
+    });
+}
+
+//针对重置按钮失效，清空查询条件
+function clearText() {
+    var input = document.getElementsByTagName("input");
+    for (var i = 0; i < input.length; i++) {
+        if (input[i].type === "text" || input[i].type === "password") {
+            input[i].value = "";
+        }
+    }
+}
+//打开窗口，chrome 不支持window.showModalDialog
+function openWind(url, params)
+{
+    if (navigator.userAgent.indexOf("Chrome") > 0) {
+        //var winOption = "height=" + height + ",width=" + width + ",top=50,left=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,fullscreen=0";
+        return  window.open(url, window, params);
+    }
+    else {
+        return window.showModalDialog(url, window, params);
+    }
+}
+function changeback() {
+    if (event.fromElement.contains(event.toElement) || source.contains(event.toElement) || source.id === "nc") {
+        return;
+    }
+    if (event.toElement !== source && cs[1].style.backgroundColor !== clickcolor) {
+        //source.style.backgroundColor=originalcolor
+        for (i = 0; i < cs.length; i++) {
+            cs[i].style.backgroundColor = "";
+        }
+    }
+}
+function  clickto() {
+    source = event.srcElement;
+    if (source.tagName === "TR" || source.tagName === "TABLE")
+        return;
+    while (source.tagName !== "TD")
+        source = source.parentElement;
+    source = source.parentElement;
+    cs = source.children;
+    if (cs[1].style.backgroundColor != clickcolor && source.id != "nc")
+        for (i = 0; i < cs.length; i++) {
+            cs[i].style.backgroundColor = clickcolor;
+        }
+    else
+        for (i = 0; i < cs.length; i++) {
+            cs[i].style.backgroundColor = "";
+        }
+}
+//<!--		################# 全选	    取消全选      -->
+function selectAllCheckBox() {
+    var chose;
+    if (document.getElementById("chose").checked) {
+        chose = document.getElementById("chose").checked;
+    }
+    var checkboxArray = document.getElementsByName("check");
+    if (checkboxArray != null) {
+        for (var i = 0; i < checkboxArray.length; i++)
+        {
+            checkboxArray[i].checked = chose;
+        }
+    }
+}
+function openIframe(url) {
+    var index = $.layer({
+        type: 2,
+        shadeClose: true,
+        scrollbar: false,
+        title: false,
+        closeBtn: [0, true],
+        shade: [0.8, '#000'],
+        border: [1],
+        offset: [($(window).height() / 20) + 'px', ''],
+        area: ["660px", '400px'],
+        iframe: {src: url}
+    });
+    return index;
+}
+function pageNow(pageNow, formName) {
+    var f, fy;
+    if (formName) {
+        fy = $("#" + formName).serialize() + "&pageNow=" + pageNow; //对表彰数据进行序列化
+        f = $("#" + formName).attr("action"); //获取表单action的属性值
+    } else {
+        fy = $("#fenye").serialize() + "&pageNow=" + pageNow; //对表彰数据进行序列化
+        f = $("#fenye").attr("action"); //获取表单action的属性值
+    }
+    var pCount = parseInt("${pageView.pageCount}");
+    if (pageNow < 1) {
+        layer.alert($.i18n.prop("fenye.first.notice"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+        return false;
+    } else if (pCount < pageNow) {
+        layer.alert($.i18n.prop("fenye.last.notice"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+        return false;
+    } else {
+        if ($("#contentFrame").length > 0) {
+            getContent(f, fy);
+        } else {
+            window.location.href = f + "?" + fy;
+        }
+    }
+}

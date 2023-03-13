@@ -1,0 +1,14 @@
+Login
+Register
+EnterRoom
+Personal Setting / change name / reset password / 
+loading
+Lobby
+Online Custom Service
+The Wallet Center
+	Up point
+	Down point
+	credit management
+	6 UIs
+Help
+Personal center

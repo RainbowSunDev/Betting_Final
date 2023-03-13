@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://ft.zxkjwl.com/special -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="0">
+	<meta name="google" content="notranslate">
+	<link id="dynamic_ico" rel="shortcut icon" type="image/x-icon"
+		href="./assets/logo_2.png">
+	<script src="./assets/config.js.download"></script>
+	<script>
+		// 动态添加meta
+		var ua = navigator.userAgent,
+			isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1;
+		if (isAndroid) {
+			var meta = document.createElement('meta');
+			meta.content = "width=device-width, initial-scale=0, user-scalable=yes, maximum-scale=1.0";
+			meta.name = "viewport";
+			document.getElementsByTagName('head')[0].appendChild(meta);
+		}
+	</script>
+	<link href="./assets/manifest.61a73641.css" rel="prefetch">
+	<link href="./assets/manifest.4be96d60.js.download" rel="prefetch">
+	<link href="./assets/styles.80f5d5ed.css" rel="preload" as="style">
+	<link href="./assets/app.3b8d1f84.js.download" rel="preload" as="script">
+	<link href="./assets/styles.2b3727d2.js.download" rel="preload" as="script">
+	<link href="./assets/styles.80f5d5ed.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./assets/manifest.61a73641.css">
+	<script charset="utf-8" src="./assets/manifest.4be96d60.js.download"></script>
+	<title>飞天后台管理系统</title>
+</head>
+
+<body class="no"><noscript><strong>We're sorry but owner-admin doesn't work properly without JavaScript
+			enabled. Please enable it to continue.</strong></noscript>
+	<div id="app">
+		<div class="container">
+			<header>
+				<div class="flex row space-between admin-navbar">
+					<div><img src="./assets/feitian_logo.fba62ffc.png">
+						<div>
+							<div>
+								<!---->
+							</div>
+						</div>
+					</div>
+					<ul class="flex row">
+						<li>房间号: 382668</li>
+						<li>昵称: 金冠线上娱乐</li>
+						<li> 过期时间: <span class="">2022/11/03 17:03:21</span></li>
+						<li><input type="button" value="H5 / App 下载"></li>
+						<li><img src="./assets/589274d3c32d4bf1bb11cac99bc07c7e.jpg"> fygj123 <i
+								class="icon-go"></i>
+							<ul class="text-center">
+								<li>修改密码</li>
+								<li> 绑定手机号码 </li>
+								<li>退出登录</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="current-mask current-download" style="display: none;">
+						<div>
+							<p class="flex row space-between"> H5 / App下载 <i class="icon-close"></i></p>
+							<div>
+								<div>
+									<h4> H5扫码登录 <button class="current-button small light-blue">刷新</button></h4>
+									<div id="wapDownload"></div>
+									<p></p>
+								</div>
+								<div>
+									<h4>安卓下载</h4>
+									<div id="appDownload"></div>
+									<p></p>
+								</div>
+								<!---->
+							</div>
+						</div>
+					</div>
+					<!---->
+					<!---->
+					<!---->
+				</div>
+				<div class="admin-topbar">
+					<ul class="flex row">
+						<li class="" onclick="window.location.href='./Home-Game-Airship.html'"><i class="icon-home"></i>首页</li>
+						<li class="" onclick="window.location.href='./RoomManagement-BasicSetting.html'"><i class="icon-system"></i><a href="./RoomManagement-BasicSetting.html" style="color:white; text-decoration:none;">房间管理</a> </li>
+						<li class="" onclick="window.location.href='./UserManagement-UserList.html'"><i class="icon-user"></i><a href="./UserManagement-UserList.html" style="color:white; text-decoration:none;"> 用户管理 </a></li>
+						<li class="" onclick="window.location.href='./Application-UpDown.html'"><i class="icon-apply"></i> 申请管理</li>
+						<li class="" onclick="window.location.href='./ReportManagement-LotteryReport-UsersReport.html'"><i class="icon-report"></i> <a href="./ReportManagement-LotteryReport-UsersReport.html" style="color:white; text-decoration:none;">报表管理</a> </li>
+						<li class="" onclick="window.location.href='./BackWaterManagement-Manual.html'"><i class="icon-commiss"></i><a href="./BackWaterManagement-Manual.html" style="color:white;text-decoration:none;">回水管理</a> </li>
+						<li class="" onclick="window.location.href='./SiteMonitoring-LotteryRecord.html'"><i class="icon-greport"></i> <a href="./SiteMonitoring-LotteryRecord.html" style="color:white;text-decoration:none;"></a>现场监控</a> </li>
+						<li class="" onclick="window.location.href='./MessageSetting-PreAward-News.html'"><i class="icon-message"></i> <a href="./MessageSetting-PreAward-News.html" style="color:white;text-decoration:none;">消息设置</a> </li>
+						<li class="" onclick="window.location.href='./OddsSetting.html'"><i class="icon-operating"></i> <a href="./OddsSetting.html" style="color:white;text-decoration:none;"></a>赔率设置</a> </li>
+						<li class="" onclick="window.location.href='./OnPlateAssistant-Setup.html'"><i class="icon-aide"></i> <a href="./OnPlateAssistant-Setup.html" style="color:white;text-decoration:none;"></a>上盘助手</a> </li>
+						<li class="" onclick="window.location.href='./Home-Game-Airship.html'" style="display: none;"><i class="icon-aide"></i> 视讯飞单 </li>
+						<li class="" onclick="window.location.href='./Protocol.html'"><img src="./assets/special.7c58eb17.svg"> <a href="./Protocol.html" style="color:white;text-decoration:none;">上盘助手</a> </li>
+						<li class="" style="display: none;"><img src="./assets/feedback.2ac1d3b2.svg"> 彩云共享</li>
+						<li class="router-link-exact-active router-link-active" onclick="window.location.href='./RedEnvelopes.html'">
+							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABq0lEQVRYR+2XvUsDQRDFfw9LsbFWUNDCL6y1Mr21CIIW/iHqH2KhYGNvbQrROn6CCgaMrRbWMjKyC2eyCRdZvRQuLLd3mZv3MjNv90ZUPFQxPkkCZrYLbAETmQg2gQNJ7vfb6CAQwHcyAbe72WsnkSLwDIwBNUn1HETMbAU4BVqSxos+UwTMDSRlrQ8zS/odXALAEfAIPAB3QEPSR5mUmNkQsAjMANPAFLCRimwqAufAUgLoNZBxUo3CdFMHi9PBHHQ04eNC0nLPGvAfzWwWmAvT1/G+TACizT1wA1zHqyS/7y3DbghmNgzMAwvhGtf+/BK4CvNrLemtDNtUClwuroJaGQdlbcws6XdwVTCw+0AI5QiwKem2ULSHwHu31GXbiMwsytQrei3UwHFQTIfMYo3kJOCSjIBRVi7ZM2Bd0kuqMLMRKIQ8kvBHJ5JWeykiG4FQA366pUb9L2rA9VwdgeLf7hbWX62B/xRUnoJBI1D65My2D5Q9ftvt+iHwFBqS3/gsb0qa7PlJVnljEvZ6b6G2Q4Py06gX32sB+6Vasxxo/fjI2v30AxxtPwHvlyUwZGyb1AAAAABJRU5ErkJggg==">
+							上盘助手
+						</li>
+					</ul>
+					<div class="current-mask">
+						<div style="width: 1000px;">
+							<p class="flex row space-between"> <a href="./RedEnvelopes.html" style="color:white;text-decoration:none;">上盘助手</a> <i class="icon-close" style="display: none;"></i></p>
+							<div>
+								<ul class="red-envelope-mask">
+									<li class="flex row">
+										<div><span>*</span> 选择游戏 <div class="current-slider smallest">
+												<div></div>
+											</div>
+										</div>
+										<div>
+											<ul class="flex row wrap">
+												<li class="flex row text-center">
+													<p>幸运飞艇</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center">
+													<p>澳洲幸运10</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center">
+													<p>极速赛车</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>秒速赛车</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>F3赛车</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>700K极速飞艇</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>澳洲幸运5</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>168极速飞艇</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>秒速时时彩</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+												<li class="flex row text-center" style="display: none;">
+													<p>极速时时彩</p>
+													<div class="current-slider smallest">
+														<div></div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<li class="flex row">
+										<p>红包类型</p>
+										<div>
+											<div class="current-slider small"> 随机 <div></div>
+											</div>
+										</div>
+									</li>
+									<li class="flex row">
+										<p>会员列表</p>
+										<div>
+											<div class="el-select">
+												<!---->
+												<div class="el-input el-input--suffix">
+													<!----><input type="text" readonly="readonly" autocomplete="off"
+														placeholder="请选择" class="el-input__inner">
+													<!----><span class="el-input__suffix"><span
+															class="el-input__suffix-inner"><i
+																class="el-select__caret el-input__icon el-icon-arrow-up"></i>
+															<!---->
+															<!---->
+															<!---->
+															<!---->
+															<!----></span>
+														<!----></span>
+													<!---->
+													<!---->
+												</div>
+												<div class="el-select-dropdown el-popper"
+													style="display: none; min-width: 217px;">
+													<div class="el-scrollbar" style="">
+														<div class="el-select-dropdown__wrap el-scrollbar__wrap"
+															style="margin-bottom: -17px; margin-right: -17px;">
+															<ul class="el-scrollbar__view el-select-dropdown__list">
+																<!---->
+																<li
+																	class="el-select-dropdown__item selected is-disabled">
+																	<span>全部</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>8hk043k0xt</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>9xvi4ly1n9</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wy94ta6pcf</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ssaa123456</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>fozf0uxgm4</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wx64r4i8yj</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xb0qktk37x</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>7ryk4avmjp</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>tbhziic3bs</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xy061616</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>x0vibueuil</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>qtftp8o16y</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>1ls17qk8ic</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>i2axwb10tx</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xonep7qz87</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>t2749k7cas</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gct7yzce1b</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>k6w8vls56s</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ojees41f97</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>4dyxdybtav</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2wk8vnx6kt</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>9bbquzlbqd</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yshklg44o8</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yc3565236</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zybpvuytxr</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>p46boqkgys</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aaa88991</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yening12345</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mu4ty7jrfa</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>bgkwvml7sj</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>uk3vjlb8uy</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2ppz0ncpfs</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yws147258</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ye0520</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>13kvol5kr5</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ih60p86x1t</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>hjjsop1gny</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>4439q7dri7</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mh4jsjqptk</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>8artlwoj0v</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>6mdioeoxnp</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>c9hepcm57i</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ku7bgo54by</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>bfg2ys2kky</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>83wuuh3br9</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>cai3590440</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ajsjsnakis520</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ci9bsmavmx</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>tvvh61xu67</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>7v7jemaj6o</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ltj38oxbju</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zxc021858</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>vyfobjncmh</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2svjsalzrl</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ea6ppkw8sg</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aiwowr3pny</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mypgcs5u1l</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lyh7758</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>cw999999</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>qimek3om9d</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>glxxbntulh</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xu18397971768</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zhanglinfa688</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>o60z69g6g3</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>89v8y1grly</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>liaoyihang7758</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>cai00000000</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>fdg21gtc6i</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>s7wnzimb0g</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>q160103</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ripbcbnf6a</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>56fd1xr9zv</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>1316597931q</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>dmeg6y8xfy</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>y9oe07u3ne</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>vn65vtrj0o</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ff116699</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>m2sto2rm0c</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ag0pqa2e41</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>p02515rs78</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zf4q05u8ke</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zr30r5c7e9</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>623f2gph1g</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>nh9g900300</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>oozl6x0vtf</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>9re1nlbecp</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aa452107828</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lsd1472583</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>en1098</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>fozdy2zdfc</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yy86919111</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yy6668888</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>hong1313</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lth123123</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>tw6688</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>bcxuix546a</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lai0888</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>84mmg8tvk1</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lai9800890</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>beudz6aode</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>13479462712aa</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xrru53dox5</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yr8d31u3xi</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>qq13131313</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>liao19940904</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lthguo123</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>a92kin21nw</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>13925166031a</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yhtcvn16x2</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>4ddbbh3m0b</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wa009900</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gal1offo8k</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>hsdkmjq9ma</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>18779797695hh</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lvsb0hws59</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>5vugs1k08z</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>rf5gu7ikog</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ixs5vklsun</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>x186512</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>a7ibz3rkd8</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zmhpmuvlm4</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lyh77582</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>jl1343hdxl</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>pbz1cawhmk</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gcay30fbnw</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zc7cun6mvq</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>magyda66zg</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xoruvyc90t</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zxcvbnm518</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>cw888888</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2p1mu0vsci</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>a900115</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>5k5oyrtszb</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>4vozjevc3t</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>7mhqdp5tgi</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2kay3l701w</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>0lntu3w85g</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ouyktxhhpa</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>sl147369</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>chen1997</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>08pizt4f7l</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aa51895189</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mszzhb25om</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>qwe7978</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>rk92g5iuv2</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>k56lxlhd7h</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>vlu1tdkzyn</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2azb1g8zi7</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>nhvktgv3u6</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>nlk95msiph</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zxc02188888</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>9p93ddaq0g</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>6iuo42fltv</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aqv9drd738</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>aabbcc6789</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>g9y85ldudj</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>123456789lhj</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>275raig0ig</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>llft0jinmt</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>7cizfmov6e</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>9jxr9tqab8</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>y4lsv7k85m</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>5jk2rymhwr</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>a5cmguk06r</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>bmfqojybpw</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>bbs888990</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>azazaz88</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>y27bqilpui</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wwh7hspl82</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>oj0kw3x5g4</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>813qh8f3p6</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>2k8c6hacdk</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>690xgs5x35</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>rv2l4j6ewe</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>usf2k7cp1g</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>8kkk04czxs</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asd585859687</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>3vksouy2cm</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>sky1989</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>sq0e5bdril</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lyh77588</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ne9dkw2yfq</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>792zcy9a3x</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>vu6mjzbp98</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>uhd40bs1kk</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>w158168</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>qms54374</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>agbcatuwyx</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>0nq2h60a20</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>8rzc1cu4vg</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yyt7fxm9cm</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>kpzfmoyz5a</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>dxisigjhsq</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>7w1jztiv9e</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>w183186066166</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wlx1239999</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asd18942280739</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lai26588</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>07tdluyamt</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>liao1120</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>zq180506</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>xu0320xw</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>l390599011w</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gyturjdd3n</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>95pydwzmlp</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>l158168</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>v668lhvecd</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>18479740952zyzy</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>6ccoz14jgg</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>exp9cey1io</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>13479462712aaa</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ki5zieoe53</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gqsmgjdd5u</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>vuyip3b5wk</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>c183708108yd</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>t4dzyteh4p</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asdf9980</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mi8ypwu2g9</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asd19930400</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>tcg3fs1n2q</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lnulpjyvq9</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>hxm0130</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>4i9rs237eu</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asd18942280738</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ilij7n9pvn</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>123000abc</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ncjnkjb13d</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ahoxcxqlo7</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>60x8j3d4kx</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>1xn2owir4w</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ybrnux4cal</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>gpvg38d287</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>di3d4glw1c</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yuan6690258258</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wfcx93x34p</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>yuanbiao66902777</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>hc8km4mrx7</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>asd18868</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>8o1da3gi7v</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>3fdybkptyt</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>13925166030a</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>q505738416</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>wxyiw7vf8p</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>db2022912</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>e7b11ctfdg</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>laiweihua84</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>80vl80957v</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>u48kabgt69</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>ljjjqbhu2v</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>f1okfbgd4f</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>83a7k1ffqo</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>tol3gby0r2</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>lzl12312</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>mu37vigcd2</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>r6tmhr040f</span></li>
+																<li class="el-select-dropdown__item is-disabled">
+																	<span>1nbhb9r6hz</span></li>
+															</ul>
+														</div>
+														<div class="el-scrollbar__bar is-horizontal">
+															<div class="el-scrollbar__thumb"
+																style="transform: translateX(0%);"></div>
+														</div>
+														<div class="el-scrollbar__bar is-vertical">
+															<div class="el-scrollbar__thumb"
+																style="transform: translateY(0%);"></div>
+														</div>
+													</div>
+													<!---->
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="flex row">
+										<p><span>*</span> 红包积分 </p><input type="text" class="current-input large">
+									</li>
+									<li class="flex row">
+										<p><span>*</span> 红包数量 </p><input type="text" class="current-input large">
+									</li>
+									<li class="flex row">
+										<p><span>*</span> 最小流水 </p><input type="text" class="current-input large">
+									</li>
+									<li class="flex row">
+										<p>流水限制类型</p>
+										<div class="flex row"> 是否扣除红包流水限制 <div class="current-slider smallest">
+												<div></div>
+											</div>
+										</div>
+									</li>
+									<li class="flex row">
+										<p>红包备注</p><input type="text" maxlength="16" class="current-input large">
+									</li>
+									<li class="flex row">
+										<p>过期时间</p>
+										<div
+											class="el-date-editor el-input el-input--prefix el-input--suffix el-date-editor--datetime">
+											<!----><input type="text" autocomplete="off" name=""
+												class="el-input__inner"><span class="el-input__prefix"><i
+													class="el-input__icon el-icon-time"></i>
+												<!----></span><span class="el-input__suffix"><span
+													class="el-input__suffix-inner"><i class="el-input__icon"></i>
+													<!---->
+													<!---->
+													<!---->
+													<!----></span>
+												<!----></span>
+											<!---->
+											<!---->
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="flex row flex-end"><input type="button" value="取消"
+									class="current-button grey"><input type="button" value="确定"
+									class="current-button light-blue"></div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main>
+				<div class="flex row space-between special">
+					<div class="flex row special_left">
+						<div class="special_group">
+							<div><a href="./Protocol.html" style="color:white;text-decoration:none;">上盘助手</a></div>
+							<div>
+								<ul>
+									<li class="flex row active"><img
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAMAAABEQrEuAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAJVUExURQAAAEyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6Uyv6WC4602v6Uyv6VCx6Uyv6WW67FCx6kyv6Uyv6WO57E6w6Uyv6Uyv6Uyv6WK57FCx6V2362S67E6w6Uyv6VKy6kyv6Uyv6Vq160yv6VOy6lGx6lSz6kyv6VKy6lCx6k2v6Uyv6VOy6lm160yv6Uyv6Wi87Eyv6Vm161Ky6kyv6Uyv6VKy6lu262y97Uyv6Uyv6VKy6kyv6Uyv6VKy6lCx6Vm161Ky6lu261e06mG47Eyv6WO57G+/7Uyv6Uyv6WC461Cx6kyv6Uyv6Uyv6Uyv6Uyv6f///1636/T6/v7//02v6XPA7lKy6pXQ8oLH8FCx6rng9tft+vf7/k+w6dvv+4PI8L7i9/L5/aPW9LDc9YvL8czo+YzM8W6+7W2+7aLW9K3a9drv+8jm+Mbm+F+361Cx6eb0/Pv9/nHA7mS67KfX9O/4/eHy+1Gx6nzF74/N8dnu+oTI8JzT8+v2/dPr+ojK8HjD7rPd9rff9pLO8m+/7Vy262e77JfR8onK8WK57Faz6tjt+t7w+/j8/p7U81Wz6vz+/6nY9OPy/PH5/dXs+mm87ff8/pTP8my97Wq87f3+/43M8U2w6eTz/MXl+MTl+GW67PD4/WC46+r2/IrL8Z8hX/UAAABxdFJOUwAKwP4CTwEjtxIeQBV0EEwcB7Q5+NMPOwy4sHchnn3Qi2MyrAVwzywLODAqQO3C31PZ4MrvjP78aW+Alz9yy2T6fpRYm+j2bt70zuDig/Pxu7h62nw3ePI8wu6gsOqqc/Pg/HryyvZcs1CQ6fzz40Ky3tRIdwAAAn1JREFUSMeNlmVD3EAQhve4O+QOSimFIsVpsbo7dXd3d89wQnGKFIq0UHd3d3f5Xc0RsruT3SR9P93MvE9yK9lZQgS5srMyc5IHhaWkpbqjiK1y3RvXKkzOjPS+lv7ElRsUQZF9TP2uMSMUqSIj5EDEcMVMvWPCJcCQRYqFevUQgH6KtRJ6GoClip1mY6RYsVcC/8fiR+Pi3Zb2tuu3G18YxsKGHzUfVU4/AU1VZy+gQgwlpqP8kZdAVXMPTbK+LvFOPt3kB05PS9FSdhOL+WRJFSA1oPdrG2YFyt3CAJwqEV+yjk9V1xkIuIoeGNrJjgN8JmgE4Bgi0lViD54ogTiH6hkqsRdlXgkEVPN1p/pV9ucT5ZUiUYYe6SbhO/n4jgjANUSkEg+KKyQEnOQdaaQQEUdlxBnekUK8fFhaIyNu8JYwcsj2FfDsOCIKuKgR5DrfwTzJJI8FHX9MCPjATDkknwV/zQD4xkyZhBykwQ9TAj5RUxYhh2nQaU58oaZs/qDqhLYTEre/BaBJ92x2EVJEifZfP4N+kGz3BmjWPetDXxTdir/V7fBdAD6rqxHkNqKqsegz9xmJVr68KjdEJA1kma/1741E5UeOWK6dJVNYplUych87G2YmaoRjHk29kU3tA1qepZ+JsTT1mj74OZvoh3p1mYseo1P13Lu3XZ66ikdK4NLlrqn21evFyVxzi5vEJutibdn9gPb78c0rtc3ltDSN7x/Rg+37xzjcozzD7ICRxj4YPdfSP2qi2GvjxlsACydIG3rsDBN/YInZ/cSxYI4MGDrA4mKStGmLwb51zWq720/Rth3bu9379+3e5SD/pfy8Aq+30CO7jJB/QwcsJnSgngEAAAAASUVORK5CYII=">
+										QQ协议 </li>
+									<li class="flex row"><img
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAwCAMAAABUpcipAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAGbUExURQAAAAGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+wGI+5uG1igAAACIdFJOUwACCP1ANAGwUBAJCvQO/Pj+X5wamigwf2GkBgPoOieueG6EaL/UOAyzraj6gOTID0+YC1hEBXa14KL57iDXq/fp5yvY78VF+5B9xt4hu4Ni0zLHwkwkZ4lg2yIU2d1b1hYxtpPJ9ea+vQ2Xb7GBc2Pw7Gq0L6NcqloR80NOOdKh8bh1S5vQ7UZBCm4IAAAB00lEQVQ4y43U5VvCUBQG8AO4gYCUASgWdismdnd3d3d35/5stztX18V9P7Czs9/DLjcA4JLszQ8xqgnle5NBjK2E0UmJTXBhxiBh3mUwhsngHGUxhhaKhdkMQbIB0vDeeu9wcXE/3k2DTLw1yI1nFu9mQgLeSuSgF+8mQDreSkIzi3fTwUoGrf8hRQpjOFilCXO6N9pkMOZvondmXBg8Bkh5+GyQw/qLkwWAXSX0xKNlr/64ui/niifnTWUcap0r4YS45ex33KfZLtzHexTwADQzroAdWavqzJS6gk2P6y1Qhqvqqv1ttXmst1ZGJGV/fGnQnnDnpeDenborUyF+YeOrHnw2S6++1YFOtBdh3oQuQW14jUDZUg26xg1oQR//zkKmaA0VqS51OMovWxZbNjlQ6VeFLfwAk9zSr0/pUoOn7dyzvTn+Du0hOJLBqFhvjaAB8jlj911EdkKj8nEwwbxpsR6ixxZlj/zCpufT2iPVm0XKk2SqI/nvqWPXIEACA+zw6VpjV0ujpSo1cqX8OQOHT9/5HOKWyi1wayl3Qa7ieJgpm5BDSS3bKLP2+aT7PAKMBf1MdhJCmMohhJDXTAiBrrGQQYCfb0IIjV+EEBxBGfwFRLFh/2NkI0sAAAAASUVORK5CYII=">
+										TIM协议 </li>
+								</ul>
+							</div>
+						</div>
+						<div class="special_info">
+							<div class="flex row">
+								<ul class="flex row"></ul>
+							</div>
+							<div>
+								<div class="flex row space-between">
+									<div class="flex row"> 服务器状态: <ul>
+											<li class="flex row">
+												<p>CPU:</p>
+												<div>
+													<p></p>
+													<div class=""></div>
+												</div>
+											</li>
+											<li class="flex row">
+												<p>内存:</p>
+												<div>
+													<p></p>
+													<div class=""></div>
+												</div>
+											</li>
+										</ul>
+									</div><button class="current-button small blue">重启服务器</button>
+								</div>
+								<p> 服务器IP: <span class="service_state">异常</span><button
+										class="current-button small blue">重新连接</button></p>
+								<p> 服务器到期时间: <span class=""></span></p>
+								<p> 服务器协议: <div class="el-select el-select--small">
+										<!---->
+										<div class="el-input el-input--small el-input--suffix">
+											<!----><input type="text" readonly="readonly" autocomplete="off"
+												placeholder="QQ协议" class="el-input__inner">
+											<!----><span class="el-input__suffix"><span
+													class="el-input__suffix-inner"><i
+														class="el-select__caret el-input__icon el-icon-arrow-up"></i>
+													<!---->
+													<!---->
+													<!---->
+													<!---->
+													<!----></span>
+												<!----></span>
+											<!---->
+											<!---->
+										</div>
+										<div class="el-select-dropdown el-popper"
+											style="display: none; min-width: 215px;">
+											<div class="el-scrollbar" style="display: none;">
+												<div class="el-select-dropdown__wrap el-scrollbar__wrap"
+													style="margin-bottom: -17px; margin-right: -17px;">
+													<ul class="el-scrollbar__view el-select-dropdown__list"></ul>
+												</div>
+												<div class="el-scrollbar__bar is-horizontal">
+													<div class="el-scrollbar__thumb" style="transform: translateX(0%);">
+													</div>
+												</div>
+												<div class="el-scrollbar__bar is-vertical">
+													<div class="el-scrollbar__thumb" style="transform: translateY(0%);">
+													</div>
+												</div>
+											</div>
+											<p class="el-select-dropdown__empty">
+												无数据
+											</p>
+										</div>
+									</div>
+								</p>
+								<ul class="flex row space-between">
+									<li class="">
+										<div class="flex row space-between"> 机器人 <button
+												class="current-button small green blue"> 登录 </button></div>
+										<div class="flex row"><img src="http://ft.zxkjwl.com/special">
+											<!---->
+										</div>
+										<p> 机器人名字: <span></span></p>
+										<p>机器人UIM: </p>
+										<p> 机器人状态 <span class=""></span></p>
+									</li>
+									<li class="">
+										<div class="flex row space-between"> 机器人 <button
+												class="current-button small green blue"> 登录 </button></div>
+										<div class="flex row"><img src="http://ft.zxkjwl.com/special">
+											<!---->
+										</div>
+										<p> 机器人名字: <span></span></p>
+										<p>机器人UIM: </p>
+										<p> 机器人状态 <span class=""></span></p>
+									</li>
+									<li class="">
+										<div class="flex row space-between"> 机器人 <button
+												class="current-button small green blue"> 登录 </button></div>
+										<div class="flex row"><img src="http://ft.zxkjwl.com/special">
+											<!---->
+										</div>
+										<p> 机器人名字: <span></span></p>
+										<p>机器人UIM: </p>
+										<p> 机器人状态 <span class=""></span></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="special_right">
+						<div class="flex row space-between special_add_group_info">
+							<p class="flex_2">群组名称</p>
+							<p>游戏名称</p><button class="current-button middle blue">添加</button>
+						</div>
+						<div class="special_group_info">
+							<ul></ul>
+						</div>
+					</div>
+					<!---->
+				</div>
+			</main>
+			<div class="admin-slipbar-outer active">
+				<div class="admin-slipbar">
+					<div class="text-center"><i class="icon-go"></i></div>
+					<div class="flex row">
+						<p> 总上分 <b>0</b></p>
+						<p> 总下分 <b>0</b></p>
+						<p> 积分统计 <b>0</b></p>
+					</div>
+					<div>
+						<ul>
+							<li class="flex row">
+								<div class="flex-1">用户名</div>
+								<div class="flex-1">昵称</div>
+								<div class="flex-1">用户备注</div>
+								<div class="flex-1">操作类型</div>
+								<div class="flex-1">申请方式</div>
+								<div class="flex-1">金额</div>
+								<div class="flex-2">时间</div>
+								<div class="flex-1">状态</div>
+								<div class="flex-2">操作</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!---->
+		</div><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/point.fb22ce1c.mp3" controls="controls"
+			hidden="hidden"></audio><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/message.017ffeae.mp3"
+			controls="controls" hidden="hidden"></audio><audio
+			src="https://jt-asia.guojilx.com/jianghu/ganghood/media/door.28097d9a.mp3" controls="controls"
+			hidden="hidden"></audio><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/early.50e34699.mp3"
+			controls="controls" hidden="hidden"></audio>
+	</div>
+	<script src="./assets/styles.2b3727d2.js.download"></script>
+	<script src="./assets/app.3b8d1f84.js.download"></script>
+	<div role="alert" class="el-notification right" style="bottom: 16px; z-index: 2000;">
+		<!---->
+		<div class="el-notification__group">
+			<h2 class="el-notification__title"></h2>
+			<div class="el-notification__content">
+				<p>
+					<div style="font-size: 16px">
+						<img style="width: 48px; height: 48px; border-radius: 50%;"
+							src="./assets/oYcWpw55v5pc_DLhxg_TyAoSK2KA_fdc46b87b4d746d88c674e877945ee94.jpg">
+						<b>fozf0uxgm4</b> 下分 <b>-15000</b>
+					</div>
+				</p>
+			</div>
+			<!---->
+		</div>
+	</div>
+</body>
+
+</html>

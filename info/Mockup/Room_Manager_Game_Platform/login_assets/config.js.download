@@ -1,0 +1,15 @@
+'use strict';
+
+function website() {
+    return {
+        // baseurl: 'http://front.wl888.co/api/' // 测试
+        // baseurl: 'http://front.k169.vip/api/', // 测试
+        baseurl: location.origin + '/data8234/api/',
+        // baseurl: 'https://k192.vip/data8234/api/',
+        // baseurl: 'http://localhost:8234/api/',
+        // fileUrl: location.origin+"/"
+        //fileUrl: "https://jt-asia.guojilx.com/newap/xinyong/"
+    };
+};
+// 页面文件路径
+document.write(`<base href="${website().fileUrl}">`);

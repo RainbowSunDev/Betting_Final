@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://admin.k1zz.vip/ag/user/add.html?id=&userLevel= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>管理后台</title>
+        <!--<base href="http://admin.k1zz.vip">--><base href=".">
+        <link rel="shortcut icon" href="./assets/logo_2.png">
+        <script type="text/javascript"> var basePath = "http://admin.k1zz.vip";</script>
+        <script type="text/javascript"> var language = "cn";</script>
+        <!--<link href="css/icon.css" rel="stylesheet" type="text/css">-->
+        <link href="./assets/ligerui-tree.css" rel="stylesheet" type="text/css">
+        <link href="./assets/jquery.tagsinput.min.css" rel="stylesheet" type="text/css">
+        <!--mt样式-->
+        <link href="./assets/style.css" rel="stylesheet" type="text/css">
+        <link href="./assets/color_black.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./assets/select_gj.css">
+        <script type="text/javascript" src="./assets/jquery.min.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/jquery.i18n.properties-1.0.9.js.download"></script> 
+        <script type="text/javascript" src="./assets/fenye.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/com.js.download" charset="utf-8"></script>
+        <script src="./assets/jquery.validate.min.js.download"></script>
+        <script src="./assets/jquery.tagsinput.min.js.download"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>-->
+        <script type="text/javascript" src="./assets/utils.js.download" charset="utf-8"></script>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+    <script type="text/javascript">
+        $(function () {
+            var resId = 2;
+            window.sessionStorage.setItem("indexTab", $('.tab-touch li[resId=' + resId + ']').index());
+        });</script><link rel="stylesheet" href="./assets/layer.css" id="layui_layer_skinlayercss" style=""><link type="text/css" rel="stylesheet" href="./assets/laydate.css"><link type="text/css" rel="stylesheet" href="./assets/laydate(1).css" id="LayDateSkin"></head>
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+    
+    
+<body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+    <div class="main">
+        <div class="menu">
+            <div class="menu-top">
+                <div id="language" class="language" style="display:none;">
+                    <div class="language-first">
+                        <a href="javascript:void(0)"><img src="./assets/lang_cn.svg" alt=""></a>
+                    </div>
+                    <ul>
+                        
+                        <li title="en"> <a href="javascript:changeLanguage(&#39;en&#39;);"><img src="./assets/lang_en.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                        <li title="tw"> <a href="javascript:changeLanguage(&#39;hk&#39;);"><img src="./assets/lang_hk.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                    </ul>
+                </div>
+                <select name="theme" id="theme" style="display:none;">
+                    
+                        <option value="blue">淡蓝色</option>
+                    
+                        <option value="black" selected="">天空灰</option>
+                    
+                </select>
+            </div>
+            <div class="menu-time">GMT+8:&nbsp;<span id="time_now">10-19 22:01:30</span></div>
+            <div class="menu-logo">
+                <img src="./assets/logo_2.png" alt="">
+                <div>
+                    <a href="./Online-Members.html" style="">
+                        <span class="online-member">在线会员:</span>
+                        <span><font style="font-size:14px; color: #5cdc12; margin-left: 10px;" id="onlineCount">0</font></span>
+                    </a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" class="searchInput" placeholder="账号搜索" autocomplete="off">
+                <a class="searchMember"><span class="btnsMain">搜索</span></a>
+            </div>
+            <div class="menu-txt">
+                <ul>
+                    <li>
+                        <span>总代理:</span>
+                        <span>gg08</span>
+                    </li>
+                    <li>
+                        <span>余额:</span>
+                        <span id="mybalance">0.77</span>  
+                        
+
+
+                    </li>
+                    
+                    
+
+                </ul>
+
+            </div>
+            <div class="menu-main">
+                <ul>
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="./Home.html">首页</a>
+                        <span>&gt;</span>
+                    </li>
+                    
+                        <li class="active" resid="389">
+                            <i class="icon-user"></i>
+                            <a href="./Account-customers.html" id="index">账户管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="169">
+                            <i class="icon-baobiao"></i>
+                            <a href="./Report-winLoss.html" id="index">报表管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="310">
+                            <i class="icon-zaixian"></i>
+                            <a href="./Online-Members.html" id="index">在线管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="7064">
+                            <i class="icon-xitong"></i>
+                            <a href="./LotterySetting.html" id="index">彩票设置</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                    <li>
+                        <i class="icon-password"></i>
+                        <a href="./Changepassword.html" class="change">修改密码</a>
+                    </li>
+                    <li>
+                        <i class="icon-out"></i>
+                        <a href="./Login.html" class="sign">安全退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-footer"></div>
+        </div>
+
+<div class="content">
+    <div class="content-right">
+        <div class="content-tableList">
+                <div class="index-title">新增子账号</div>
+            </div>
+            <form name="form1" id="form1" action="http://admin.k1zz.vip/ag/user/add.html" method="post" novalidate="novalidate">
+                <input type="hidden" name="token" value="" autocomplete="off">
+                <input type="hidden" name="user.age" id="age" value="0" autocomplete="off">
+                <input type="hidden" name="user.realname" value="hidden" autocomplete="off">
+                <input type="hidden" name="user.address" value="hidden" autocomplete="off">
+                <input type="hidden" name="user.phone" value="hidden" autocomplete="off">
+                <input type="hidden" name="user.qq" value="hidden" autocomplete="off">
+                  <input type="hidden" name="user.gender" value="1" autocomplete="off">
+                <input type="hidden" name="user.appType" value="1" autocomplete="off">
+                <input type="hidden" name="user.parentStatus" value="1" autocomplete="off">
+               <div class="content-addBox">
+                    <div class="content-addBoxList">
+                         <div class="tables" style="overflow: hidden">
+                            <div class="tables-box">
+                        <table style="table-layout:fixed">
+                            <tbody>
+                                <tr>
+                                    <td>  账号*: gg08</td>
+                                    <td>
+                                        <input type="hidden" name="user.username" id="username" class="required userName1 userName" aria-required="true" autocomplete="off">
+                                        
+<select id="first" class="suffix names">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+    <option value="H">H</option>
+    <option value="I">I</option>
+    <option value="J">J</option>
+    <option value="K">K</option>
+    <option value="L">L</option>
+    <option value="M">M</option>
+    <option value="N">N</option>
+    <option value="O">O</option>
+    <option value="P">P</option>
+    <option value="Q">Q</option>
+    <option value="R">R</option>
+    <option value="S">S</option>
+    <option value="T">T</option>
+    <option value="U">U</option>
+    <option value="V">V</option>
+    <option value="W">W</option>
+    <option value="X">X</option>
+    <option value="Y">Y</option>
+    <option value="Z">Z</option>
+</select>
+<style type="text/css">
+    select.suffix {
+        width: 40px !important;
+        hight: 18px !important;
+    }
+</style>
+<select id="second" class="suffix names">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+    <option value="H">H</option>
+    <option value="I">I</option>
+    <option value="J">J</option>
+    <option value="K">K</option>
+    <option value="L">L</option>
+    <option value="M">M</option>
+    <option value="N">N</option>
+    <option value="O">O</option>
+    <option value="P">P</option>
+    <option value="Q">Q</option>
+    <option value="R">R</option>
+    <option value="S">S</option>
+    <option value="T">T</option>
+    <option value="U">U</option>
+    <option value="V">V</option>
+    <option value="W">W</option>
+    <option value="X">X</option>
+    <option value="Y">Y</option>
+    <option value="Z">Z</option>
+</select>
+<style type="text/css">
+    select.suffix {
+        width: 40px !important;
+        hight: 18px !important;
+    }
+</style><img class="rightUserName" src="./assets/right.png" style="display:none;">
+                                    </td>
+                                    <td>级别:</td>
+                                    <td>子账号</td>
+
+                                </tr>
+                                <tr>
+                                    <td>密码*:</td>
+                                    <td>
+                                        <input name="user.password" type="text" id="password" aria-required="true" aria-invalid="false" placeholder="登录密码" class="valid required password1" autocomplete="off">
+                                        <img class="rightPassword" src="./assets/right.png" style="display:none;">
+                                        <input type="button" onclick="randomPassword()" value="随机" class="random" autocomplete="off">
+                                    </td>
+                                    <td>邮箱:</td>
+                                    <td><input type="email" name="user.email" autocomplete="off"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>名字:</td>
+                                    <td>
+                                        <input name="user.nickname" autocomplete="off">
+                                    </td>
+                                    <td>状态：</td>
+                                    <td>
+                                        <ul>
+                                            <li class="record-list">
+                                                <input type="radio" class="radio" name="user.status" value="1" checked="checked" autocomplete="off"><span class="green">激活</span>
+                                                <input type="radio" class="radio" name="user.status" value="2" autocomplete="off"><span class="red">暂停</span>
+                                                <input type="radio" class="radio" name="user.status" value="0" autocomplete="off"><span class="gray">停用</span>
+                                            </li>                                  
+                                        </ul>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>IP白名单</td>
+                                    <td>
+                                        <textarea name="user.whiteIps" id="whiteIps" rows="3" cols="40" data-tagsinput-init="true" style="display: none;"></textarea><div id="whiteIps_tagsinput" class="tagsinput" style="width: 300px; min-height: 100px; height: 100px;"><div id="whiteIps_addTag"><input id="whiteIps_tag" value="" data-default="输入IP" autocomplete="off" style="color: rgb(102, 102, 102); width: 63px;"></div><div class="tags_clear"></div></div>
+                                    </td>
+                                    <td>操作权限:</td>
+                                    <td>
+                                        <ul>
+                                            <li style="float: left;margin-right: 5px;width: 150px;">
+                                                    <input type="checkbox" name="roles" class="checkbox" value="106" checked="checked" autocomplete="off">&nbsp;
+                                                    <span style="top: -2px; position: relative;">
+                                                        修改</span>
+                                                </li>
+                                            <li style="float: left;margin-right: 5px;width: 150px;">
+                                                    <input type="checkbox" name="roles" class="checkbox" value="124" checked="checked" autocomplete="off">&nbsp;
+                                                    <span style="top: -2px; position: relative;">
+                                                        查看</span>
+                                                </li>
+                                            <li style="float: left;margin-right: 5px;width: 150px;">
+                                                    <input type="checkbox" name="roles" class="checkbox" value="42" checked="checked" autocomplete="off">&nbsp;
+                                                    <span style="top: -2px; position: relative;">
+                                                        新增</span>
+                                                </li>
+                                            </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="content-downBtn">
+                            <a href="javascript:void(0);" class="content-saveBtn" onclick="submitList()" name="saveBtn">保存</a>
+                            <a href="javascript:history.back();" id="backBt" class="content-returnBtn">返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#whiteIps').tagsInput({
+            'defaultText': '输入IP'
+        });
+        $("#form1").validate({
+            rules: {
+                username: {
+                    required: true
+                },
+                password: "required",
+                roles: {
+                    required: true
+                }
+            }, highlight: function (element, errorClass) {
+                $(element).addClass(errorClass);
+                $(element.form).find("label[for=" + element.id + "]").addClass(errorClass);
+                $(element.form).find("label[for=" + element.id + "]").removeClass("checked");
+            }, unhighlight: function (element, errorClass) {
+                $(element).removeClass(errorClass);
+                $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+            }, success: function (label, element) {
+                label.html("").addClass("checked");
+            }, onfocusout: function (element) {
+                $(element).valid();
+            }, onkeyup: function () {
+            }, submitHandler: function (form) {
+                if (valideUsername()) {
+                    submitForm(function () {
+                        location.href = document.referrer;
+                    });
+                }
+                return false;
+            }
+        });
+
+        $.validator.addMethod("userName1", function (value, element) {
+            var patt1 = new RegExp("^[A-Za-z0-9]{2,14}$");//2到14位字母和数字组成
+            return patt1.test(value);
+        }, "必须由2-14个字符（字母或数字）组成！");
+
+        $.validator.addMethod("password1", function (value, element) {
+            // var patt1 = new RegExp("^[A-Za-z0-9]{6,14}$");//2到14位字母和数字组成
+            var patt1 = new RegExp("^[^ ]{6,16}$");//不可以有空格
+            var right = patt1.test(value);
+            $(".rightPassword").css("display", right ? "" : "none");
+            return right;
+        }, "必须由6-14个字母或数字或特殊字符组成！");
+    });
+    $(".suffix").change(function () {
+        //验证名称是否存在
+        valideUsername();
+    });
+    function valideUsername() {
+        var rt = false;
+        var username = "gg08" + $("#first").val() + $("#second").val();
+        $("#username").val(username);
+        $.ajax({
+            type: "post",
+            url: "ag/agent/checkUserExisit.html",
+            data: {userName: $("#username").val()},
+            async: false,
+            success: function (b) {
+                rt = b === 'S';
+            }
+        });
+        if (!rt) {//已经存在，给出提示
+            layer.alert("账号已经存在！", {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+            return false;
+        }
+        return true;
+    }
+</script>
+<div class="model">
+    <div class="model-box">
+        <div class="model-table" id="model_content">
+        </div>
+    </div>
+</div>
+<div class="dialog flex" style="position: absolute; width: 80px; display: none;"></div>
+<div id="shareDetail" style="position: absolute; width: 120px;background: #fff;box-shadow: #a09b9b 0px 0px 0px;padding: 5px 0; justify-content: center; display: none;"></div>
+<script type="text/javascript" src="./assets/layer.js.download" charset="utf-8"></script>
+<script src="./assets/jquery.number.format.js.download"></script>
+<script src="./assets/messages_cn.js.download"></script>
+<script src="./assets/additional-methods.min.js.download"></script>
+<script type="text/javascript" src="./assets/laydate.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./assets/form2js.js.download"></script>
+<script type="text/javascript" src="./assets/jquery.table2excel.min.js.download"></script>
+<script src="./assets/jQuery.print.js.download"></script>
+<script type="text/javascript">
+    var sysTime = null;
+    $(function () {
+        getSysTime();//获取最新的系统时间
+    });
+    function getSysTime() {
+        $.ajax({
+            type: "POST",
+            url: "ag/open/sysDate.html",
+            dataType: "json",
+            success: function (json) {
+                sysTime = new Number(json.string);
+                $("#time_now").text(getDate(sysTime));
+            }
+        });
+    }
+    setInterval(function () {
+        sysTime += 1000;
+        $("#time_now").text(getDate(sysTime));
+    }, 1000);
+    function  getDate(systime) {
+        var dd = new Date(systime + 60 * 60 * 8 * 1000);
+        var y = dd.getUTCFullYear();
+        var m = dd.getUTCMonth() + 1;
+        var d = dd.getUTCDate();
+        var h = dd.getUTCHours();
+        var M = dd.getUTCMinutes();
+        var s = dd.getUTCSeconds();
+        m = m < 10 ? "0" + m : m;
+        d = d < 10 ? "0" + d : d;
+        h = h < 10 ? "0" + h : h;
+        M = M < 10 ? "0" + M : M;
+        s = s < 10 ? "0" + s : s;
+        var day = m + "-" + d + " " + h + ":" + M + ":" + s;
+        return day;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#print").click(function () {
+            $.print("table.excel");
+
+        });
+        reflashBalanceLazy();
+    });
+    function openIframe(url, data) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            $("div.model").css("display", "block");
+            $("div#model_content").html(data);
+        }, "text");
+    }
+    function openIframeP(url) {
+        valiateSession();
+        parent.layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: 0.8,
+            scrollbar: false,
+            area: ['780px', '60%'],
+            offset: '100px',
+            content: url, //iframe?url
+            end: function () {
+                if (parent.isSubmitForm === 1) {
+                    parent.isSubmitForm = 0;
+                    if (window.top !== window.self) {
+                        $("#fenye").submit();
+                    } else {
+                        parent.submitList();
+                    }
+                }
+            }
+        });
+    }
+
+    function getContent(url, data, width, height) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            if (!width) {
+                width = '100%';
+            }
+            $("div#model_content").css({width: width, height: height}).html(data);
+            $("div.model").css("display", "block");
+        }, "text");
+    }
+
+    $(document).on("click", ".closeModel", function () {
+        closeModel();
+    });
+
+    function closeModel() {
+        $("div.model").css("display", "none");
+        $("div#model_content").html("");
+        $("div.dialog").css({display: "none"});
+    }
+
+    $(document).on("focus", "input.casInput", function () {
+        var offset = $(this).offset();
+        var id = $(this).attr("id");
+        var max = parseFloat($(this).attr("max"));
+        var step = parseFloat($(this).attr("step"));
+        var childEle = "";
+        for (var i = max; i > 0; i -= step) {
+            childEle += '<span class="dialogChild" target="' + id + '">' + i.toFixed(1) + '</span>';
+        }
+        $("div.dialog").html(childEle).css({top: offset.top + 26, left: offset.left, display: "flex"});
+    });
+
+    $(document).on("mouseenter", ".shareDetail", function () {
+        var offset = $(this).offset();
+        $("#shareDetail").css({top: offset.top + 26, left: offset.left + 30, display: "flex"});
+        $.post("ag/report/shares.html", {userId: parseInt($(this).attr("userid"))}, function (json) {
+            var ele = "<table>";
+            for (var i = 0; i < json.length; i++) {
+                var obj = json[i];
+                ele += '<tr><td style="text-align: left; width: 80px; padding-left: 5px;">' + $.i18n.prop("game.id." + obj.gameId) + ':</td><td>' + ("" + (obj.shareNum * 100)) + "%</td></tr>";
+            }
+            $("#shareDetail").html(ele + "</table>");
+        }, "json");
+    });
+
+    $(document).on("mouseleave", ".shareDetail", function () {
+        $("#shareDetail").html('').css("display", "none");
+    });
+
+    $("body").click(function (event) {
+        if (event.target.className !== 'dialogChild' && !$(event.target).hasClass("casInput")) {
+            $("div.dialog").hide();
+        }
+    });
+
+    $(document).on("keydown", "input.casInput", function () {
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".dialogChild", function () {
+        var target = $(this).attr("target");
+        var ele = $("#" + target).val($(this).text());
+        var field = ele.attr("field");
+        if (field === "share" || field === "comm") {
+            var gameId = ele.attr("gameId");
+            $("." + field + gameId).val($(this).text());
+        }
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".back", function () {
+        window.history.back();
+    });
+
+    function valiateSession() {
+        $.get("http://admin.k1zz.vip/ag/sessionTest.html", {}, function (data) {
+            if (data !== "1") {
+                top.window.location.reload();
+            }
+        }, "text");
+    }
+
+    function exportCVS(name) {
+        $("table.excel").table2excel({
+            exclude: ".noExl",
+            name: name,
+            filename: name,
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
+    }
+
+    function input2Json(ele, devide) {
+        var inputs = $(ele).find("input.casInput");
+        var json = {};
+        for (var i = 0; i < inputs.length; i++) {
+            var value = parseFloat(inputs[i].value);
+            if (value) {
+                json[$(inputs[i]).attr("field")] = getRoundDd(value / devide, 4);
+            }
+        }
+        var select = $(ele).find("select.casInput");
+        if (select) {
+            for (var i = 0; i < select.length; i++) {
+                json[$(select[i]).attr("field")] = select[i].value;
+            }
+        }
+        return JSON.stringify(json);
+    }
+    function getRoundDd(num, len) {
+        return num.toFixed(len);
+    }
+    setInterval(function () {
+        updateOnlineCount();
+    }, 60000);
+
+    function onlineCount(json) {
+        if (!json) {
+            top.window.location.reload();
+            return;
+        }
+        $("font#onlineCount").text(json.total);
+    }
+
+    function updateOnlineCount() {
+        $.ajax({
+            type: "GET",
+            url: "/ag/memberOnline/onlineCount.html",
+            success: function (json) {
+                onlineCount(json);
+            },
+            dataType: "json"
+        });
+    }
+    $(document).ready(function () {
+        updateOnlineCount();
+    });
+
+    //将秒数转换为时分秒格式
+    function formatSeconds(value) {
+        var theTime = parseInt(value);// 秒
+        var middle = 0;// 分
+        var hour = 0;// 小时
+        if (theTime > 60) {
+            middle = parseInt(theTime / 60);
+            theTime = parseInt(theTime % 60);
+            if (middle > 60) {
+                hour = parseInt(middle / 60);
+                middle = parseInt(middle % 60);
+            }
+        }
+        var timeStr = theTime;
+        if (theTime < 10) {
+            timeStr = "0" + timeStr;
+        }
+        var middleStr = middle;
+        if (middle < 10) {
+            middleStr = "0" + middle;
+        }
+        var hourStr = hour;
+        if (hour < 10) {
+            hourStr = "0" + middle;
+        }
+        var result = middleStr + ":" + timeStr;
+        if (hour > 0) {
+            result = hourStr + ":" + result;
+        }
+        return result;
+    }
+//    function openCustomerWindow(url, width, height, title) {
+//        layer.open({
+//            type: 2,
+//            title: title,
+//            area: [width, height], fix: false, //不固定
+//            content: url
+//        });
+//    }
+
+    function reflashBalanceLazy() {
+        setTimeout(function () {
+            //定时刷新代理余额
+            setInterval(function () {
+                reflashBalance();
+            }, 5000);
+        }, 100000);
+    }
+
+    function reflashBalance() {
+        valiateSession();
+        $.get("http://admin.k1zz.vip/ag/reflashBalance.html", {}, function (data) {
+            if (data !== "error") {
+                $("#mybalance").html(data);
+            }
+        }, "text");
+    }
+    function convertNum(amount) {
+        //千位符号隔开
+        amount = amount + '';
+        var array = new Array();
+        array = amount.split(".");
+        var re = /(-?\d+)(\d{3})/;
+        while (re.test(array[0])) {
+            array[0] = array[0].replace(re, "$1,$2")
+        }
+        var returnV = array[0];
+        if (array.length > 1) {
+            returnV += "." + array[1].substring(0, 2);
+        } else {
+            returnV += "." + 0;
+        }
+        return returnV;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $(".search-box a.searchMember").click(function () {
+            searchMember2($("input.searchInput").val());
+        });
+        $(".search-box .searchInput").keyup(function (event) {
+            if (event.keyCode === 13) {
+                searchMember2($(this).val());
+            }
+        });
+        $(".search-box .searchInput").click(function () {
+            $(".position").css("display", "none");
+        });
+        function initLanguages() {
+            var lang = 'cn';
+            $("li[title='" + lang + "']").remove();
+        }
+        initLanguages();
+        $('input').attr('autocomplete', 'off'); //去除所有输入框的记忆功能
+        $("#theme").change(function () {
+            $.post("ag/style.html", {webStyle: $(this).val()}, function () {
+                window.location.reload();
+            }, "json");
+        });
+    });
+    function searchMember2(username) {
+        var url = "/ag/search/queryall.html?username=" + encodeURI(encodeURI(username));
+        window.location.href = url;
+    }
+    function searchMember(username) {
+        if (!username) {
+            return;
+        }
+        $.post("ag/search/member.html", {username: username}, function (json) {
+            if (json.codeId === 0) {
+                var member = json.object;
+                var position = $(".position").css("display", "block");
+                position.find(".username").text(member.username);
+                position.find(".status").text(member.status === 0 ? "停用" : member.status === 1 ? "激活" : "暂停");
+                position.find(".balan").text(member.balance.toFixed(2) + "(" + member.currencyName + ")");
+                position.find(".parentName").text(member.parentName);
+                position.find(".ip").text(member.ip);
+                position.find(".lastLoginTime").text(member.lastLoginTime);
+                position.find(".report").attr("href", "ag/report/betDetail.html?memberId=" + member.id);
+                position.find(".info").attr("href", "ag/member/query.html?id=" + member.id);
+            } else {
+                layer.alert("账号没找到", {title: $.i18n.prop("fenye.notice"), btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+            }
+        }, 'json');
+    }
+    $("#language").change(function () {
+        $.get("ag/language.html", {language: $(this).val()}, function () {
+            location.reload();
+        }, "text");
+    });
+    function changeLanguage(language) {
+        $.ajax({
+            type: "POST",
+            url: "ag/languageNew.html",
+            data: {language: language},
+            async: true,
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+
+    $(function () {//左侧menu
+        $('.menu-main li').eq(window.sessionStorage.getItem("index")).addClass('active').siblings().removeClass('active');
+        $('.menu-main li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("index", index);
+            $(this).addClass('active').siblings().removeClass('active');
+            window.sessionStorage.setItem("indexTab", 0);
+            window.sessionStorage.setItem("indexDays", 0);
+        });
+    });
+    $(function () {   //顶部tab
+        $('.tab-touch li').eq(window.sessionStorage.getItem("indexTab")).addClass('active').siblings().removeClass('active');
+        $('.tab-touch li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTab", index);
+            $(this).addClass('active').siblings().removeClass('active');
+//                            window.sessionStorage.setItem("indexDays", 0);
+            window.sessionStorage.setItem("titleTab", 0);
+        })
+    });
+    $(function () {   //查看报表时间
+//                    $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+        $('.title-days li').click(function () {
+            $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexDays", index);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+
+    /* 移入表格变色 */
+    $(function () {
+        $("table tr:not(:first) td").not(".record-top table tr td").not(".em-table tr td").mouseover(function () {
+            $(this).parent().find("td").addClass("hoverColor");
+        }).mouseleave(function () {
+            $(this).parent().find("td").removeClass("hoverColor");
+        })
+    });
+    $(function () {//会员 高级会员
+        $('.title-tab a').eq(window.sessionStorage.getItem("indexTitle")).addClass('active').siblings().removeClass('active');
+        $('.title-tab a').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTitle", 0);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    });
+    function signupToMT(id) {
+        $.post("http://admin.k1zz.vip/ag/member/signupToMT.html", {"id": id}, function (json) {
+            if (json.codeId === 0) {
+                layer.alert("操作成功！")
+            } else {
+                layer.alert("操作失败！")
+            }
+        }, "json")
+    }
+
+</script>
+
+</div><tester id="whiteIps_tag_autosize_tester" style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13px; font-family: helvetica; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

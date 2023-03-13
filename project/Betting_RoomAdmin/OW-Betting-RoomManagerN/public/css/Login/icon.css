@@ -1,0 +1,375 @@
+/* @font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot");
+  src: url("../fonts/iconfont.eot") format("embedded-opentype"),
+    url("../fonts/iconfont.ttf") format("truetype"),
+    url("../fonts/iconfont.woff") format("woff"),
+    url("../fonts/iconfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+} */
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "iconfont" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-slottery:before {
+  content: "\e805";
+}
+.icon-qrcode:before {
+  content: "\e80d";
+}
+.icon-android:before {
+  content: "\e80e";
+}
+.icon-surse:before {
+  content: "\e810";
+}
+.icon-siphone:before {
+  content: "\e811";
+}
+.icon-smessage:before {
+  content: "\e828";
+}
+.icon-login:before {
+  content: "\e829";
+}
+.icon-wechat:before {
+  content: "\e849";
+}
+.icon-qq:before {
+  content: "\e84a";
+}
+.icon-weibo:before {
+  content: "\e84c";
+}
+.icon-skype:before {
+  content: "\e84f";
+}
+.icon-email:before {
+  content: "\e853";
+}
+.icon-casino:before {
+  content: "\e855";
+}
+.icon-trend:before {
+  content: "\e900";
+}
+.icon-gpi:before {
+  content: "\e901";
+}
+.icon-tgp:before {
+  content: "\e902";
+}
+.icon-bbinnew:before {
+  content: "\e903";
+}
+.icon-spadeg:before {
+  content: "\e904";
+}
+.icon-lebo:before {
+  content: "\e905";
+}
+.icon-chess:before {
+  content: "\e906";
+}
+.icon-anno:before {
+  content: "\e907";
+}
+.icon-slot:before {
+  content: "\e908";
+}
+.icon-all:before {
+  content: "\e909";
+}
+.icon-sb:before {
+  content: "\e90a";
+}
+.icon-arcade:before {
+  content: "\e90b";
+}
+.icon-jdb:before {
+  content: "\e90c";
+}
+.icon-card:before {
+  content: "\e90d";
+}
+.icon-sb1:before {
+  content: "\e90e";
+}
+.icon-fish:before {
+  content: "\e90f";
+}
+.icon-lottery:before {
+  content: "\e910";
+}
+.icon-home:before {
+  content: "\e952";
+}
+.icon-ag:before {
+  content: "\e96e";
+}
+.icon-bbin:before {
+  content: "\e96f";
+}
+.icon-mg:before {
+  content: "\e970";
+}
+.icon-ob:before {
+  content: "\e971";
+}
+.icon-og:before {
+  content: "\e972";
+}
+.icon-pt:before {
+  content: "\e973";
+}
+.icon-up:before {
+  content: "\e974";
+}
+.icon-down:before {
+  content: "\e979";
+}
+.icon-gd:before {
+  content: "\e97b";
+}
+.icon-bg:before {
+  content: "\e97d";
+}
+.icon-ct:before {
+  content: "\e97e";
+}
+.icon-dg:before {
+  content: "\e97f";
+}
+.icon-hb:before {
+  content: "\e980";
+}
+.icon-agvip:before {
+  content: "\e984";
+}
+.icon-fish1:before {
+  content: "\e99c";
+}
+.icon-gaming:before {
+  content: "\ea41";
+}
+.icon-free:before {
+  content: "\ea42";
+}
+.icon-tablegame:before {
+  content: "\ea43";
+}
+.icon-chess1:before {
+  content: "\ea46";
+}
+.icon-cunsong:before {
+  content: "\ea48";
+}
+.icon-fanshui:before {
+  content: "\ea49";
+}
+.icon-financial:before {
+  content: "\ea4a";
+}
+.icon-userchat:before {
+  content: "\ea4b";
+}
+.icon-language:before {
+  content: "\ea52";
+}
+.icon-report:before {
+  content: "\ea53";
+}
+.icon-rewardicon:before {
+  content: "\ea54";
+}
+.icon-out:before {
+  content: "\ea56";
+}
+.icon-user:before {
+  content: "\ea57";
+}
+.icon-casino5:before {
+  content: "\ea58";
+}
+.icon-passcode:before {
+  content: "\ea5a";
+}
+.icon-userinfo:before {
+  content: "\ea5c";
+}
+.icon-sport:before {
+  content: "\ea5d";
+}
+.icon-refresh:before {
+  content: "\ea61";
+}
+.icon-pass1:before {
+  content: "\ea62";
+}
+.icon-skype1:before {
+  content: "\ea64";
+}
+.icon-man:before {
+  content: "\ea65";
+}
+.icon-monetary:before {
+  content: "\ea69";
+}
+.icon-menu:before {
+  content: "\ea6a";
+}
+.icon-onlinePay:before {
+  content: "\ea71";
+}
+.icon-onlinebank:before {
+  content: "\ea72";
+}
+.icon-baidupay:before {
+  content: "\ea73";
+}
+.icon-jdpay:before {
+  content: "\ea74";
+}
+.icon-qqpay:before {
+  content: "\ea75";
+}
+.icon-tenpay:before {
+  content: "\ea76";
+}
+.icon-weixinpay:before {
+  content: "\ea77";
+}
+.icon-alipay:before {
+  content: "\ea78";
+}
+.icon-openeye:before {
+  content: "\ea79";
+}
+.icon-offeye:before {
+  content: "\ea7a";
+}
+.icon-wechatpay:before {
+  content: "\ea7b";
+}
+.icon-iphone:before {
+  content: "\ea7c";
+}
+.icon-qq1:before {
+  content: "\ea84";
+}
+.icon-sina:before {
+  content: "\ea85";
+}
+.icon-wx:before {
+  content: "\ea87";
+}
+.icon-ios:before {
+  content: "\ea8a";
+}
+.icon-about:before {
+  content: "\ea90";
+}
+.icon-wifi:before {
+  content: "\ea92";
+}
+.icon-contactus:before {
+  content: "\ea93";
+}
+.icon-userinfo2:before {
+  content: "\ea97";
+}
+.icon-lost:before {
+  content: "\ea99";
+}
+.icon-win:before {
+  content: "\ea9a";
+}
+.icon-tips:before {
+  content: "\ea9b";
+}
+.icon-iprestric:before {
+  content: "\ea9c";
+}
+.icon-recharge:before {
+  content: "\eaa2";
+}
+.icon-sort:before {
+  content: "\eaa3";
+}
+.icon-transaction:before {
+  content: "\eaa4";
+}
+.icon-recharge1:before {
+  content: "\eaa5";
+}
+.icon-transaction1:before {
+  content: "\eaa6";
+}
+.icon-withdraw:before {
+  content: "\eaa8";
+}
+.icon-nickname:before {
+  content: "\eaa9";
+}
+.icon-hand:before {
+  content: "\eaaa";
+}
+.icon-sqrcode:before {
+  content: "\eab2";
+}
+.icon-password:before {
+  content: "\eaba";
+}
+.icon-fund-detail:before {
+  content: "\eabc";
+}
+.icon-close:before {
+  content: "\eabd";
+}
+.icon-next:before {
+  content: "\eabe";
+}
+.icon-back:before {
+  content: "\eabf";
+}
+.icon-gamelive:before {
+  content: "\eac0";
+}
+.icon-live:before {
+  content: "\eac1";
+}
+.icon-gamesport:before {
+  content: "\eac5";
+}
+.icon-transfer:before {
+  content: "\eac7";
+}
+.icon-recharge2:before {
+  content: "\eac9";
+}
+.icon-qrpay:before {
+  content: "\eacd";
+}
+.icon-hongbao:before {
+  content: "\ead2";
+}
+.icon-seting:before {
+  content: "\f013";
+}
+.icon-delete:before {
+  content: "\f014";
+}
+.icon-pass2:before {
+  content: "\f23e";
+}

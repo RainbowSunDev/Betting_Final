@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://www.k195.vip/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="在线博彩平台，持续在体育博彩、真人娱乐城、老虎机、等各方面，期待您的加入。">
+    <link rel="icon" href="https://jt-asia.guojilx.com/newap/xinyong/imgs/cy/favicon.ico" type="imgs/x-icon">
+    <script src="./login_assets/config.js.download"></script>
+    <!--<base href="https://jt-asia.guojilx.com/newap/xinyong/">-->
+    <base href=".">
+    <link rel="stylesheet" href="./login_assets/icon.css">
+    <link rel="stylesheet" href="./login_assets/style.css">
+    <link rel="stylesheet" href="./login_assets/common.css">
+    <script type="text/javascript" src="./login_assets/jquery.min.js.download"></script>
+    <title>RM彩票</title>
+    <script async="" type="text/javascript" src="./login_assets/tracking.js.download"></script>
+</head>
+
+<body style="background: url(&quot;./imgs/bg2.jpg&quot;) center center no-repeat rgb(237, 237, 237);">
+    <main>
+        <div class="login-box">
+            <div class="loginbox-modal before-login" style="margin-left: 50vw;">
+
+                <div class="login-title-pc" style="display: block;">
+                    <img class="logo-img" src="./login_assets/logo.png"> 欢迎登录
+                </div>
+                <div class="login-title-wap">
+                    <img class="logo-img" src="./login_assets/logo.png">
+                </div>
+                <div class="login-contain">
+                    <div class="loginbox-group">
+                        <input class="user" maxlength="11" placeholder="请输入您的用户名">
+                    </div>
+                    <div class="loginbox-group">
+                        <input type="password" class="password" maxlength="11" placeholder="请输入您的密码">
+                    </div>
+                    <div class="loginbox-group">
+                        <input class="piccodenumber" maxlength="4" placeholder="请输入验证码">
+                        <img class="captcha piccode" style="background-color: antiquewhite" id="checkcodeimg"
+                            src="./login_assets/saved_resource" alt="">
+                    </div>
+                    <div class="loginbox-btn">
+                        <a class="btn-info2 logon-btn">注册</a>
+                        <a class="btn-info login-btn">登录</a>
+                    </div>
+                </div>
+            </div>
+            <div class="loginbox-modal after-login" style="margin-left: 50vw; display: block;">
+                <div class="login-title-pc" style="display: block;">
+                    <img class="logo-img" src="./login_assets/logo.png"> 欢迎归来
+                </div>
+                <div class="login-title-wap">
+                    <img class="logo-img" src="./login_assets/logo.png">
+                </div>
+
+                <div class="login-contain">
+                    <div class="loginbox-after">
+                        <span class="icon-user"></span>
+                        <em class="memberAccount">fygj123</em>
+                    </div>
+                    <div class="loginbox-after">
+                        <span class="icon-monetary"></span>
+                        <em class="sysBalance">0.00</em>
+                        <img class="refresh-btn" src="./login_assets/refresh-icon.svg">
+                    </div>
+                    <div class="loginbox-btn">
+                        <a class="btn-info join-btn">进入游戏</a>
+                        <a class="btn-info2 logout-btn">退出游戏</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex member">
+            <div>
+                <div class="flex row member-title">
+                    <h2>会员中心</h2>
+                    <ul>
+                        <li class="active">游戏报表</li>
+                    </ul>
+                    <img class="close-member" src="./login_assets/close.png">
+                </div>
+                <div class="member-main">
+                    <div class="report">
+                        <div class="report-title">
+                            <h2>游戏报表</h2>
+                        </div>
+                        <div class="flex row report-rule">
+                            <ul class="flex row report-game">
+                                <li class="active" data-gameid="602">万利彩票</li>
+                            </ul>
+                            <div class="flex row">
+                                <select class="report-state">
+                                    <option value="">派彩状态</option>
+                                    <option value="0">未结算</option>
+                                    <option value="1">已结算</option>
+                                    <option value="2">已撤销</option>
+                                </select>
+                                <ul class="flex row search-time">
+                                    <li class="active">本周</li>
+                                    <li>上周</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="report-week">
+                            <div class="flex row">
+                                <h4>周总计</h4>
+                                <p>下注金额 <span class="week-bet"></span></p>
+                                <p>有效投注 <span class="week-availBet"></span></p>
+                                <p>输赢金额 <span class="week-win"></span></p>
+                            </div>
+                            <ul class="flex row search-day">
+                                <li class="search-day-1"></li>
+                                <li class="search-day-2"></li>
+                                <li class="search-day-3"></li>
+                                <li class="search-day-4"></li>
+                                <li class="search-day-5"></li>
+                                <li class="search-day-6"></li>
+                                <li class="search-day-7"></li>
+                            </ul>
+                        </div>
+                        <ul class="report-table">
+                            <li class="flex row">
+                                <p class="flex-1">序号</p>
+                                <p class="flex-2">游戏</p>
+                                <p class="flex-4">游戏编号</p>
+                                <p class="flex-2">下注金额</p>
+                                <p class="flex-2">有效投注</p>
+                                <p class="flex-2">派彩状态</p>
+                                <p class="flex-2">输赢金额</p>
+                                <p class="flex-4">结算时间</p>
+                            </li>
+                            <li class="flex row report-table-row-1"></li>
+                            <li class="flex row report-table-row-2"></li>
+                            <li class="flex row report-table-row-3"></li>
+                            <li class="flex row report-table-row-4"></li>
+                            <li class="flex row report-table-row-5"></li>
+                            <li class="flex row report-table-row-6"></li>
+                            <li class="flex row report-table-row-7"></li>
+                            <li class="flex row report-table-row-8"></li>
+                            <li class="flex row report-table-total">
+                                <p class="flex-1">总计</p>
+                                <p class="flex-6 row-number">0</p>
+                                <p class="flex-2 total-bet">0.00</p>
+                                <p class="flex-2 total-availBet">0.00</p>
+                                <p class="flex-2"></p>
+                                <p class="flex-2 total-win">0.00</p>
+                                <p class="flex-4"></p>
+                            </li>
+                        </ul>
+                        <div class="flex row report-filp">
+                            <div class="flex-1"></div>
+                            <div class="flex-2 flex row">
+                                <button class="prev" onclick="filp(-1)">上一页</button>
+                                <p>
+                                    <span class="now-page">1</span>/<span class="total-page">1</span>
+                                </p>
+                                <button class="next" onclick="filp(1)">下一页</button>
+                            </div>
+                            <div class="flex-1 flex row">
+                                <input type="text" class="search-num" maxlength="5">
+                                <button class="search-btn">GO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex mask-layer">
+            <div>
+                <h2>修改密码</h2>
+                <ul>
+                    <li class="flex row">
+                        <div>原密码：</div>
+                        <div>
+                            <input class="old-val" type="password" minlength="6" maxlength="11">
+                        </div>
+                    </li>
+                    <li class="flex row">
+                        <div>新密码：</div>
+                        <div>
+                            <input class="new-val" type="password" minlength="6" maxlength="11">
+                        </div>
+                        <div><span>*</span> 密码为6-11位英文数字组合</div>
+                    </li>
+                    <li class="flex row">
+                        <div>确认新密码：</div>
+                        <div>
+                            <input class="check-val" type="password" minlength="6" maxlength="11">
+                        </div>
+                    </li>
+                </ul>
+                <div class="flex row">
+                    <button class="change-password">确认修改</button>
+                    <button class="close-mask">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex txt-center load">
+            <div class="loader-wrapper">
+                <div class="loader">
+                    <div class="roller"></div>
+                    <div class="roller"></div>
+                </div>
+                <div class="loader loader2">
+                    <div class="roller"></div>
+                    <div class="roller"></div>
+                </div>
+                <div class="loader loader3">
+                    <div class="roller"></div>
+                    <div class="roller"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        window.__lc = window.__lc || {};
+        window.__lc.license = 12978063;;
+        (function(n, t, c) {
+            function i(n) {
+                return e._h ? e._h.apply(null, n) : e._q.push(n)
+            }
+            var e = {
+                _q: [],
+                _h: null,
+                _v: "2.0",
+                on: function() {
+                    i(["on", c.call(arguments)])
+                },
+                once: function() {
+                    i(["once", c.call(arguments)])
+                },
+                off: function() {
+                    i(["off", c.call(arguments)])
+                },
+                get: function() {
+                    if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load.");
+                    return i(["get", c.call(arguments)])
+                },
+                call: function() {
+                    i(["call", c.call(arguments)])
+                },
+                init: function() {
+                    var n = t.createElement("script");
+                    n.async = !0, n.type = "text/javascript", n.src =
+                        "https://cdn.livechatinc.com/tracking.js",
+                        t.head.appendChild(n)
+                }
+            };
+            !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e
+        }(window, document, [].slice))
+    </script>
+    <noscript><a href="https://www.livechatinc.com/chat-with/12978063/" rel="nofollow">Chat with us</a>, powered by <a
+            href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+
+    <script src="./login_assets/errCode.js.download"></script>
+    <script src="./login_assets/md5.js.download"></script>
+    <script src="./login_assets/utils.js.download"></script>
+    <script>
+        (function() {
+            window.addEventListener(
+                "offline",
+                function() {
+                    alert("网络连接已断开");
+                },
+                false
+            );
+        })();
+        $(document).keydown(function(e) {
+            if (!getSession("isLogin")) {
+                if (e.keyCode === 13) login();
+            }
+        });
+    </script>
+    <div id="chat-widget-container"
+        style="opacity: 1; visibility: visible; z-index: 2147483639; position: fixed; bottom: 20px; width: 84px; height: 84px; max-width: 100%; max-height: calc(100% - 20px); min-height: 0px; min-width: 0px; background-color: transparent; border: 0px; overflow: hidden; right: 20px; transition: none 0s ease 0s !important;">
+        <iframe allow="autoplay; microphone *; camera *; display-capture *; picture-in-picture *; fullscreen *;"
+            src="./login_assets/open_chat.html" allowtransparency="true" id="chat-widget" name="chat-widget"
+            title="LiveChat chat widget" scrolling="no"
+            style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; position: absolute; inset: 0px; transition: none 0s ease 0s !important; display: none;"></iframe><iframe
+            allowtransparency="true" id="chat-widget-minimized" name="chat-widget-minimized"
+            title="LiveChat chat widget" scrolling="no"
+            style="width: 100%; height: 100%; min-height: 0px; min-width: 0px; margin: 0px; padding: 0px; background-image: none; background-position: 0% 0%; background-size: initial; background-attachment: scroll; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0); border-width: 0px; float: none; display: block;"
+            src="./login_assets/saved_resource.html"></iframe></div>
+</body>
+
+</html>

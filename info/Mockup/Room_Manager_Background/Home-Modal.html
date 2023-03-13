@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://ft.zxkjwl.com/index -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="0">
+	<meta name="google" content="notranslate">
+	<link id="dynamic_ico" rel="shortcut icon" type="image/x-icon"
+		href="http://ft.zxkjwl.com/feitian_favicon.ico?time=1666501551349">
+	<script src="./assets/config.js.download"></script>
+	<script>
+		// 动态添加meta
+		var ua = navigator.userAgent,
+			isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1;
+		if (isAndroid) {
+			var meta = document.createElement('meta');
+			meta.content = "width=device-width, initial-scale=0, user-scalable=yes, maximum-scale=1.0";
+			meta.name = "viewport";
+			document.getElementsByTagName('head')[0].appendChild(meta);
+		}
+	</script>
+	<link href="./assets/manifest.61a73641.css" rel="prefetch">
+	<link href="./assets/manifest.4be96d60.js.download" rel="prefetch">
+	<link href="./assets/styles.80f5d5ed.css" rel="preload" as="style">
+	<link href="./assets/app.3b8d1f84.js.download" rel="preload" as="script">
+	<link href="./assets/styles.2b3727d2.js.download" rel="preload" as="script">
+	<link href="./assets/styles.80f5d5ed.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./assets/manifest.61a73641.css">
+	<script charset="utf-8" src="./assets/manifest.4be96d60.js.download"></script>
+	<title>飞天后台管理系统</title>
+</head>
+
+<body class="no"><noscript><strong>We're sorry but owner-admin doesn't work properly without JavaScript
+			enabled. Please enable it to continue.</strong></noscript>
+	<div id="app">
+		<div class="container">
+			<header>
+				<div class="flex row space-between admin-navbar">
+					<div><img src="./assets/feitian_logo.fba62ffc.png">
+						<div>
+							<div>
+								<!---->
+							</div>
+						</div>
+					</div>
+					<ul class="flex row">
+						<li>房间号: 382668</li>
+						<li>昵称: 金冠线上娱乐</li>
+						<li> 过期时间: <span class="">2022/11/03 17:03:21</span></li>
+						<li><input type="button" value="H5 / App 下载"></li>
+						<li><img src="./assets/589274d3c32d4bf1bb11cac99bc07c7e.jpg"> fygj123 <i
+								class="icon-go"></i>
+							<ul class="text-center">
+								<li>修改密码</li>
+								<li> 绑定手机号码 </li>
+								<li>退出登录</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="current-mask current-download" style="display: none;">
+						<div>
+							<p class="flex row space-between"> H5 / App下载 <i class="icon-close"></i></p>
+							<div>
+								<div>
+									<h4> H5扫码登录 <button class="current-button small light-blue">刷新</button></h4>
+									<div id="wapDownload"></div>
+									<p></p>
+								</div>
+								<div>
+									<h4>安卓下载</h4>
+									<div id="appDownload"></div>
+									<p></p>
+								</div>
+								<!---->
+							</div>
+						</div>
+					</div>
+					<!---->
+					<!---->
+					<!---->
+				</div>
+				<div class="admin-topbar">
+					<ul class="flex row">
+						<li class="router-link-exact-active router-link-active"><i class="icon-home"></i> 首页 </li>
+						<li class=""><i class="icon-system"></i> 房间管理 </li>
+						<li class=""><i class="icon-user"></i> 用户管理 </li>
+						<li class=""><i class="icon-apply"></i> 申请管理 </li>
+						<li class=""><i class="icon-report"></i> 报表管理 </li>
+						<li class=""><i class="icon-commiss"></i> 回水管理 </li>
+						<li class=""><i class="icon-greport"></i> 现场监控 </li>
+						<li class=""><i class="icon-message"></i> 消息设置 </li>
+						<li class=""><i class="icon-operating"></i> 赔率设置 </li>
+						<li class=""><i class="icon-aide"></i> 上盘助手 </li>
+						<li class="" style="display: none;"><i class="icon-aide"></i> 视讯飞单 </li>
+						<li class=""><img src="./assets/special.7c58eb17.svg"> 通讯协议 </li>
+						<li class="" style="display: none;"><img src="./assets/feedback.2ac1d3b2.svg"> 彩云共享
+						</li>
+						<li><img
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABq0lEQVRYR+2XvUsDQRDFfw9LsbFWUNDCL6y1Mr21CIIW/iHqH2KhYGNvbQrROn6CCgaMrRbWMjKyC2eyCRdZvRQuLLd3mZv3MjNv90ZUPFQxPkkCZrYLbAETmQg2gQNJ7vfb6CAQwHcyAbe72WsnkSLwDIwBNUn1HETMbAU4BVqSxos+UwTMDSRlrQ8zS/odXALAEfAIPAB3QEPSR5mUmNkQsAjMANPAFLCRimwqAufAUgLoNZBxUo3CdFMHi9PBHHQ04eNC0nLPGvAfzWwWmAvT1/G+TACizT1wA1zHqyS/7y3DbghmNgzMAwvhGtf+/BK4CvNrLemtDNtUClwuroJaGQdlbcws6XdwVTCw+0AI5QiwKem2ULSHwHu31GXbiMwsytQrei3UwHFQTIfMYo3kJOCSjIBRVi7ZM2Bd0kuqMLMRKIQ8kvBHJ5JWeykiG4FQA366pUb9L2rA9VwdgeLf7hbWX62B/xRUnoJBI1D65My2D5Q9ftvt+iHwFBqS3/gsb0qa7PlJVnljEvZ6b6G2Q4Py06gX32sB+6Vasxxo/fjI2v30AxxtPwHvlyUwZGyb1AAAAABJRU5ErkJggg==">
+							发红包 </li>
+					</ul>
+					<!---->
+				</div>
+			</header>
+			<main>
+				<div class="index">
+					<main class="flex row space-between">
+						<div class="flex row index-message">
+							<div>
+								<div class="flex row"><button class="active"> 游戏 <i
+											style="display: none;"></i></button><button class=""> 客服
+										<i></i></button><button class=""> 支付客服 <i style="display: none;"></i></button>
+								</div>
+								<div>
+									<ul>
+										<li class="">
+											<div class="flex row"><img src="./assets/gameicon_70206.png">
+												<div>
+													<div class="flex row space-between"> 幸运飞艇 <div
+															class="current-slider smallest active">
+															<div></div>
+														</div>
+													</div>
+													<p>20221023002期</p>
+												</div>
+											</div>
+										</li>
+										<li class="active">
+											<div class="flex row"><img src="./assets/gameicon_70211.png">
+												<div>
+													<div class="flex row space-between"> 澳洲幸运10 <div
+															class="current-slider smallest active">
+															<div></div>
+														</div>
+													</div>
+													<p>20949900期</p>
+												</div>
+											</div>
+										</li>
+										<li class="">
+											<div class="flex row"><img src="./assets/gameicon_70209.png">
+												<div>
+													<div class="flex row space-between"> 极速赛车 <div
+															class="current-slider smallest active">
+															<div></div>
+														</div>
+													</div>
+													<p>32515913期</p>
+												</div>
+											</div>
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+										<li class="">
+											<!---->
+										</li>
+									</ul>
+								</div>
+								<div>
+									<p> 在线人数 <span>3</span></p>
+									<div class="flex row space-between"> 是否显示已关闭游戏 <div class="current-slider smallest">
+											<div></div>
+										</div>
+									</div>
+									<p> App上次登录 <span>2022/10/23 04:06:58</span></p>
+								</div>
+							</div>
+							<div>
+								<div>
+									<ul>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221559246993225.png"
+												class="chat-image" src="./assets/201901211657204585732.png">
+											<div>
+												<p> Dark <span>12:55:05</span></p>
+												<div>
+													<p>685单60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221603042802135.png"
+												class="chat-image" src="./assets/201903221557544122299.png">
+											<div>
+												<p> chee <span>12:55:06</span></p>
+												<div>
+													<p>234/67890/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/1586264544873.jpg"
+												class="chat-image" src="./assets/201903221603042802135.png">
+											<div>
+												<p> perp <span>12:55:14</span></p>
+												<div>
+													<p>345小70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558116762556.png"
+												class="chat-image" src="./assets/201904020023396093349.png">
+											<div>
+												<p> 是否拥有 <span>12:55:45</span></p>
+												<div>
+													<p>147/23456/10</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221557544122299.png"
+												class="chat-image" src="./assets/201903121019499850980.png">
+											<div>
+												<p> Uniq <span>12:56:04</span></p>
+												<div>
+													<p>1/12345/50</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023502809817.png"
+												class="chat-image" src="./assets/201904020023502809817.png">
+											<div>
+												<p> Ranp <span>12:56:07</span></p>
+												<div>
+													<p>678/128/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558039678728.png"
+												class="chat-image" src="./assets/201903221558116762556.png">
+											<div>
+												<p> 步月歌 <span>12:56:30</span></p>
+												<div>
+													<p>123/50</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221600001817402.png"
+												class="chat-image" src="./assets/201903221600001817402.png">
+											<div>
+												<p> 清欢渡劫 <span>12:56:46</span></p>
+												<div>
+													<p>69单50</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023271860143.png"
+												class="chat-image" src="./assets/201904020023271860143.png">
+											<div>
+												<p> 怪癖尐姐 <span>12:57:12</span></p>
+												<div>
+													<p>45/615/80</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023058777502.png"
+												class="chat-image" src="./assets/201904020023058777502.png">
+											<div>
+												<p> fore <span>12:57:50</span></p>
+												<div>
+													<p>890/24680/70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023396093349.png"
+												class="chat-image" src="./assets/201904020023396093349.png">
+											<div>
+												<p> Fore <span>12:57:54</span></p>
+												<div>
+													<p>23/4798/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020025496356780.png"
+												class="chat-image" src="./assets/201904020025496356780.png">
+											<div>
+												<p> kimi <span>12:57:56</span></p>
+												<div>
+													<p>234/67890/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657204585732.png"
+												class="chat-image" src="./assets/201901211657204585732.png">
+											<div>
+												<p> Pupp <span>12:58:06</span></p>
+												<div>
+													<p>23/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>12:58:18</span></p>
+												<div>
+													<p>注意：距离封盘时间还有10秒，封盘之后将不能再投注！</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>12:58:28</span></p>
+												<div>
+													<p>=======停止战斗=======
+														========封盘线========</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>12:58:31</span></p>
+												<div>
+													<p>竞猜列表核对：
+														20949897期有效投注
+														================
+														[桔味美人]汇总:300
+														亚军[1/20 3/20 5/20 7/20 9/20 ]
+														第三名[1/20 3/20 5/20 7/20 9/20 ]
+														第四名[1/20 3/20 5/20 7/20 9/20 ]
+
+														[步月歌]汇总:150
+														冠军[1/50 2/50 3/50 ]
+
+														[Uniq]汇总:250
+														冠军[1/50 2/50 3/50 4/50 5/50 ]
+
+														[Pupp]汇总:80
+														冠军[2/40 3/40 ]
+
+														[perp]汇总:210
+														第三名[小/70 ]
+														第四名[小/70 ]
+														第五名[小/70 ]
+
+														[清欢渡劫]汇总:100
+														第六名[单/50 ]
+														第九名[单/50 ]
+
+														[怪癖尐姐]汇总:480
+														第四名[1/80 5/80 6/80 ]
+														第五名[1/80 5/80 6/80 ]
+
+														[伤会慢慢]汇总:400
+														冠军[1/80 2/80 3/80 4/80 5/80 ]
+
+														[放弃治疗]汇总:88
+														冠军[小/88 ]
+
+														[°dsT]汇总:100
+														冠军[7/50 8/50 ]
+
+														[在劫难逃]汇总:60
+														冠军[2/30 3/30 ]
+
+														[Fore]汇总:320
+														亚军[4/40 7/40 8/40 9/40 ]
+														第三名[4/40 7/40 8/40 9/40 ]
+
+														[Ranp]汇总:540
+														第六名[1/60 2/60 8/60 ]
+														第七名[1/60 2/60 8/60 ]
+														第八名[1/60 2/60 8/60 ]
+
+														[chee]汇总:900
+														亚军[6/60 7/60 8/60 9/60 10/60 ]
+														第三名[6/60 7/60 8/60 9/60 10/60 ]
+														第四名[6/60 7/60 8/60 9/60 10/60 ]
+
+														[是否拥有]汇总:150
+														冠军[2/10 3/10 4/10 5/10 6/10 ]
+														第四名[2/10 3/10 4/10 5/10 6/10 ]
+														第七名[2/10 3/10 4/10 5/10 6/10 ]
+
+														[fore]汇总:1050
+														第八名[2/70 4/70 6/70 8/70 10/70 ]
+														第九名[2/70 4/70 6/70 8/70 10/70 ]
+														第十名[2/70 4/70 6/70 8/70 10/70 ]
+
+														[kimi]汇总:300
+														亚军[6/20 7/20 8/20 9/20 10/20 ]
+														第三名[6/20 7/20 8/20 9/20 10/20 ]
+														第四名[6/20 7/20 8/20 9/20 10/20 ]
+
+														[Dark]汇总:180
+														第五名[单/60 ]
+														第六名[单/60 ]
+														第八名[单/60 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>12:59:06</span></p>
+												<div>
+													<p>20949897期已开奖
+														中奖名单如下：
+														═════════════
+														[在劫难逃]积分:4730.88
+														冠军[2/294 ]
+
+														[fore]积分:7191.52
+														第十名[4/686 ]
+
+														[kimi]积分:4031.76
+														第三名[10/196 ]
+
+														[perp]积分:4562.00
+														第四名[小/137.2 ]
+
+														[chee]积分:6553.16
+														第三名[10/588 ]
+
+														[桔味美人]积分:4925.40
+														亚军[5/196 ]
+														第四名[3/196 ]
+
+														[Dark]积分:3618.68
+														第八名[单/117.6 ]
+
+														[Uniq]积分:5475.52
+														冠军[2/490 ]
+
+														[清欢渡劫]积分:3548.80
+														第九名[单/98 ]
+
+														[步月歌]积分:2624.52
+														冠军[2/490 ]
+
+														[Pupp]积分:4623.88
+														冠军[2/392 ]
+
+														[伤会慢慢]积分:9165.40
+														冠军[2/784 ]
+
+														[是否拥有]积分:3754.36
+														冠军[2/98 ]
+														第四名[3/98 ]
+
+														[放弃治疗]积分:6214.64
+														冠军[小/172.5 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>12:59:10</span></p>
+												<div><img
+														data-src="https://resultimg.guojilx.com/imgs/1/azxy10_20949897.jpg"
+														class="chat-image" src="./assets/azxy10_20949897.jpg">
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221559137131780.png"
+												class="chat-image" src="./assets/201903221559137131780.png">
+											<div>
+												<p> 在劫难逃 <span>12:59:24</span></p>
+												<div>
+													<p>7/1593/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657308711461.png"
+												class="chat-image" src="./assets/201901211657308711461.png">
+											<div>
+												<p> °dsT <span>12:59:47</span></p>
+												<div>
+													<p>789/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221557544122299.png"
+												class="chat-image" src="./assets/201903221557544122299.png">
+											<div>
+												<p> Uniq <span>12:59:49</span></p>
+												<div>
+													<p>456/30</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020024356331075.png"
+												class="chat-image" src="./assets/201904020024356331075.png">
+											<div>
+												<p> 喋喋不ぃ <span>12:59:59</span></p>
+												<div>
+													<p>234/24680/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221559246993225.png"
+												class="chat-image" src="./assets/201903221559246993225.png">
+											<div>
+												<p> Dark <span>13:00:12</span></p>
+												<div>
+													<p>34龙40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558039678728.png"
+												class="chat-image" src="./assets/201903221558039678728.png">
+											<div>
+												<p> 步月歌 <span>13:00:13</span></p>
+												<div>
+													<p>12/23456/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020025496356780.png"
+												class="chat-image" src="./assets/201904020025496356780.png">
+											<div>
+												<p> kimi <span>13:00:17</span></p>
+												<div>
+													<p>78/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558116762556.png"
+												class="chat-image" src="./assets/201903221558116762556.png">
+											<div>
+												<p> 是否拥有 <span>13:00:40</span></p>
+												<div>
+													<p>678/128/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558116762556.png"
+												class="chat-image" src="./assets/201903221558116762556.png">
+											<div>
+												<p> 是否拥有 <span>13:01:00</span></p>
+												<div>
+													<p>678双80</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/1586264544873.jpg"
+												class="chat-image" src="./assets/1586264544873.jpg">
+											<div>
+												<p> perp <span>13:01:03</span></p>
+												<div>
+													<p>890/24680/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023502809817.png"
+												class="chat-image" src="./assets/201904020023502809817.png">
+											<div>
+												<p> Ranp <span>13:01:11</span></p>
+												<div>
+													<p>13/357/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221600001817402.png"
+												class="chat-image" src="./assets/201903221600001817402.png">
+											<div>
+												<p> 清欢渡劫 <span>13:01:22</span></p>
+												<div>
+													<p>56/1234/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023172987424.png"
+												class="chat-image" src="./assets/201904020023172987424.png">
+											<div>
+												<p> 桔味美人 <span>13:01:24</span></p>
+												<div>
+													<p>3589/12345/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657204585732.png"
+												class="chat-image" src="./assets/201901211657204585732.png">
+											<div>
+												<p> Pupp <span>13:01:27</span></p>
+												<div>
+													<p>123小70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221603042802135.png"
+												class="chat-image" src="./assets/201903221603042802135.png">
+											<div>
+												<p> chee <span>13:01:49</span></p>
+												<div>
+													<p>34双20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221602002389149.png"
+												class="chat-image" src="./assets/201903221602002389149.png">
+											<div>
+												<p> 放弃治疗 <span>13:02:21</span></p>
+												<div>
+													<p>78/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221603042802135.png"
+												class="chat-image" src="./assets/201903221603042802135.png">
+											<div>
+												<p> chee <span>13:02:23</span></p>
+												<div>
+													<p>34/4680/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020022448364094.png"
+												class="chat-image" src="./assets/201904020022448364094.png">
+											<div>
+												<p> 伤会慢慢 <span>13:02:33</span></p>
+												<div>
+													<p>345小50</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023271860143.png"
+												class="chat-image" src="./assets/201904020023271860143.png">
+											<div>
+												<p> 怪癖尐姐 <span>13:02:33</span></p>
+												<div>
+													<p>890/67890/80</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023058777502.png"
+												class="chat-image" src="./assets/201904020023058777502.png">
+											<div>
+												<p> fore <span>13:03:00</span></p>
+												<div>
+													<p>890/13579/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:03:19</span></p>
+												<div>
+													<p>注意：距离封盘时间还有10秒，封盘之后将不能再投注！</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:03:29</span></p>
+												<div>
+													<p>=======停止战斗=======
+														========封盘线========</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:03:32</span></p>
+												<div>
+													<p>竞猜列表核对：
+														20949898期有效投注
+														================
+														[Dark]汇总:80
+														第三名[龙/40 ]
+														第四名[龙/40 ]
+
+														[桔味美人]汇总:800
+														第三名[1/40 2/40 3/40 4/40 5/40 ]
+														第五名[1/40 2/40 3/40 4/40 5/40 ]
+														第八名[1/40 2/40 3/40 4/40 5/40 ]
+														第九名[1/40 2/40 3/40 4/40 5/40 ]
+
+														[Ranp]汇总:360
+														冠军[3/60 5/60 7/60 ]
+														第三名[3/60 5/60 7/60 ]
+
+														[怪癖尐姐]汇总:1200
+														第八名[6/80 7/80 8/80 9/80 10/80 ]
+														第九名[6/80 7/80 8/80 9/80 10/80 ]
+														第十名[6/80 7/80 8/80 9/80 10/80 ]
+
+														[Uniq]汇总:90
+														冠军[4/30 5/30 6/30 ]
+
+														[喋喋不ぃ]汇总:300
+														亚军[2/20 4/20 6/20 8/20 10/20 ]
+														第三名[2/20 4/20 6/20 8/20 10/20 ]
+														第四名[2/20 4/20 6/20 8/20 10/20 ]
+
+														[kimi]汇总:40
+														冠军[7/20 8/20 ]
+
+														[步月歌]汇总:400
+														冠军[2/40 3/40 4/40 5/40 6/40 ]
+														亚军[2/40 3/40 4/40 5/40 6/40 ]
+
+														[chee]汇总:200
+														第三名[4/20 6/20 8/20 10/20 ]
+														第四名[4/20 6/20 8/20 10/20 ]
+														第三名[双/20 ]
+														第四名[双/20 ]
+
+														[°dsT]汇总:60
+														冠军[7/20 8/20 9/20 ]
+
+														[Pupp]汇总:210
+														冠军[小/70 ]
+														亚军[小/70 ]
+														第三名[小/70 ]
+
+														[放弃治疗]汇总:40
+														冠军[7/20 8/20 ]
+
+														[是否拥有]汇总:1050
+														第六名[1/90 2/90 8/90 ]
+														第七名[1/90 2/90 8/90 ]
+														第八名[1/90 2/90 8/90 ]
+														第六名[双/80 ]
+														第七名[双/80 ]
+														第八名[双/80 ]
+
+														[在劫难逃]汇总:240
+														第七名[1/60 3/60 5/60 9/60 ]
+
+														[清欢渡劫]汇总:480
+														第五名[1/60 2/60 3/60 4/60 ]
+														第六名[1/60 2/60 3/60 4/60 ]
+
+														[perp]汇总:1350
+														第八名[2/90 4/90 6/90 8/90 10/90 ]
+														第九名[2/90 4/90 6/90 8/90 10/90 ]
+														第十名[2/90 4/90 6/90 8/90 10/90 ]
+
+														[fore]汇总:600
+														第八名[1/40 3/40 5/40 7/40 9/40 ]
+														第九名[1/40 3/40 5/40 7/40 9/40 ]
+														第十名[1/40 3/40 5/40 7/40 9/40 ]
+
+														[伤会慢慢]汇总:150
+														第三名[小/50 ]
+														第四名[小/50 ]
+														第五名[小/50 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:04:05</span></p>
+												<div>
+													<p>20949898期已开奖
+														中奖名单如下：
+														═════════════
+														[fore]积分:7603.52
+														第八名[3/392 ]
+
+														[chee]积分:6834.36
+														第三名[6/196 ]
+														第三名[双/39.2 ]
+
+														[伤会慢慢]积分:8814.20
+														第四名[小/98 ]
+
+														[Pupp]积分:5795.08
+														冠军[小/137.2 ]
+
+														[是否拥有]积分:2983.16
+														第七名[2/882 ]
+														第七名[双/156.8 ]
+
+														[perp]积分:4680.00
+														第九名[10/882 ]
+														第十名[4/882 ]
+
+														[步月歌]积分:3388.52
+														冠军[5/392 ]
+
+														[Dark]积分:3587.08
+														第三名[龙/78.4 ]
+
+														[怪癖尐姐]积分:8002.28
+														第九名[10/784 ]
+
+														[Uniq]积分:6088.32
+														冠军[5/294 ]
+
+														[Ranp]积分:4638.52
+														冠军[5/588 ]
+
+														[喋喋不ぃ]积分:5847.16
+														第三名[6/196 ]
+
+														[桔味美人]积分:4610.20
+														第八名[3/392 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:04:09</span></p>
+												<div><img
+														data-src="https://resultimg.guojilx.com/imgs/1/azxy10_20949898.jpg"
+														class="chat-image" src="./assets/azxy10_20949898.jpg">
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657308711461.png"
+												class="chat-image" src="./assets/201901211657308711461.png">
+											<div>
+												<p> °dsT <span>13:04:43</span></p>
+												<div>
+													<p>147/23456/70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020024356331075.png"
+												class="chat-image" src="./assets/201904020024356331075.png">
+											<div>
+												<p> 喋喋不ぃ <span>13:04:49</span></p>
+												<div>
+													<p>982/849/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023172987424.png"
+												class="chat-image" src="./assets/201904020023172987424.png">
+											<div>
+												<p> 桔味美人 <span>13:04:55</span></p>
+												<div>
+													<p>1小80</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903121019499850980.png"
+												class="chat-image" src="./assets/201903121019499850980.png">
+											<div>
+												<p> Liar <span>13:04:58</span></p>
+												<div>
+													<p>158/10</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221600001817402.png"
+												class="chat-image" src="./assets/201903221600001817402.png">
+											<div>
+												<p> 清欢渡劫 <span>13:06:08</span></p>
+												<div>
+													<p>789/123/20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221603042802135.png"
+												class="chat-image" src="./assets/201903221603042802135.png">
+											<div>
+												<p> chee <span>13:06:24</span></p>
+												<div>
+													<p>45/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023271860143.png"
+												class="chat-image" src="./assets/201904020023271860143.png">
+											<div>
+												<p> 怪癖尐姐 <span>13:06:32</span></p>
+												<div>
+													<p>685单90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023172987424.png"
+												class="chat-image" src="./assets/201904020023172987424.png">
+											<div>
+												<p> 桔味美人 <span>13:06:57</span></p>
+												<div>
+													<p>1/12345/70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558116762556.png"
+												class="chat-image" src="./assets/201903221558116762556.png">
+											<div>
+												<p> 是否拥有 <span>13:07:10</span></p>
+												<div>
+													<p>147/23456/30</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020025496356780.png"
+												class="chat-image" src="./assets/201904020025496356780.png">
+											<div>
+												<p> kimi <span>13:07:27</span></p>
+												<div>
+													<p>890/24680/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657204585732.png"
+												class="chat-image" src="./assets/201901211657204585732.png">
+											<div>
+												<p> Pupp <span>13:07:35</span></p>
+												<div>
+													<p>890/24680/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023396093349.png"
+												class="chat-image" src="./assets/201904020023396093349.png">
+											<div>
+												<p> Fore <span>13:07:47</span></p>
+												<div>
+													<p>123单40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221602002389149.png"
+												class="chat-image" src="./assets/201903221602002389149.png">
+											<div>
+												<p> 放弃治疗 <span>13:07:51</span></p>
+												<div>
+													<p>23/60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020022448364094.png"
+												class="chat-image" src="./assets/201904020022448364094.png">
+											<div>
+												<p> 伤会慢慢 <span>13:07:51</span></p>
+												<div>
+													<p>123单10</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023502809817.png"
+												class="chat-image" src="./assets/201904020023502809817.png">
+											<div>
+												<p> Ranp <span>13:07:52</span></p>
+												<div>
+													<p>45/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020024356331075.png"
+												class="chat-image" src="./assets/201904020024356331075.png">
+											<div>
+												<p> 喋喋不ぃ <span>13:07:58</span></p>
+												<div>
+													<p>982/012356/70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023396093349.png"
+												class="chat-image" src="./assets/201904020023396093349.png">
+											<div>
+												<p> Fore <span>13:08:00</span></p>
+												<div>
+													<p>123/12345/40</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221558039678728.png"
+												class="chat-image" src="./assets/201903221558039678728.png">
+											<div>
+												<p> 步月歌 <span>13:08:01</span></p>
+												<div>
+													<p>75/30</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221557544122299.png"
+												class="chat-image" src="./assets/201903221557544122299.png">
+											<div>
+												<p> Uniq <span>13:08:09</span></p>
+												<div>
+													<p>123双20</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:08:18</span></p>
+												<div>
+													<p>注意：距离封盘时间还有10秒，封盘之后将不能再投注！</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:08:28</span></p>
+												<div>
+													<p>=======停止战斗=======
+														========封盘线========</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:08:31</span></p>
+												<div>
+													<p>竞猜列表核对：
+														20949899期有效投注
+														================
+														[kimi]汇总:1350
+														第八名[2/90 4/90 6/90 8/90 10/90 ]
+														第九名[2/90 4/90 6/90 8/90 10/90 ]
+														第十名[2/90 4/90 6/90 8/90 10/90 ]
+
+														[Liar]汇总:30
+														冠军[1/10 5/10 8/10 ]
+
+														[步月歌]汇总:60
+														冠军[5/30 7/30 ]
+
+														[chee]汇总:180
+														冠军[4/90 5/90 ]
+
+														[伤会慢慢]汇总:30
+														冠军[单/10 ]
+														亚军[单/10 ]
+														第三名[单/10 ]
+
+														[Pupp]汇总:1350
+														第八名[2/90 4/90 6/90 8/90 10/90 ]
+														第九名[2/90 4/90 6/90 8/90 10/90 ]
+														第十名[2/90 4/90 6/90 8/90 10/90 ]
+
+														[喋喋不ぃ]汇总:1620
+														亚军[1/70 2/70 3/70 4/40 5/70 6/70 8/40 9/40 10/70 ]
+														第八名[1/70 2/70 3/70 4/40 5/70 6/70 8/40 9/40 10/70 ]
+														第九名[1/70 2/70 3/70 4/40 5/70 6/70 8/40 9/40 10/70 ]
+
+														[°dsT]汇总:1050
+														冠军[2/70 3/70 4/70 5/70 6/70 ]
+														第四名[2/70 3/70 4/70 5/70 6/70 ]
+														第七名[2/70 3/70 4/70 5/70 6/70 ]
+
+														[清欢渡劫]汇总:180
+														第七名[1/20 2/20 3/20 ]
+														第八名[1/20 2/20 3/20 ]
+														第九名[1/20 2/20 3/20 ]
+
+														[放弃治疗]汇总:120
+														冠军[2/60 3/60 ]
+
+														[Ranp]汇总:180
+														冠军[4/90 5/90 ]
+
+														[Uniq]汇总:60
+														冠军[双/20 ]
+														亚军[双/20 ]
+														第三名[双/20 ]
+
+														[Fore]汇总:720
+														冠军[1/40 2/40 3/40 4/40 5/40 ]
+														亚军[1/40 2/40 3/40 4/40 5/40 ]
+														第三名[1/40 2/40 3/40 4/40 5/40 ]
+														冠军[单/40 ]
+														亚军[单/40 ]
+														第三名[单/40 ]
+
+														[桔味美人]汇总:430
+														冠军[1/70 2/70 3/70 4/70 5/70 ]
+														冠军[小/80 ]
+
+														[怪癖尐姐]汇总:270
+														第五名[单/90 ]
+														第六名[单/90 ]
+														第八名[单/90 ]
+
+														[是否拥有]汇总:450
+														冠军[2/30 3/30 4/30 5/30 6/30 ]
+														第四名[2/30 3/30 4/30 5/30 6/30 ]
+														第七名[2/30 3/30 4/30 5/30 6/30 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:09:06</span></p>
+												<div>
+													<p>20949899期已开奖
+														中奖名单如下：
+														═════════════
+														[喋喋不ぃ]积分:5861.16
+														亚军[10/686 ]
+														第八名[2/686 ]
+														第九名[3/686 ]
+
+														[怪癖尐姐]积分:7171.08
+														第五名[单/176.4 ]
+														第六名[单/176.4 ]
+
+														[kimi]积分:2433.76
+														第八名[2/882 ]
+
+														[°dsT]积分:7021.64
+														第七名[4/686 ]
+
+														[Liar]积分:7536.80
+														冠军[8/98 ]
+
+														[Pupp]积分:5587.08
+														第八名[2/882 ]
+
+														[Uniq]积分:6857.52
+														冠军[双/39.2 ]
+														亚军[双/39.2 ]
+														第三名[双/39.2 ]
+
+														[是否拥有]积分:2427.16
+														第七名[4/294 ]
+
+														[清欢渡劫]积分:3397.20
+														第八名[2/196 ]
+														第九名[3/196 ]</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/syshead/de5ad761cbbd4c0f8a163a3025690829.jpg"
+												class="chat-image"
+												src="./assets/de5ad761cbbd4c0f8a163a3025690829.jpg">
+											<div>
+												<p> 金冠 <span>13:09:10</span></p>
+												<div><img
+														data-src="https://resultimg.guojilx.com/imgs/1/azxy10_20949899.jpg"
+														class="chat-image" src="./assets/azxy10_20949899.jpg">
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221557544122299.png"
+												class="chat-image" src="./assets/201903221557544122299.png">
+											<div>
+												<p> Uniq <span>13:09:23</span></p>
+												<div>
+													<p>23/30</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201904020023502809817.png"
+												class="chat-image" src="./assets/201904020023502809817.png">
+											<div>
+												<p> Ranp <span>13:09:30</span></p>
+												<div>
+													<p>145双60</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903121019499850980.png"
+												class="chat-image" src="./assets/201903121019499850980.png">
+											<div>
+												<p> Liar <span>13:09:30</span></p>
+												<div>
+													<p>34/8985/70</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201903221603042802135.png"
+												class="chat-image" src="./assets/201903221603042802135.png">
+											<div>
+												<p> chee <span>13:09:56</span></p>
+												<div>
+													<p>34/90</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/1586264544873.jpg"
+												class="chat-image" src="./assets/1586264544873.jpg">
+											<div>
+												<p> perp <span>13:10:11</span></p>
+												<div>
+													<p>890/13579/80</p>
+												</div>
+											</div>
+										</li>
+										<li class="flex row index-message-left"><img
+												data-src="https://tupian.guojilx.com/uploadImg/feitian/defaultimg/201901211657308711461.png"
+												class="chat-image" src="./assets/201901211657308711461.png">
+											<div>
+												<p> °dsT <span>13:10:18</span></p>
+												<div>
+													<p>890/12345/80</p>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="flex row">
+									<div>
+										<div contenteditable="true"></div>
+									</div><input type="button" value="发送">
+									<div style="display: none;"><img
+											src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAA8ADwDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYIBQcJAQT/xAA0EAABAwMCAwUFCAMAAAAAAAABAAIDBAURBgcSITEIGEFVlBNhcbPSFBY3UVJzdZLR0+L/xAAbAQEAAQUBAAAAAAAAAAAAAAAABQIDBAYIB//EACoRAAEEAQIEBAcAAAAAAAAAAAEAAgMRBAUGEiExoRNBUZEUFRciYXLC/9oADAMBAAIRAxEAPwDBIiLTFw+iIiIiIiIiIiIizWibFHqnWdhs0sjoorjcKejdI3q0SSNYSPhlYVS7Z/8AFrRP85Q/PYq2C3AFZeIxsmTGxwsFwB910Gt2xG3tsooaWLR1nlZE0ND6mjZNI73ue8Ek/ErUe83Y6pNX3eC5aNfb9PPc3gqaKRhZTnHR7Axp4T4EYwevXObGXm7U9hs9dc6tzm0lFBJUzOa3iIYxpc7A8eQK0n30duf13X0f/S2SVkFcMlDsuodYxNvthGLqAZGDzHRp5ehFH8LTXcU1h59Y/wC03+tQjdXsy6r2nsbbzXS0VytgeI5ZqF7iYSThvGHNHInlkZ5kdMhWc7P3abg3XrDYrtR/YdQta6SN1OxxgqGDmSOpYQOoJwfA88KS9qEZ2H1Z+1D8+NYZxoHxGSNaTLtnb+bpEuoacT9rXEGzyLRdEHv2XOJERQi8JRSzaORsW62i3vcGMbeqJznE4AAnZzUTXrHuje1zXFrmnIcDggqpp4SCr8Evgyslq+Eg+xtdbXsbI0tcA5pGCCMghY77s2fymh9Mz/CoHbu1pubbaKGmF9jqGxNDRJUUkT5CB0y4tyT7zzX0d8Hc7zal9DF9Knvj4T1BXQv1B0Z4BfG+/wBWn+ldXbXaXTm1NtkpbFR8Esx4p6ybDp5jnlxOwOQ8AMAfl1Uc7UcjY9h9V8Tg3McLRk9T7ePkqm98Hc7zal9DF9Kie4O+es9zqGKhv93M9DG/2gpoYWRMLvBzg0DiI8M5wrT8yLwyxg8lEZu9tH+Wy4OFC5vE0tAoACxXkT6305qBIiKEXhSIiIiIiIiIiIiIiIi//9k="><input
+											type="file" accept="image/*"></div>
+								</div>
+							</div>
+							<!---->
+						</div>
+						<div class="index-report">
+							<div>
+								<div class="flex row space-between">
+									<h2> 用户余额: <span>5145.43</span></h2>
+									<div>
+										<p>数据均为今日统计</p>
+										<p>2022/10/23</p>
+									</div>
+								</div>
+								<ul class="flex row wrap">
+									<li class="icon"><img
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAHTUlEQVRYhc2Y2W9V1xXGf3ufg43NGAZjBjsYg5lsMEMcoKQOjUE0hBCBmirQpooqNZXah7xXlfon9KEPSdUqRSIi0LTQEhMyUkgzQCk1M8aAB2yDwQZsbAzmnL2rtc+99rV9PYVA/ElXur6+d+9vf2utb6191O9/00EMKcAvgVeAfGA0jxetwGlgJ/Am4Ij5MQrTgfeBwsdMKhEiyIrY6zXgBaBOx5T7rsn1hHApBVKF4OvDjFwci4FfCMGtw4NPUmwVgksf546eN6SvL/FjOfjIkJIKhSs1c/K1ex+GoDVcvWIp+9LQUGf72zrVf5TkpmYr1m3xOPc/w97tIW13IjLag6xZimc3ely7Yjn8QYg1ydfQj4rc5KmKtZs99u0IOfov00lOYEKorrDs/mPg1Fyzse+4D0jQHwEz8xSLntbu9eQc5T7rD0rjlPtgV8jNGxGxSZmKeYWa2Qs1I9OjH4tqB98PGTteuT2S7t/XPp4PRc96zMlXXLlsaWqINpo1X1O8QVF+0vCfQ8ap0ROz5mmu1VpuXLWkjYL1P/LJnt1FIAw8/v1hSNlXBiwc3h/yg00eVReCwRFMHQmbXvWpvmh45w8hYY/fiYJPFXtsfs1n346A+/e6/z9nbnQApWDjNt/lYhy1lZa2FkvxBo977XC+zDiVR6RE+/ZcK2mI17/sc/a44chnphc5QfAAvvok5MIpQ8nm3vkjIbt53bp0EHJCVr4veSfvbzVaTh8zrCrp2v52o2XsE73D3EtBCU8QRAvEIbmzZJV2eXS/HSrLDV9+bDh5xJA923Phq7nYVQSSg9bC1CxN801LcxOMTFfUVxtH3PMUDXWG/OU+6aPhbmv0fZUkDXsRXLhcudyKY+VzHkVruk4qObVgaVQsu94MOXbYsHSVEDHkLlBkTldMmqJ48ac+aek4VZY9o9j3TsC0bM26LZrUNMVH7wWd0RBMyFDcburtib0IyuINtV2VFycnilaWW5at1kx7UjFqjKJ4g+aLj4wrHDHi61etC2P1xdApMnocZOVops9UvPQzn4//HtJQB1cuGZat9pxJd9yHiVMUHfdw7wckKAvb2EFEkThyF2hSUowjmjJSMylDkTNPlNSdIZfc6omjB41TXYqq5CXPhT+vINpj7/bA/S0Fc/RQEjtIRjAxD9LSFZfPG6dSxjTF+ImK5c9ozp8wNE5W5C3SHCoNu+VrMrS3RVZy6azhhW0+I0ZA6c6A2suW5zZ5NF6z3XI4Eb2quPlmFFrBrRuWnLma+YU6Musi7exgwuTIdCVkA5FLRF2VZc/bgVNv+kzNy6/7rkCk1fUFb/33f/u77hLC3EWay+csLbcsBUUe2bkKreBQqXGqiV/J/6WF9YR44KoSj5VrPVf54gpyqMYG6zpH253I61at9dj/buj6dH/opaAYp1SUJH77Xdj/buCSVz6Tojh11DifE19LhEwqG3/iueqdU6B5YpJi3ARFVq5izYse237tu88Esobka6KBD15BoKrcsm6z50Jx8Yzl7HHL3TbLg45Iofoay5ljCTkT6xiSDn1B8lmKrrzMuHVS03B9eaAUSbqiTB5//VPAlBmKrb/ynTe23IaqCosx0QESISkhvijh+3RvyP5dIfXV1vXpzw+E/O3PAf/93DB6rGJFSdR5qi9YV3gDDR59Hlk6xid7Qvb8JaC1GWcrkzOV2yQ+ocSxcFm0zKd7A8aMV8xbrLh4xnDiiOFGveWHP/a5WmNdykjBySAi+S2OMWZc/2EecGCVKpO+HIeMXD0nmMwZ0SZiFVNm4Iy+oCgy8ZFpimOHQ+YVKtdZBOIC0vKIDR79YcgD64MOS/ro7qf2/ahlyTjfcd+6nNzzdsi9dktbq2VmnubA7pDr9REpqer0MapTgG+VYFMDZEzvTrDltnVKyCtX2t5CzZ1mS0oKZGYpN0ykjVIurO77tyBjqnJ2Iwf4VglWVxhmL+hOsDJWNPnLtRtEpbssXqFZutqj4pTlw/dC15elymWIbW2xrqJrKqKBtT8M+dIkbe576yLzrrkUrS4Tzfwl2vVUUUkuRVJMglff8J2Ppsee9Ih/SmHkFWj+uSPJsNkDQ1ZQ+urxL4y7kUkuEbOlA7sDl4cyXsXJESuCOLmvPwupvGCdcddV991/E/GNbnVHDobObDe84ndWYdUFy663And/6QmZ80p3hhw5aCh+3nN5KRY2GMjjt4GPkQSiypaf+46oVGjisCkKTpwiFy/lJmq5cInFyMVoxizNP7YH7lL1SAkKpF3JuCQDwbkyQ/kJ40KXeAmXbiHDbMFTmltN1h1GSA8WD0Uwjhk5ylWstDvp33fvRC1RlJRnMfKY48TXxl2y7BB382NPMh/q+YxcJWsrA1c0ophcB6SN3W21bhiVFvcN0SoEj8eeaj40JB9lKB3Q3AaP0zr2THi4YqcQfAs4MQwJnhRuQlAuexuAsmFAKg4R7HnhFjfqOuBp4A3pXNIcvgNSsqfsLRyKHCfg/7pHHRmQC0+QAAAAAElFTkSuQmCC">
+									</li>
+									<li>
+										<p>彩票流水</p>
+										<h4 class=""> 173225 </h4>
+									</li>
+									<li>
+										<p>彩票总盈亏</p>
+										<h4 class=""> 22918.45 </h4>
+									</li>
+									<li>
+										<p>彩票盈亏</p>
+										<h4 class=""> 25161.92 </h4>
+									</li>
+									<li>
+										<p>彩票回水</p>
+										<h4 class=""> 2243.47 </h4>
+									</li>
+									<li class="icon" style="display: none;"><img
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAFGUlEQVRYhc2YWWxUVRjHf2c6Ld1mhrKUQi0WRdpKNwlWjXHjwaitMdEna0h8UfSF+OKDxCU+YGKI0WBi1BiNMYZXg5q4JqIJD6KApdApixSwFCjYbTpTuswx37l3pO1d5k6Jdf5JXzr3nPO7336u2vzjDLaKgOeAJ4FGoJzFVQLoBvYA7wOTcnoGsBr4CmhdZCgvHQY6gP6Qbbl8gsNm+RpYIoDb8gwuoxbgWQHszA8eV3UK4Kbr2WFZEbTEoKbkPwG8LWzHYCApoLYMWmOK5piAKWpKr638aVDzyjHNxEzQHbNqSdjvCYnQW6MWSOtSaIopoj4r7l6u2BiFh1bBlkrFjIaTCU3vGPSMQe+Y5lwK0jo4oZQZx+P3r1RsXasMXFgF3+yzs5rqEoiF4d1Tmsk0NEQUdRGojyg2lEMaDPDxhKZnFHoTmtPj4KSw5LDHlpWKN5tyoJql34fgqRpFx/40taWKCxOavQMaBuQZTUjBjaVQF1E0RKBjNbwYCREOwb5Bza7jmuGpuXuG5h/ydK0F9/JRzQ+XgvtiKg2FITiThKIQvNWseLhq7ouKa8Va31zQvH1C8/whzQM/p9l6IG3W7Gpy4DgBVxTBL5c1317U7OjW9KeCAf45DjeVSaxp/p7EuFdcmU1iAoF+7Zg2obCubO4Ch4v7kpqNUcX29VBagImpIBIwcduhYUjNYKwyMBFsrSg5Y60rnmcyhwX/GLFqmyTJE9XBY1GsJbEloKJc4EQVhbC0UAyUBbBrOLeNMxKgquJgbnVTfVSZ+E3Nq6FOwFGdU53CDv4CBX+lLFctRBIevWPOgx2A49Nwatz/BMlYeS6j00mrw8RHc3yzWZIaGU84/+/MaxOH/gftu6zZdihtMhesN6/3OCCje1coUwe9JAW9x+UF3QF94lBc+N4pq311/ppmZ1zTNWLFkFf8CZwU/zuXuRNGwrCmRLqL87ecLbj7pNVPRdKevjiv2X9Fc0MJ/2bwbG2uULzRqEzLfGyN+57SBmXPxLTzN1dAycjBq+6bHRi6BiEuixVK/Elbg9Ep5/O3V9hjMXDPcmVqqxPQPUE8AfGx4kt1ikdXK55Zp2ivUny4KURtqfcBXw5c+//Hfdo1y+si3uXJG9AjDsVlrzYoSgqsbP7+ojYW6PE4QErPwWH4/Kzmoz73l6g3Bd59ved0Z1nQO+2k04gkJiUDBdRLO+NpziXdfxSXr/XxgKcFJaPmV3U3SWuSEcotQTI6m7SGAjfdUg6XJnCMWVkBJUO7AxRe6SJXJq2/hahhVv/OCRB7cPDT+VSmfi28g5gE8SnwvoDZBgcBkxblFeBBJAkSH10oYJbBQYqrXDeDDrUZSXlqW6ZMfZQhN75QF2cbHGRulOn55jLvZ+ZL5j4pU+1VsL7cSo7LPvHrC0iWtnffCsXeAcxgu329Mhd4t04xW0NTVjeSG2B9lgTB69o5W3LXfafFux5KEf70jKajCppjispiq6zIwb1j2HdiPafPSl+e1rC7RXF4xOowXvK9uItkEPjuIjy4ai6ktKwjI9pk+vCUZsdRzBVIXLjBvlY2RuHxakVNiTIZb6ATVp9vq7CuCK/3pK/Pgtj95C77q8HQJBwZ1ZxIBP9CUB62YKQlytxYWazoG9d8ckabISMb4NVcvs8sshKSJAfzFE7UHbK/Ceer9gjgB1JN8hCwS9gEUGKw3f5wnS8Sgz0ibJlC3Q/cAbwA/CZN5H8AlTPlbGFoM0zAP713B8atVLE0AAAAAElFTkSuQmCC">
+									</li>
+									<li style="display: none;">
+										<p>视讯流水</p>
+										<h4 class=""> 0 </h4>
+									</li>
+									<li style="display: none;">
+										<p>视讯总盈亏</p>
+										<h4 class=""> 0 </h4>
+									</li>
+									<li style="display: none;">
+										<p>视讯盈亏</p>
+										<h4 class=""> 0 </h4>
+									</li>
+									<li style="display: none;">
+										<p>视讯回水</p>
+										<h4 class=""> 0 </h4>
+									</li>
+								</ul>
+							</div>
+							<div class="feitian">
+								<div class="text-center">
+									<div class="index-report-single">
+										<div class="flex row">
+											<div class="flex-1">幸运飞艇</div>
+											<div class="flex-105">20221023002期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 00:03:12 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single">
+										<div class="flex row">
+											<div class="flex-1">澳洲幸运10</div>
+											<div class="flex-105">20949900期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 00:03:07 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single">
+										<div class="flex row">
+											<div class="flex-1">极速赛车</div>
+											<div class="flex-105">32515913期</div>
+											<div class="flex-105"> 本期流水 <span class="win"> 1605 </span></div>
+											<div class="flex-105"> 今日流水 <span class="win"> 173225 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class="win"> 22918.44 </span></div>
+											<div class="flex-1"> 封盘中 </div>
+										</div>
+										<ul style="">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">3284371970</div>
+												<div class="flex-1">fozf0uxgm4</div>
+												<div class="flex-1">步步高</div>
+												<div class="flex-1">0.45</div>
+												<div class="flex-1">1400.00</div>
+												<div class="flex-1 lose"> -1800.00 </div>
+												<div class="flex-3">
+													<ul class="flex row flex-end index-report-bet">
+														<li> 9/12345/梭哈 </li>
+														<li><input type="button" value="详情"  onclick="window.location.href='./Home-Modal.html'"
+																class="current-button small light-blue"></li>
+													</ul>
+												</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">3207195441</div>
+												<div class="flex-1">wy94ta6pcf</div>
+												<div class="flex-1">心想事成</div>
+												<div class="flex-1">248.89</div>
+												<div class="flex-1">205.00</div>
+												<div class="flex-1 lose"> -29.00 </div>
+												<div class="flex-3">
+													<ul class="flex row flex-end index-report-bet">
+														<li> 1236547/25 </li>
+														<li> 8/15 </li>
+														<li style="display: none;"> 56/5 </li>
+														<li style="display: none;"> 1/5 </li>
+														<li><input type="button" value="详情"  onclick="window.location.href='./Home-Modal.html'"
+																class="current-button small light-blue"></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">秒速赛车</div>
+											<div class="flex-105">202210230629期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">F3赛车</div>
+											<div class="flex-105">20221023082期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">700K极速飞艇</div>
+											<div class="flex-105">32515910期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">澳洲幸运5</div>
+											<div class="flex-105">50940999期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">168极速飞艇</div>
+											<div class="flex-105">53155233期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">秒速时时彩</div>
+											<div class="flex-105">202210230629期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+									<div class="index-report-single" style="display: none;">
+										<div class="flex row">
+											<div class="flex-1">极速时时彩</div>
+											<div class="flex-105">12485174期</div>
+											<div class="flex-105"> 本期流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日流水 <span class=""> 0 </span></div>
+											<div class="flex-105"> 今日盈亏 <span class=""> 0 </span></div>
+											<div class="flex-1"> 维护中 </div>
+										</div>
+										<ul style="display: none;">
+											<li class="flex row">
+												<div class="flex-1">会员编号</div>
+												<div class="flex-1">用户名</div>
+												<div class="flex-1">昵称</div>
+												<div class="flex-1">余额</div>
+												<div class="flex-1">竞猜总分</div>
+												<div class="flex-1">上期盈亏</div>
+												<div class="flex-3">竞猜详情</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="current-mask">
+								<div>
+									<p class="flex row space-between"> 下注详情 <i class="icon-close"></i></p>
+									<div>
+										<ul class="current-scroll-view scroll-view-hover">
+											<li class="flex row scroll-view-title">
+												<div class="flex-1">玩法</div>
+												<div class="flex-1">投注内容</div>
+												<div class="flex-1">投注金额</div>
+												<div class="flex-1">赔率</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">第八名</div>
+												<div class="flex-1">03</div>
+												<div class="flex-1">5</div>
+												<div class="flex-1">9.8</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">第八名</div>
+												<div class="flex-1">01</div>
+												<div class="flex-1">5</div>
+												<div class="flex-1">9.8</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">第八名</div>
+												<div class="flex-1">05</div>
+												<div class="flex-1">5</div>
+												<div class="flex-1">9.8</div>
+											</li>
+											<li class="flex row">
+												<div class="flex-1">第八名</div>
+												<div class="flex-1">04</div>
+												<div class="flex-1">5</div>
+												<div class="flex-1">9.8</div>
+											</li>
+										</ul>
+									</div>
+									<div class="flex row flex-end" style="display: none;"><input type="button"
+											value="取消" class="current-button grey"><input type="button" value="确定"
+											class="current-button light-blue"></div>
+								</div>
+							</div>
+						</div>
+					</main>
+				</div>
+			</main>
+			<div class="admin-slipbar-outer active">
+				<div class="admin-slipbar">
+					<div class="text-center"><i class="icon-go"></i></div>
+					<div class="flex row">
+						<p> 总上分 <b>0</b></p>
+						<p> 总下分 <b>0</b></p>
+						<p> 积分统计 <b>0</b></p>
+					</div>
+					<div>
+						<ul>
+							<li class="flex row">
+								<div class="flex-1">用户名</div>
+								<div class="flex-1">昵称</div>
+								<div class="flex-1">用户备注</div>
+								<div class="flex-1">操作类型</div>
+								<div class="flex-1">申请方式</div>
+								<div class="flex-1">金额</div>
+								<div class="flex-2">时间</div>
+								<div class="flex-1">状态</div>
+								<div class="flex-2">操作</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!---->
+		</div><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/point.fb22ce1c.mp3" controls="controls"
+			hidden="hidden"></audio><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/message.017ffeae.mp3"
+			controls="controls" hidden="hidden"></audio><audio
+			src="https://jt-asia.guojilx.com/jianghu/ganghood/media/door.28097d9a.mp3" controls="controls"
+			hidden="hidden"></audio><audio src="https://jt-asia.guojilx.com/jianghu/ganghood/media/early.50e34699.mp3"
+			controls="controls" hidden="hidden"></audio>
+	</div>
+	<script src="./assets/styles.2b3727d2.js.download"></script>
+	<script src="./assets/app.3b8d1f84.js.download"></script>
+	<div role="alert" class="el-notification right" style="bottom: 16px; z-index: 2000;">
+		<!---->
+		<div class="el-notification__group">
+			<h2 class="el-notification__title"></h2>
+			<div class="el-notification__content">
+				<p>
+					<div style="font-size: 16px">
+						<img style="width: 48px; height: 48px; border-radius: 50%;"
+							src="./assets/oYcWpw55v5pc_DLhxg_TyAoSK2KA_fdc46b87b4d746d88c674e877945ee94.jpg">
+						<b>fozf0uxgm4</b> 上分 <b>5000</b>
+					</div>
+				</p>
+			</div>
+			<!---->
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://admin.k1zz.vip/ag/member/add.html?parentId=4002&from= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>管理后台</title>
+        <!--<base href="http://admin.k1zz.vip">--><base href=".">
+        <link rel="shortcut icon" href="./assets/logo_2.png">
+        <script type="text/javascript"> var basePath = "http://admin.k1zz.vip";</script>
+        <script type="text/javascript"> var language = "cn";</script>
+        <!--<link href="css/icon.css" rel="stylesheet" type="text/css">-->
+        <link href="./assets/ligerui-tree.css" rel="stylesheet" type="text/css">
+        <link href="./assets/jquery.tagsinput.min.css" rel="stylesheet" type="text/css">
+        <!--mt样式-->
+        <link href="./assets/style.css" rel="stylesheet" type="text/css">
+        <link href="./assets/color_black.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./assets/select_gj.css">
+        <script type="text/javascript" src="./assets/jquery.min.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/jquery.i18n.properties-1.0.9.js.download"></script> 
+        <script type="text/javascript" src="./assets/fenye.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/com.js.download" charset="utf-8"></script>
+        <script src="./assets/jquery.validate.min.js.download"></script>
+        <script src="./assets/jquery.tagsinput.min.js.download"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>-->
+        <script type="text/javascript" src="./assets/utils.js.download" charset="utf-8"></script>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+    <script type="text/javascript">
+        $(function () {
+            var resId = 62;
+            window.sessionStorage.setItem("indexTab", $('.tab-touch li[resId=' + resId + ']').index());
+        });</script><link rel="stylesheet" href="./assets/layer.css" id="layui_layer_skinlayercss" style=""><link type="text/css" rel="stylesheet" href="./assets/laydate.css"><link type="text/css" rel="stylesheet" href="./assets/laydate(1).css" id="LayDateSkin"></head>
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+    
+    
+<body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+    <div class="main">
+        <div class="menu">
+            <div class="menu-top">
+                <div id="language" class="language" style="display:none;">
+                    <div class="language-first">
+                        <a href="javascript:void(0)"><img src="./assets/lang_cn.svg" alt=""></a>
+                    </div>
+                    <ul>
+                        
+                        <li title="en"> <a href="javascript:changeLanguage(&#39;en&#39;);"><img src="./assets/lang_en.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                        <li title="tw"> <a href="javascript:changeLanguage(&#39;hk&#39;);"><img src="./assets/lang_hk.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                    </ul>
+                </div>
+                <select name="theme" id="theme" style="display:none;">
+                    
+                        <option value="blue">淡蓝色</option>
+                    
+                        <option value="black" selected="">天空灰</option>
+                    
+                </select>
+            </div>
+            <div class="menu-time">GMT+8:&nbsp;<span id="time_now">10-19 21:57:03</span></div>
+            <div class="menu-logo">
+                <img src="./assets/logo_2.png" alt="">
+                <div>
+                    <a href="./Online-Members.html" style="">
+                        <span class="online-member">在线会员:</span>
+                        <span><font style="font-size:14px; color: #5cdc12; margin-left: 10px;" id="onlineCount">0</font></span>
+                    </a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" class="searchInput" placeholder="账号搜索" autocomplete="off">
+                <a class="searchMember"><span class="btnsMain">搜索</span></a>
+            </div>
+            <div class="menu-txt">
+                <ul>
+                    <li>
+                        <span>总代理:</span>
+                        <span>gg08</span>
+                    </li>
+                    <li>
+                        <span>余额:</span>
+                        <span id="mybalance">0.77</span>  
+                        
+
+
+                    </li>
+                    
+                    
+
+                </ul>
+
+            </div>
+            <div class="menu-main">
+                <ul>
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="./Home.html">首页</a>
+                        <span>&gt;</span>
+                    </li>
+                    
+                        <li class="active" resid="389">
+                            <i class="icon-user"></i>
+                            <a href="./Account-customers.html" id="index">账户管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="169">
+                            <i class="icon-baobiao"></i>
+                            <a href="./Report-winLoss.html" id="index">报表管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="310">
+                            <i class="icon-zaixian"></i>
+                            <a href="./Online-Members.html" id="index">在线管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="7064">
+                            <i class="icon-xitong"></i>
+                            <a href="./LotterySetting.html" id="index">彩票设置</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                    <li>
+                        <i class="icon-password"></i>
+                        <a href="./Changepassword.html" class="change">修改密码</a>
+                    </li>
+                    <li>
+                        <i class="icon-out"></i>
+                        <a href="./Login.html" class="sign">安全退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-footer"></div>
+        </div>
+
+<div class="content">
+    <div class="content-right">
+        <div class="content-tableList">
+            <div class="index-title">
+                总代理: gg08 &gt; 新增会员基本资料设定</div>
+            <form name="form1" id="form1" action="http://admin.k1zz.vip/ag/member/add.html" method="post" class="form-group" novalidate="novalidate">
+                <input type="hidden" name="token" value="" autocomplete="off">
+                <div class="content-addBox">
+                    <div class="content-addBoxList">
+                        <div class="tables" style="overflow: hidden">
+                            <div class="tables-box">
+                                <table>
+                                    <tbody><tr>
+                                        <td>账户：</td>
+                                        <td>
+                                            <input name="user.username" id="username" class="required userName1 userName" placeholder="账号" msg="账号" aria-required="true" autocomplete="off">
+                                            <img class="rightUserName" src="./assets/right.png" style="display:none;">(必须由4-14个字母或数字组成)
+                                        </td>
+                                        <td>密码：</td>
+                                        <td>
+                                            <input name="user.password" class="required" minlength="6" type="text" id="password" placeholder="登录密码" msg="登录密码" aria-required="true" autocomplete="off">
+                                            <img class="rightPassword" src="./assets/right.png" style="display:none;">
+                                            <input type="button" onclick="randomPassword()" value="随机" placeholder="登录密码" class="random" autocomplete="off">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>名字：</td>
+                                        <td><input name="user.nickname" autocomplete="off"></td>
+                                        <td>状态：</td>
+                                        <td>
+                                            <ul>
+                                                <li class="record-list">
+                                                    <input type="radio" class="radio" name="user.status" value="1" checked="checked" autocomplete="off"><span class="green">激活</span>
+                                                    <input type="radio" class="radio" name="user.status" value="2" autocomplete="off"><span class="red">暂停</span>
+                                                    <input type="radio" class="radio" name="user.status" value="0" autocomplete="off"><span class="gray">停用</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">币种：</td>
+                                        <td class="select-game">
+                                            <input type="hidden" name="user.currencyId" value="1" autocomplete="off">
+                                                    <span>人民币</span>
+                                                <input name="user.parentId" type="hidden" value="4002" autocomplete="off">
+                                        </td>
+                                        <td class="">信用额：</td>
+                                        <td class="">
+                                            <input name="user.balance" type="number" value="0" min="0" max="0.7698" class="amt" msg="信用额" autocomplete="off">
+                                            <img class="rightAmount" src="./assets/right.png" style="display:none;">
+                                            (可用注额:0.77)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">复制：</td>
+                                        <td class="">
+                                            <select name="copy" id="copy_user">
+                                                <option value="0">不复制</option>
+                                                <option value="4598">fygj123</option>
+                                                <option value="4759">fygj147</option>
+                                                <option value="4003">fygj6688</option>
+                                                <option value="5342">fygj789</option>
+                                                <option value="4641">jg6688</option>
+                                                <option value="5039">mm1213</option>
+                                                <option value="4707">qq3358</option>
+                                                </select>
+                                        </td>
+                                        <td class="">最多赢取倍数(&lt;= 1 不限制)：</td>
+                                        <td class=""><input name="user.winLimit" value="0" min="0" type="number" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">选择游戏：</td>
+                                        <td class="select-game">
+                                            <div class="games">
+                                                <ul>
+                                                    <li class="r_val">
+                                                            <input type="checkbox" name="games" class="checkbox game_checkbox" value="103" id="103" checked="" autocomplete="off">&nbsp;
+                                                            <span style="top: -2px; position: relative;">
+                                                                DG视讯</span>
+                                                        </li>
+                                                    <li class="r_val">
+                                                            <input type="checkbox" name="games" class="checkbox game_checkbox" value="602" id="602" checked="" autocomplete="off">&nbsp;
+                                                            <span style="top: -2px; position: relative;">
+                                                                彩票</span>
+                                                        </li>
+                                                    </ul>
+                                            </div>
+                                        </td>
+                                        <td class=""></td>
+                                        <td class=""></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab settings">
+    
+
+
+
+
+ 
+ 
+
+
+
+
+    
+
+
+<div id="casform0" class="casform casform103" style="display: block;">
+    
+
+
+
+ 
+ 
+
+
+<div class="flex em-top batch" id="batch0">
+    
+    
+        <span class="emspan">
+        <span>佣金批量设置:</span>
+        <input onblur="clearNoNum(this)" field="comm" class="casInput comm103" id="comm0" gameid="103" type="number" step="0.1" msg="title.佣金批量设置" min="0" max="0.6" value="0" autocomplete="off"> 
+        (0-0.6)%
+    </span>
+    
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#comm0").change(function () {
+            $(".comm103").val($(this).val());
+        });
+    
+    });
+</script>
+
+    <div class="table-list">
+        <table class="em-table" index="0">
+            <tbody><tr>
+                <td> 
+                    类型
+                </td>
+                <td> 
+                    百家乐
+                </td>
+                <td> 
+                    保险百家乐
+                </td>
+                <td> 
+                    龙虎
+                </td>
+                <td> 
+                    轮盘
+                </td>
+                <td> 
+                    骰宝
+                </td>
+                <td> 
+                    翻摊
+                </td>
+                <td> 
+                    牛牛
+                </td>
+                <td> 
+                    竞眯百家乐
+                </td>
+                <td> 
+                    赌场扑克
+                </td>
+                <td> 
+                    VIP百家乐
+                </td>
+                <td> 
+                    炸金花
+                </td>
+                <td> 
+                    极速骰宝
+                </td>
+            </tr>
+            
+            <tr>
+                <td>佣金</td>
+                <td> 
+                    <input field="bjlC" class="casInput comm103" step="0.1" type="number" id="bjlC_103" msg="DG视讯百家乐佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="bxC" class="casInput comm103" step="0.1" type="number" id="bxC_103" msg="DG视讯保险百家乐佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="lhC" class="casInput comm103" step="0.1" type="number" id="lhC_103" msg="DG视讯龙虎佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="lpC" class="casInput comm103" step="0.1" type="number" id="lpC_103" msg="DG视讯轮盘佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="sbC" class="casInput comm103" step="0.1" type="number" id="sbC_103" msg="DG视讯骰宝佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="ftC" class="casInput comm103" step="0.1" type="number" id="ftC_103" msg="DG视讯翻摊佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="nnC" class="casInput comm103" step="0.1" type="number" id="nnC_103" msg="DG视讯斗牛佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="jmC" class="casInput comm103" step="0.1" type="number" id="jmC_103" msg="DG视讯竞眯百家乐佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="dzC" class="casInput comm103" step="0.1" type="number" id="dzC_103" msg="DG视讯赌场扑克佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)%
+                </td>
+                <td> 
+                    <input field="vipC" class="casInput comm103" step="0.1" type="number" id="vipC_103" msg="DG视讯VIP佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)% 
+                </td>
+                <td> 
+                    <input field="zjhC" class="casInput comm103" step="0.1" type="number" id="zjhC_103" msg="DG视讯炸金花佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)% 
+                </td>
+                <td> 
+                    <input field="jssbC" class="casInput comm103" step="0.1" type="number" id="jssbC_103" msg="DG视讯极速骰宝佣金" min="0" max="0.6" value="0" autocomplete="off"> 
+                    (0-0.6)% 
+                </td>
+            </tr>
+            
+                
+
+
+
+
+ 
+ 
+
+
+
+<!--新增状态-->
+
+<!--修改状态-->
+
+    
+        
+            <tr>
+                
+                    
+                    <td style="color: red; font-weight: 600">
+                        限红:
+                        
+                    </td>
+                    <td colspan="20">
+                        <ul style="list-style: none;padding: 0px;" id="limitUl">
+                            
+                                
+                                <li style="float: left;margin-right: 5px;width: auto;color: #555557;border: none;" class="r_val gameId103">
+                                    <input type="checkbox" name="limit" class="checkbox r_limit limit10410" value="10410" msg="限红" autocomplete="off">&nbsp;
+                                    <span style=" position: relative;">
+                                        10.0-25,000.0
+                                    </span>
+                                </li>
+                                
+                            
+                                
+                                <li style="float: left;margin-right: 5px;width: auto;color: #555557;border: none;" class="r_val gameId103">
+                                    <input type="checkbox" name="limit" class="checkbox r_limit limit10412" value="10412" msg="限红" autocomplete="off">&nbsp;
+                                    <span style=" position: relative;">
+                                        20.0-50,000.0
+                                    </span>
+                                </li>
+                                
+                            
+                                
+                                <li style="float: left;margin-right: 5px;width: auto;color: #555557;border: none;" class="r_val gameId103">
+                                    <input type="checkbox" name="limit" class="checkbox r_limit limit10452" value="10452" msg="限红" autocomplete="off">&nbsp;
+                                    <span style=" position: relative;">
+                                        30.0-75,000.0
+                                    </span>
+                                </li>
+                                
+                            
+                                
+                                <li style="float: left;margin-right: 5px;width: auto;color: #555557;border: none;" class="r_val gameId103">
+                                    <input type="checkbox" name="limit" class="checkbox r_limit limit10454" value="10454" msg="限红" autocomplete="off">&nbsp;
+                                    <span style=" position: relative;">
+                                        40.0-100,000.0
+                                    </span>
+                                </li>
+                                
+                            
+                        </ul>
+                    </td>
+                   
+                
+            
+        </tr>
+    
+
+<script type="text/javascript">
+    $(".r_val span").click(function () {
+        $(this).parent().find("input").click();
+    });
+    $(".checkbox.gameId").click(function () {
+        var value = $(this).val();
+        $(".gameId" + value).find("input").prop("checked", this.checked);
+    });
+    function initLimit(limits) {
+        for (var i = 0; i < limits.length; i++) {
+            $('input.limit' + limits[i].id).prop("checked", true);
+        }
+    }
+    function clearLimit() {
+        $('input.r_limit').prop("checked", false);
+    }
+    function changeCurrency(currencyId) {
+        $(".r_limit").prop("checked", false);
+        $(".limitCurrency").css({display: "none"});
+        $(".limitCurrency_" + currencyId).css({display: ""});
+    }
+</script>
+
+
+                
+            
+        </tbody></table>
+    </div>
+</div><input type="hidden" name="list[0].id" class="setting gameId" value="" autocomplete="off">
+        <input type="hidden" name="list[0].gameId" class="gameId103" value="103" autocomplete="off">
+        <input type="hidden" name="list[0].ownerId" class="ownerId103" value="4002" autocomplete="off">
+        <input type="hidden" name="list[0].gameType" class="gameType103" value="1" autocomplete="off">
+        <input type="hidden" name="list[0].parentId" class="parentId103" value="4002" autocomplete="off">
+        <input type="hidden" name="list[0].commNum" class="setting commNum103" id="commNum0" value="0.0" autocomplete="off">
+        <input type="hidden" name="list[0].shareNum" class="setting shareNum103" id="shareNum0" value="0.0" autocomplete="off">
+        <input type="hidden" name="list[0].casDetail" class="setting casDetail103" id="casDetail0" value="{&quot;comm&quot;:0.0,&quot;share&quot;:0.0,&quot;nnC&quot;:0.0,&quot;sbC&quot;:0.0,&quot;ftC&quot;:0.0,&quot;lhC&quot;:0.0,&quot;dzC&quot;:0.0,&quot;bjlC&quot;:0.0,&quot;bxC&quot;:0.0,&quot;vipC&quot;:0.0,&quot;jmC&quot;:0.0,&quot;lpC&quot;:0.0,&quot;zjhC&quot;:0.0,&quot;jssbC&quot;:0.0,&quot;nnS&quot;:0.0,&quot;sbS&quot;:0.0,&quot;ftS&quot;:0.0,&quot;lhS&quot;:0.0,&quot;dzS&quot;:0.0,&quot;bjlS&quot;:0.0,&quot;bxS&quot;:0.0,&quot;jmS&quot;:0.0,&quot;vipS&quot;:0.0,&quot;lpS&quot;:0.0,&quot;zjhS&quot;:0.0,&quot;jssbS&quot;:0.0}" autocomplete="off">
+    
+
+
+
+
+ 
+ 
+
+
+
+
+    
+
+
+<div id="casform1" class="casform casform602" style="display: block;">
+    <h4>彩票</h4>
+    
+
+
+
+ 
+ 
+
+
+<div class="flex em-top batch" id="batch1">
+    
+    
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#comm1").change(function () {
+            $(".comm602").val($(this).val());
+        });
+    
+    });
+</script>
+
+    <div class="table-list">
+        <table class="em-table" index="1">
+            
+                <tbody><tr>
+                    <td>
+                        <div align="right">赔率组</div>
+                    </td>
+                    <td>
+                        <div align="left">
+                            <select name="odd" field="odd" id="ascOdd" class="casInput casText" style="width: 100px !important;">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="8"></td>
+                </tr>
+            
+            
+            <tr id="group_title">
+                <td style="text-align:right!important;">佣金</td>
+                <td colspan="5" class="groupc  groupc_A" style="display: table-cell;">A组佣金</td>
+                <td colspan="5" class="groupc  groupc_B" style="display: none;">B组佣金</td>
+                <td colspan="5" class="groupc  groupc_C" style="display: none;">C组佣金</td>
+                <td colspan="5" class="groupc  groupc_D" style="display: none;">D组佣金</td>
+            </tr>
+            <tr id="group_div">
+                <td></td>
+                <td colspan="5" class="groupc groupc_A" style="display: table-cell;">
+                    <input field="type1C" class="groupc casInput comm602" step="0.1" type="number" id="type1C_601" msg="普通彩佣金" min="0" max="0.95" value="0" autocomplete="off"> 
+                    <span field="type1C">(0-0.95)%</span>
+                </td>
+                <td colspan="5" class="groupc  groupc_B" style="display: none;">
+                    <input field="type2C" class="groupc casInput comm602" step="0.1" type="number" id="type2C_601" msg="北京PK10佣金" min="0" max="1.95" value="0" autocomplete="off"> 
+                    <span field="type2C">(0-1.95)%</span>
+                </td>
+                <td colspan="5" class="groupc  groupc_C" style="display: none;">
+                    <input field="type3C" class="groupc casInput comm602" step="0.1" type="number" id="type3C_601" msg="快乐彩佣金" min="0" max="2.95" value="0" autocomplete="off"> 
+                    <span field="type3C">(0-2.95)%</span>
+                </td>
+                <td colspan="5" class="groupc  groupc_D" style="display: none;">
+                    <input field="type4C" class="groupc casInput comm602" step="0.1" type="number" id="type4C_601" msg="时时彩佣金" min="0" max="4.95" value="0" autocomplete="off"> 
+                    <span field="type4C">(0-4.95)%</span>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+    <script type="text/javascript">
+        var isMember = "true";
+        var odd = "";
+        $(function () {
+            if (isMember) {
+                var group = $('#ascOdd').find('option:selected').val();
+                group = group ? group : odd;
+                if (group) {
+                    initGroupValue(group);
+                }
+            }
+            $('#ascOdd').on('change', function () {
+                if ($(this).val()) {
+                    var group = $(this).find('option:selected').val();
+                    getGroupEnabled(group);
+                } else {
+                }
+            });
+        });
+        
+        function getGroupEnabled(group) {
+            $("td.groupc").hide();
+            $("td.groupc_" + group).show();
+            $("input.groupc").each(function () {
+                $(this).removeClass("error");
+                $(this).val(0);
+                $("#" + $(this).attr("id") + "-error").hide();
+            });
+        }
+        
+        function initGroupValue(group) {
+            $("td.groupc").hide();
+            $("td.groupc_" + group).show();
+        }
+    </script>
+</div>
+<input type="hidden" name="list[1].id" class="setting gameId" value="" autocomplete="off">
+        <input type="hidden" name="list[1].gameId" class="gameId602" value="602" autocomplete="off">
+        <input type="hidden" name="list[1].ownerId" class="ownerId602" value="4002" autocomplete="off">
+        <input type="hidden" name="list[1].gameType" class="gameType602" value="6" autocomplete="off">
+        <input type="hidden" name="list[1].parentId" class="parentId602" value="4002" autocomplete="off">
+        <input type="hidden" name="list[1].commNum" class="setting commNum602" id="commNum1" value="0.0" autocomplete="off">
+        <input type="hidden" name="list[1].shareNum" class="setting shareNum602" id="shareNum1" value="0.0" autocomplete="off">
+        <input type="hidden" name="list[1].casDetail" class="setting casDetail602" id="casDetail1" value="{&quot;comm&quot;:0.0,&quot;share&quot;:0.0,&quot;type1C&quot;:0.0,&quot;type2C&quot;:0.0,&quot;type3C&quot;:0.0,&quot;type4C&quot;:0.0,&quot;type1S&quot;:0.0,&quot;type2S&quot;:0.0,&quot;type3S&quot;:0.0,&quot;type4S&quot;:0.0,&quot;type5S&quot;:0.0,&quot;type6S&quot;:0.0,&quot;type7S&quot;:0.0,&quot;type11S&quot;:0.0,&quot;type14S&quot;:0.0,&quot;type15S&quot;:0.0,&quot;type16S&quot;:0.0,&quot;type17S&quot;:0.0,&quot;type18S&quot;:0.0,&quot;type8S&quot;:0.0,&quot;type9S&quot;:0.0,&quot;type12S&quot;:0.0,&quot;type10S&quot;:0.0,&quot;type20S&quot;:0.0,&quot;type19S&quot;:0.0,&quot;type13S&quot;:0.0}" autocomplete="off">
+    </div>
+<script type="text/javascript">
+    function changeTab(gameId) {
+        $(".settings .active").removeClass("active");
+        $(".tabli" + gameId).addClass("active");
+        $(".casform").css("display", "none");
+        $(".casform" + gameId).css("display", "");
+    }
+    function packToDetail() {
+        for (var index = 0; index <= 1; index++) {
+            $("#commNum" + index).val($("#comm" + index).val());
+            $("#shareNum" + index).val($("#share" + index).val());
+            $("#casDetail" + index).val(input2Json("#casform" + index, 100));
+        }
+        return true;
+    }
+    function initSetting(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            var setting = arr[i];
+            var gameId = setting.gameId;
+            $("input.setting.commNum" + gameId).val(setting.commNum);
+            $("input.setting.shareNum" + gameId).val(setting.shareNum);
+            $("input.setting.casDetail" + gameId).val(setting.casDetail);
+            var detail = JSON.parse(setting.casDetail);
+            for (var key in detail) {
+                $(".casform" + gameId).find("input[field=" + key + "]").val((detail[key] * 100).toFixed(2));
+            }
+        }
+    }
+    function maxSetting(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            var setting = arr[i];
+            var gameId = setting.gameId;
+            $("input.setting.commNum" + gameId).attr("max", setting.commNum);
+            var detail = JSON.parse(setting.casDetail);
+            for (var key in detail) {
+                $(".casform" + gameId).find("input[field=" + key + "]").attr("max", (detail[key] * 100).toFixed(2));
+                $(".casform" + gameId).find("span[field=" + key + "]").text("(0-" + (detail[key] * 100).toFixed(1) + ")%");
+            }
+            if (detail["odd"]) {
+                $('#ascOdd').val(detail["odd"]);
+                $('#ascOdd').attr("disabled", "disabled");
+                //复制按钮要禁用
+                 $('#copy_user').attr("disabled", "disabled");
+                getGroupEnabled(detail["odd"]);
+            }
+        }
+    }
+    function restoreSetting(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            var setting = arr[i];
+            var gameId = setting.gameId;
+            var detail = JSON.parse(setting.casDetail);
+            for (var key in detail) {
+                $(".casform" + gameId).find("input[field=" + key + "]").attr("max", (detail[key] * 100).toFixed(2));
+                $(".casform" + gameId).find("span[field=" + key + "]").text("(0-" + (detail[key] * 100).toFixed(1) + ")%");
+            }
+        }
+        $('#ascOdd').removeAttr("disabled");
+        $('#copy_user').removeAttr("disabled");
+    }
+    function clearSetting() {
+        $("input.setting").val('');
+        $("input.casInput").val(0.0);
+    }
+    function checkMinMax(ele) {
+        var min = $(ele).attr("min");
+        var max = $(ele).attr("max");
+        var val = $(ele).val();
+        if (!val || val < min || val > max) {
+            !$(ele).next(".errorSetting").length && $(ele).after('<label class="error errorSetting">超过限额</label>');
+        } else {
+            var error = $(ele).next(".errorSetting");
+            error && error.remove();
+        }
+    }
+</script>
+<div class="content-downBtn">
+                        <a href="javascript:;" onclick="submitAdd()" name="saveBtn" class="content-saveBtn">保存</a>
+                        <a href="javascript:history.back();" id="backBt" class="content-returnBtn">返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".game_checkbox").click(function () {
+            var gameId = $(this).val();
+            if (this.checked) {
+                $(".batch" + gameId).css("display", "");
+                $(".tabli" + gameId).css("display", "");
+                $(".casform" + gameId).css("display", "");
+//                changeTab(gameId);
+            } else {
+                $(".batch" + gameId).css("display", "none");
+                $(".tabli" + gameId).css("display", "none");
+                $(".casform" + gameId).css("display", "none");
+                initCheckedGame();
+            }
+        });
+        initCheckedGame();
+        if ($('.game_checkbox').is(':checked')) {
+            $.each($('input:checkbox:checked'), function () {
+                $(".casform" + $(this).val()).css("display", "block");
+            });
+        }
+
+        $.ajaxSetup({
+            cache: false //关闭AJAX相应的缓存
+        });
+        $("#form1").validate({
+            rules: {
+                limit: {
+                    required: true
+                }
+            }
+        });
+        $.validator.addMethod("userName1", function (value, element) {
+            var patt1 = new RegExp("^[A-Za-z0-9]{4,14}$");//3到14位字母和数字组成
+            var right = patt1.test(value);
+            $(".rightUserName").css("display", right ? "" : "none");
+            return right;
+        }, "必须由4-14个字母或数字组成！");
+        $.validator.addMethod("password1", function (value, element) {
+            //var patt1 = new RegExp("^[A-Za-z0-9]{6,14}$");//2到14位字母和数字组成
+            var patt1 = new RegExp("^[^ ]{6,16}$");//不可以有空格
+            var right = patt1.test(value);
+            $(".rightPassword").css("display", right ? "" : "none");
+            return right;
+        }, "必须由6-14个字母或数字或特殊字符组成！");
+        $.validator.addMethod("userName", function (value, element) {
+            var rt = false;
+            $.ajax({
+                type: "post",
+                url: "http://admin.k1zz.vip/ag/member/checkMemberExisit.html",
+                data: {userName: value},
+                async: false,
+                success: function (b) {
+                    rt = b === 'S';
+                }
+            });
+            $(".rightUserName").css("display", rt ? "" : "none");
+            return rt;
+        }, "账号已经存在！");
+        $.validator.addMethod("amt", function (value, element) {
+            var rt = value === '';
+            if (/[0-9]+/.test(value)) {
+                $.ajax({
+                    type: "post",
+                    url: "http://admin.k1zz.vip/ag/agent/checkDW.html",
+                    data: {id:4002, amount: value, type: 2},
+                    async: false,
+                    success: function (b) {
+                        rt = b === 'S';
+                    }
+                });
+            }
+            $(".rightAmount").css("display", rt ? "" : "none");
+            return rt;
+        }, "格式错误/超过限额");
+                $.validator.addMethod("email", function (value, element) {
+                    return true;
+                }, "格式错误！");
+                $("#copy_user").change(function () {
+                    var cpid = $("#copy_user").val();
+                    clearSetting();
+                    if (cpid !== "0") {
+                        getUserSet(cpid);
+                        getUserGameLimit(cpid);
+                    }
+                });
+                $("#code").change(function () {
+                    var code = $("#code").val();
+                    if (!code) {
+                        getParentSet(4002);
+                        return;
+                    }
+                    var userId=$("#code").find("option:selected").data("userid");
+                    if (userId) {
+                        getParentMemberSet(userId);
+                    }
+                });
+            });
+            function copyFilter(curid) {
+                $("#copy_user option").hide();
+                $("#copy_user option").filter(function (index) {
+                    if (curid) {
+                        return $(this).attr("cur") === curid || $(this).val() === 0;
+                    } else {
+                        return true;
+                    }
+                }).show();
+            }
+
+            function setCopyLimit(data) {
+                $(".r_limit").removeAttr("checked");
+                $.each(data, function (gameType, list) {
+                    $.each(list, function (i, el) {
+                        $(".r_limit").filter(function (index) {
+                            return $(this).val() === el.id;
+                        }).click();
+                    });
+                });
+            }
+
+            function initGLimit(data) {
+                $("#limit .basic").first().siblings("tr").remove();
+                $.each(data, function (gameType, list) {
+                    $tr = $("<tr>").append("<td  nowrap=\"nowrap\"><span style=\"top: -2px; position: relative;\">" + gameType + "</span></td>");
+                    $td = $("<td>");
+                    $ul = $("<ul style=\"list-style: none;padding: 0px;\">");
+                    $.each(list, function (i, el) {
+                        $ul.append('<li style="float: left;margin-right: 5px;width: 150px;"><input type="checkbox" name="limit" class="r_limit" value="' + el.id + '" />&nbsp;<span style="top: -2px; position: relative;">' + $.number(el.min, 0) + "-" + $.number(el.max, 0) + "</span></li>");
+                    });
+                    $td.append($ul);
+                    $tr.append($td);
+                    $("#limit").append($tr);
+                });
+            }
+
+            $(document).on("click", ".r_limit", function (event) {
+                event.stopPropagation();
+                if ($(this).is(":checked")) {
+                    if ($(this).parents("ul").find("input:checked").size() > 1) {
+                        parent.layer.msg("会员最多1个限红！");
+                        $(this).prop("checked", false);
+                    }
+                }
+            });
+
+            function getUserSet(userId) {
+                $.post("ag/agent/getUserSet.html", {userId: userId}, function (setdata) {
+                    initSetting(setdata);
+                    console.log(setdata);
+                }, "json");
+            }
+            function getParentMemberSet(userId) {
+                $.post("ag/agent/getUserSet.html", {userId: userId}, function (setdata) {
+                    maxSetting(setdata);
+                    clearSetting();
+                }, "json");
+            }
+            function getParentSet(userId) {
+                $.post("ag/agent/getUserSet.html", {userId: userId}, function (setdata) {
+                    restoreSetting(setdata);
+                    clearSetting();
+                }, "json");
+            }
+            function getUserGameLimit(userId) {
+                $.post("ag/agent/getGameLimit.html", {id: userId}, function (gldata) {
+                    initLimit(gldata);
+                }, "json");
+            }
+            function initCheckedGame() {
+                var games = $(".game_checkbox");
+                for (var i = 0; i < games.length; i++) {
+                    if (games[i].checked) {
+                        changeTab($(games[i]).val());
+                        break;
+                    }
+                }
+            }
+
+            function submitAdd() {
+                //1.先验证表单
+                if (!$("#form1").valid()) {
+                    //2.验证不通过，弹窗提示错误信息
+                    var errorMsgs = [];
+                    $.each($("#form1").validate().errorList, function (index, item) {
+                        var message = $(item.element).attr("msg") + ": " + item.message + "<br/>";
+                        if (errorMsgs.indexOf(message) === -1) {
+                            errorMsgs.push(message);
+                        }
+                    });
+                    var errorMsg = errorMsgs.join("");
+                    layer.alert(errorMsg, {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                    return false;
+                }
+                //占层设置
+                if (packToDetail()) {
+                    submitForm(function () {
+                        location.href = "/ag/agent/query.html?parentId=" + "4002";
+                    });
+                }
+            }
+</script>
+<div class="model">
+    <div class="model-box">
+        <div class="model-table" id="model_content">
+        </div>
+    </div>
+</div>
+<div class="dialog flex" style="position: absolute; width: 80px; display: none;"></div>
+<div id="shareDetail" style="position: absolute; width: 120px;background: #fff;box-shadow: #a09b9b 0px 0px 0px;padding: 5px 0; justify-content: center; display: none;"></div>
+<script type="text/javascript" src="./assets/layer.js.download" charset="utf-8"></script>
+<script src="./assets/jquery.number.format.js.download"></script>
+<script src="./assets/messages_cn.js.download"></script>
+<script src="./assets/additional-methods.min.js.download"></script>
+<script type="text/javascript" src="./assets/laydate.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./assets/form2js.js.download"></script>
+<script type="text/javascript" src="./assets/jquery.table2excel.min.js.download"></script>
+<script src="./assets/jQuery.print.js.download"></script>
+<script type="text/javascript">
+    var sysTime = null;
+    $(function () {
+        getSysTime();//获取最新的系统时间
+    });
+    function getSysTime() {
+        $.ajax({
+            type: "POST",
+            url: "ag/open/sysDate.html",
+            dataType: "json",
+            success: function (json) {
+                sysTime = new Number(json.string);
+                $("#time_now").text(getDate(sysTime));
+            }
+        });
+    }
+    setInterval(function () {
+        sysTime += 1000;
+        $("#time_now").text(getDate(sysTime));
+    }, 1000);
+    function  getDate(systime) {
+        var dd = new Date(systime + 60 * 60 * 8 * 1000);
+        var y = dd.getUTCFullYear();
+        var m = dd.getUTCMonth() + 1;
+        var d = dd.getUTCDate();
+        var h = dd.getUTCHours();
+        var M = dd.getUTCMinutes();
+        var s = dd.getUTCSeconds();
+        m = m < 10 ? "0" + m : m;
+        d = d < 10 ? "0" + d : d;
+        h = h < 10 ? "0" + h : h;
+        M = M < 10 ? "0" + M : M;
+        s = s < 10 ? "0" + s : s;
+        var day = m + "-" + d + " " + h + ":" + M + ":" + s;
+        return day;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#print").click(function () {
+            $.print("table.excel");
+
+        });
+        reflashBalanceLazy();
+    });
+    function openIframe(url, data) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            $("div.model").css("display", "block");
+            $("div#model_content").html(data);
+        }, "text");
+    }
+    function openIframeP(url) {
+        valiateSession();
+        parent.layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: 0.8,
+            scrollbar: false,
+            area: ['780px', '60%'],
+            offset: '100px',
+            content: url, //iframe?url
+            end: function () {
+                if (parent.isSubmitForm === 1) {
+                    parent.isSubmitForm = 0;
+                    if (window.top !== window.self) {
+                        $("#fenye").submit();
+                    } else {
+                        parent.submitList();
+                    }
+                }
+            }
+        });
+    }
+
+    function getContent(url, data, width, height) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            if (!width) {
+                width = '100%';
+            }
+            $("div#model_content").css({width: width, height: height}).html(data);
+            $("div.model").css("display", "block");
+        }, "text");
+    }
+
+    $(document).on("click", ".closeModel", function () {
+        closeModel();
+    });
+
+    function closeModel() {
+        $("div.model").css("display", "none");
+        $("div#model_content").html("");
+        $("div.dialog").css({display: "none"});
+    }
+
+    $(document).on("focus", "input.casInput", function () {
+        var offset = $(this).offset();
+        var id = $(this).attr("id");
+        var max = parseFloat($(this).attr("max"));
+        var step = parseFloat($(this).attr("step"));
+        var childEle = "";
+        for (var i = max; i > 0; i -= step) {
+            childEle += '<span class="dialogChild" target="' + id + '">' + i.toFixed(1) + '</span>';
+        }
+        $("div.dialog").html(childEle).css({top: offset.top + 26, left: offset.left, display: "flex"});
+    });
+
+    $(document).on("mouseenter", ".shareDetail", function () {
+        var offset = $(this).offset();
+        $("#shareDetail").css({top: offset.top + 26, left: offset.left + 30, display: "flex"});
+        $.post("ag/report/shares.html", {userId: parseInt($(this).attr("userid"))}, function (json) {
+            var ele = "<table>";
+            for (var i = 0; i < json.length; i++) {
+                var obj = json[i];
+                ele += '<tr><td style="text-align: left; width: 80px; padding-left: 5px;">' + $.i18n.prop("game.id." + obj.gameId) + ':</td><td>' + ("" + (obj.shareNum * 100)) + "%</td></tr>";
+            }
+            $("#shareDetail").html(ele + "</table>");
+        }, "json");
+    });
+
+    $(document).on("mouseleave", ".shareDetail", function () {
+        $("#shareDetail").html('').css("display", "none");
+    });
+
+    $("body").click(function (event) {
+        if (event.target.className !== 'dialogChild' && !$(event.target).hasClass("casInput")) {
+            $("div.dialog").hide();
+        }
+    });
+
+    $(document).on("keydown", "input.casInput", function () {
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".dialogChild", function () {
+        var target = $(this).attr("target");
+        var ele = $("#" + target).val($(this).text());
+        var field = ele.attr("field");
+        if (field === "share" || field === "comm") {
+            var gameId = ele.attr("gameId");
+            $("." + field + gameId).val($(this).text());
+        }
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".back", function () {
+        window.history.back();
+    });
+
+    function valiateSession() {
+        $.get("http://admin.k1zz.vip/ag/sessionTest.html", {}, function (data) {
+            if (data !== "1") {
+                top.window.location.reload();
+            }
+        }, "text");
+    }
+
+    function exportCVS(name) {
+        $("table.excel").table2excel({
+            exclude: ".noExl",
+            name: name,
+            filename: name,
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
+    }
+
+    function input2Json(ele, devide) {
+        var inputs = $(ele).find("input.casInput");
+        var json = {};
+        for (var i = 0; i < inputs.length; i++) {
+            var value = parseFloat(inputs[i].value);
+            if (value) {
+                json[$(inputs[i]).attr("field")] = getRoundDd(value / devide, 4);
+            }
+        }
+        var select = $(ele).find("select.casInput");
+        if (select) {
+            for (var i = 0; i < select.length; i++) {
+                json[$(select[i]).attr("field")] = select[i].value;
+            }
+        }
+        return JSON.stringify(json);
+    }
+    function getRoundDd(num, len) {
+        return num.toFixed(len);
+    }
+    setInterval(function () {
+        updateOnlineCount();
+    }, 60000);
+
+    function onlineCount(json) {
+        if (!json) {
+            top.window.location.reload();
+            return;
+        }
+        $("font#onlineCount").text(json.total);
+    }
+
+    function updateOnlineCount() {
+        $.ajax({
+            type: "GET",
+            url: "/ag/memberOnline/onlineCount.html",
+            success: function (json) {
+                onlineCount(json);
+            },
+            dataType: "json"
+        });
+    }
+    $(document).ready(function () {
+        updateOnlineCount();
+    });
+
+    //将秒数转换为时分秒格式
+    function formatSeconds(value) {
+        var theTime = parseInt(value);// 秒
+        var middle = 0;// 分
+        var hour = 0;// 小时
+        if (theTime > 60) {
+            middle = parseInt(theTime / 60);
+            theTime = parseInt(theTime % 60);
+            if (middle > 60) {
+                hour = parseInt(middle / 60);
+                middle = parseInt(middle % 60);
+            }
+        }
+        var timeStr = theTime;
+        if (theTime < 10) {
+            timeStr = "0" + timeStr;
+        }
+        var middleStr = middle;
+        if (middle < 10) {
+            middleStr = "0" + middle;
+        }
+        var hourStr = hour;
+        if (hour < 10) {
+            hourStr = "0" + middle;
+        }
+        var result = middleStr + ":" + timeStr;
+        if (hour > 0) {
+            result = hourStr + ":" + result;
+        }
+        return result;
+    }
+//    function openCustomerWindow(url, width, height, title) {
+//        layer.open({
+//            type: 2,
+//            title: title,
+//            area: [width, height], fix: false, //不固定
+//            content: url
+//        });
+//    }
+
+    function reflashBalanceLazy() {
+        setTimeout(function () {
+            //定时刷新代理余额
+            setInterval(function () {
+                reflashBalance();
+            }, 5000);
+        }, 100000);
+    }
+
+    function reflashBalance() {
+        valiateSession();
+        $.get("http://admin.k1zz.vip/ag/reflashBalance.html", {}, function (data) {
+            if (data !== "error") {
+                $("#mybalance").html(data);
+            }
+        }, "text");
+    }
+    function convertNum(amount) {
+        //千位符号隔开
+        amount = amount + '';
+        var array = new Array();
+        array = amount.split(".");
+        var re = /(-?\d+)(\d{3})/;
+        while (re.test(array[0])) {
+            array[0] = array[0].replace(re, "$1,$2")
+        }
+        var returnV = array[0];
+        if (array.length > 1) {
+            returnV += "." + array[1].substring(0, 2);
+        } else {
+            returnV += "." + 0;
+        }
+        return returnV;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $(".search-box a.searchMember").click(function () {
+            searchMember2($("input.searchInput").val());
+        });
+        $(".search-box .searchInput").keyup(function (event) {
+            if (event.keyCode === 13) {
+                searchMember2($(this).val());
+            }
+        });
+        $(".search-box .searchInput").click(function () {
+            $(".position").css("display", "none");
+        });
+        function initLanguages() {
+            var lang = 'cn';
+            $("li[title='" + lang + "']").remove();
+        }
+        initLanguages();
+        $('input').attr('autocomplete', 'off'); //去除所有输入框的记忆功能
+        $("#theme").change(function () {
+            $.post("ag/style.html", {webStyle: $(this).val()}, function () {
+                window.location.reload();
+            }, "json");
+        });
+    });
+    function searchMember2(username) {
+        var url = "/ag/search/queryall.html?username=" + encodeURI(encodeURI(username));
+        window.location.href = url;
+    }
+    function searchMember(username) {
+        if (!username) {
+            return;
+        }
+        $.post("ag/search/member.html", {username: username}, function (json) {
+            if (json.codeId === 0) {
+                var member = json.object;
+                var position = $(".position").css("display", "block");
+                position.find(".username").text(member.username);
+                position.find(".status").text(member.status === 0 ? "停用" : member.status === 1 ? "激活" : "暂停");
+                position.find(".balan").text(member.balance.toFixed(2) + "(" + member.currencyName + ")");
+                position.find(".parentName").text(member.parentName);
+                position.find(".ip").text(member.ip);
+                position.find(".lastLoginTime").text(member.lastLoginTime);
+                position.find(".report").attr("href", "ag/report/betDetail.html?memberId=" + member.id);
+                position.find(".info").attr("href", "ag/member/query.html?id=" + member.id);
+            } else {
+                layer.alert("账号没找到", {title: $.i18n.prop("fenye.notice"), btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+            }
+        }, 'json');
+    }
+    $("#language").change(function () {
+        $.get("ag/language.html", {language: $(this).val()}, function () {
+            location.reload();
+        }, "text");
+    });
+    function changeLanguage(language) {
+        $.ajax({
+            type: "POST",
+            url: "ag/languageNew.html",
+            data: {language: language},
+            async: true,
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+
+    $(function () {//左侧menu
+        $('.menu-main li').eq(window.sessionStorage.getItem("index")).addClass('active').siblings().removeClass('active');
+        $('.menu-main li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("index", index);
+            $(this).addClass('active').siblings().removeClass('active');
+            window.sessionStorage.setItem("indexTab", 0);
+            window.sessionStorage.setItem("indexDays", 0);
+        });
+    });
+    $(function () {   //顶部tab
+        $('.tab-touch li').eq(window.sessionStorage.getItem("indexTab")).addClass('active').siblings().removeClass('active');
+        $('.tab-touch li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTab", index);
+            $(this).addClass('active').siblings().removeClass('active');
+//                            window.sessionStorage.setItem("indexDays", 0);
+            window.sessionStorage.setItem("titleTab", 0);
+        })
+    });
+    $(function () {   //查看报表时间
+//                    $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+        $('.title-days li').click(function () {
+            $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexDays", index);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+
+    /* 移入表格变色 */
+    $(function () {
+        $("table tr:not(:first) td").not(".record-top table tr td").not(".em-table tr td").mouseover(function () {
+            $(this).parent().find("td").addClass("hoverColor");
+        }).mouseleave(function () {
+            $(this).parent().find("td").removeClass("hoverColor");
+        })
+    });
+    $(function () {//会员 高级会员
+        $('.title-tab a').eq(window.sessionStorage.getItem("indexTitle")).addClass('active').siblings().removeClass('active');
+        $('.title-tab a').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTitle", 0);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    });
+    function signupToMT(id) {
+        $.post("http://admin.k1zz.vip/ag/member/signupToMT.html", {"id": id}, function (json) {
+            if (json.codeId === 0) {
+                layer.alert("操作成功！")
+            } else {
+                layer.alert("操作失败！")
+            }
+        }, "json")
+    }
+
+</script>
+
+</div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

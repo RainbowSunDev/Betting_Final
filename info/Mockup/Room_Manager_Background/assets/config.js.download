@@ -1,0 +1,4 @@
+window.apiHostSetting = {
+	TEST: 'http://nettest.gtapp6.com/',
+	API: location.origin + '/data6688/'
+};

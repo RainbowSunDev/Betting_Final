@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0035)http://admin.k1zz.vip/ag/login.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>管理后台</title>
+        <!--<base href="http">--><base href=".">
+        <link rel="shortcut icon" href="./assets/logo_2.png">
+        <link href="./assets/style_login.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./assets/reset.css">
+        <link rel="stylesheet" href="./assets/select_gj.css">
+        <script src="./assets/jquery.min.js.download"></script>
+        <script type="text/javascript" src="./assets/select_gj.min.js.download"></script>
+    </head>
+    <body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+        <header>
+            <div class="head">
+                <div class="language-box" style="display:none;">
+                    <ul>
+                        <li>
+                            <a href="http://admin.k1zz.vip/ag/language.html?language=cn"><img src="./assets/cn.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="http://admin.k1zz.vip/ag/language.html?language=en"><img src="./assets/en.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="http://admin.k1zz.vip/ag/language.html?language=hk"><img src="./assets/hk.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="main-login">
+            <div class="login">
+                <div class="login-logo">
+                    <a><img alt="" src="./assets/logo_1.png" data-xblocker="passed" style="visibility: visible;"></a>
+                </div>
+                <form action="./Home.html" onsubmit="return inputCheck();" name="loginForm" method="post">
+                    <div class="login-form">
+                        <div class="login-group">
+                            <input class="user" autofocus="autofocus" placeholder="账号" name="username" tabindex="1" autocomplete="off" type="text">
+
+                        </div>
+                        <div class="login-group">
+                            <input class="password" placeholder="密码" name="password" tabindex="2" type="password">
+                        </div>
+                        <div class="login-group ">
+                            <input type="submit" class="login-btn" value="登录">
+                        </div>
+                        <p>
+                            </p>
+                         <div class="login-h2">
+                           管理后台</div>
+                    </div>
+                </form>
+                <div class="disclaimer">
+                    <span class="success" id="error"></span>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-text">Copyright © 2020 RM GAMING. 保留所有权利。</div>
+        </footer>
+        <script src="./assets/select2_1.js.download"></script>
+        <script type="text/javascript">
+                    function inputCheck() {
+                        var userInput = $("input[name=username]");
+                        var passwdInput = $("input[name=password]");
+                        if (!userInput.val()) {
+                            alert('请输入账号!!');
+                            userInput.focus();
+                            return false;
+                        } else if (passwdInput.val() === "") {
+                            alert('请输入密码!!');
+                            passwdInput.focus();
+                            return false;
+                        } else if (passwdInput.val().length > 0 && passwdInput.val().length < 6) {
+                            alert('密码长度不能少于6个字符');
+                            passwdInput.focus();
+                            return false;
+                        }
+                        window.sessionStorage.setItem("index", 0);
+                        return true;
+                    }
+        </script>
+    
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

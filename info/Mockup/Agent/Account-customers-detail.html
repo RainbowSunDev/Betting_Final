@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)./Account-customers.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>管理后台</title>
+        <!--<base href="http://admin.k1zz.vip">--><base href=".">
+        <link rel="shortcut icon" href="./assets/logo_2.png">
+        <script type="text/javascript"> var basePath = "http://admin.k1zz.vip";</script>
+        <script type="text/javascript"> var language = "cn";</script>
+        <!--<link href="css/icon.css" rel="stylesheet" type="text/css">-->
+        <link href="./assets/ligerui-tree.css" rel="stylesheet" type="text/css">
+        <link href="./assets/jquery.tagsinput.min.css" rel="stylesheet" type="text/css">
+        <!--mt样式-->
+        <link href="./assets/style.css" rel="stylesheet" type="text/css">
+        <link href="./assets/color_black.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./assets/select_gj.css">
+        <script type="text/javascript" src="./assets/jquery.min.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/jquery.i18n.properties-1.0.9.js.download"></script> 
+        <script type="text/javascript" src="./assets/fenye.js.download" charset="utf-8"></script>
+        <script type="text/javascript" src="./assets/com.js.download" charset="utf-8"></script>
+        <script src="./assets/jquery.validate.min.js.download"></script>
+        <script src="./assets/jquery.tagsinput.min.js.download"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>-->
+        <script type="text/javascript" src="./assets/utils.js.download" charset="utf-8"></script>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+    <script type="text/javascript">
+        $(function () {
+            var resId = 62;
+            window.sessionStorage.setItem("indexTab", $('.tab-touch li[resId=' + resId + ']').index());
+        });</script><link rel="stylesheet" href="./assets/layer.css" id="layui_layer_skinlayercss" style=""><link type="text/css" rel="stylesheet" href="./assets/laydate.css"><link type="text/css" rel="stylesheet" href="./assets/laydate(1).css" id="LayDateSkin"></head>
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+    
+    
+<body data-new-gr-c-s-check-loaded="14.1084.0" data-gr-ext-installed="">
+    <div class="main">
+        <div class="menu">
+            <div class="menu-top">
+                <div id="language" class="language">
+                    <div class="language-first">
+                        <a href="javascript:void(0)"><img src="./assets/lang_cn.svg" alt=""></a>
+                    </div>
+                    <ul>
+                        
+                        <li title="en"> <a href="javascript:changeLanguage(&#39;en&#39;);"><img src="./assets/lang_en.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                        <li title="tw"> <a href="javascript:changeLanguage(&#39;hk&#39;);"><img src="./assets/lang_hk.svg" alt="" data-xblocker="passed" style="visibility: visible;"></a></li>
+                    </ul>
+                </div>
+                <select name="theme" id="theme">
+                    
+                        <option value="blue">淡蓝色</option>
+                    
+                        <option value="black" selected="">天空灰</option>
+                    
+                </select>
+            </div>
+            <div class="menu-time">GMT+8:&nbsp;<span id="time_now">10-20 00:14:13</span></div>
+            <div class="menu-logo">
+                <img src="./assets/logo_2.png" alt="">
+                <div>
+                    <a href="./Online-Members.html" style="">
+                        <span class="online-member">在线会员:</span>
+                        <span><font style="font-size:14px; color: #5cdc12; margin-left: 10px;" id="onlineCount">0</font></span>
+                    </a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" class="searchInput" placeholder="账号搜索" autocomplete="off">
+                <a class="searchMember"><span class="btnsMain">搜索</span></a>
+            </div>
+            <div class="menu-txt">
+                <ul>
+                    <li>
+                        <span>总代理:</span>
+                        <span>gg08</span>
+                    </li>
+                    <li>
+                        <span>余额:</span>
+                        <span id="mybalance">0.77</span>  
+                        
+
+
+                    </li>
+                    
+                    
+
+                </ul>
+
+            </div>
+            <div class="menu-main">
+                <ul>
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="./Home.html">首页</a>
+                        <span>&gt;</span>
+                    </li>
+                    
+                        <li class="active" resid="389">
+                            <i class="icon-user"></i>
+                            <a href="./Account-customers.html" id="index">账户管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="169">
+                            <i class="icon-baobiao"></i>
+                            <a href="./Report-winLoss.html" id="index">报表管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="310">
+                            <i class="icon-zaixian"></i>
+                            <a href="./Online-Members.html" id="index">在线管理</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                        <li class="" resid="7064">
+                            <i class="icon-xitong"></i>
+                            <a href="./LotterySetting.html" id="index">彩票设置</a>
+                            <span>&gt;</span>
+                        </li>
+                    
+                    <li>
+                        <i class="icon-password"></i>
+                        <a href="./Changepassword.html" class="change">修改密码</a>
+                    </li>
+                    <li>
+                        <i class="icon-out"></i>
+                        <a href="./Login.html" class="sign">安全退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-footer"></div>
+        </div>
+
+<div class="content">
+    <div class="content-right">
+        <div class="content-topList tab-touch">
+            <ul>
+                <li resid="2"> <a href="./Account-subAccount.html">子账号管理</a></li>
+                                <li resid="62" class="active"> <a href="./Account-customers.html">下级管理</a></li>
+                                <li resid="7204"> <a href="./Account-promotion.html">推广设置</a></li>
+                                <li resid="1060"> <a href="./Account-search.html">账号搜索</a></li>
+                                </ul>
+        </div>
+        <div class="content-tableList">
+            <form id="fenye" name="fenye" action="./Account-customers.html" method="post">
+                <div class="title">
+                    <div class="title-box">
+                        <input type="hidden" name="parentId" value="4002" autocomplete="off">
+                        <input type="hidden" name="userLevel" value="5" autocomplete="off">
+                        <input type="text" name="username" placeholder="账号" value="" autocomplete="off">
+                        <input type="text" name="nickname" value="" placeholder="名字" autocomplete="off">
+                        <a href="javascript:void(0);" class="title-btn1" onclick="submitList()">开始查找</a>
+                        </div>
+                </div>
+                <div class="content-tableBox title-borNone scroll">
+                    <div class="tables-box">
+                        <div class="abccc-box">
+                            <div class="abccc" style="font-weight:bold">
+                                <span></span>
+
+                                当前级别&nbsp;&nbsp;:
+                            </div>
+                            <div class="abccc">
+                                <span>
+                                    总代理<br>
+
+                                        <a class="gradeBtn underline" href="./Account-customers.html?parentId=4002" style="border-bottom: 2px solid #8fa9e3;">
+                                            gg08</a>
+                                    </span>
+                                <span>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="tables-txt caption">
+                                <span>总代理:gg08</span>
+                                <span>&gt;</span>
+                                <span>代理列表</span>
+                                <a class="btn-adds" href="http://admin.k1zz.vip/ag/agent/add.html?id=4002&amp;userLevel=4">  
+                                        新增代理</a>
+                                </div><table class="cgcolor">
+                            
+                            <tbody><tr class="table-topText caption">
+                                <th>序号
+                                </th><td> 代理账号</td>
+                                <td>占成</td>
+                                <td>代理名字</td>
+                                <td>币种</td>
+                                <td>状态</td>
+                                <td>余额</td>
+                                <td class="operat-title">操作</td>
+                            </tr>
+                            </tbody></table>
+
+                        <div class="height-space" style="height:50px;background:#fff;"></div>
+                        <div class="tables-txt caption">
+                                    <span>总代理:gg08</span>
+                                    <span>&gt;</span>
+                                    <span>直属会员列表</span>
+                                    <a href="http://admin.k1zz.vip/ag/member/add.html?parentId=4002&amp;from=" class="btn-adds">新增直属会员</a>
+                                        </div><table class="cgcolor">
+                                
+                                <tbody><tr class="table-topText caption">
+                                    <td class="">序号</td>
+                                    <td class=""> 会员账号</td>
+                                    <td class="">会员名字</td>
+                                    <td class="">币种</td>
+                                    <td class="">状态</td>
+                                    <td class="">余额</td>
+                                    <td class="">上级会员</td>
+                                    <td class="operat-title">操作</td>
+                                </tr>
+                                <tr>
+                                            <td class="">1</td>
+                                        <td class="">fygj123</td>
+                                        <td class="right">fygj123</td>
+                                        <td class="">人民币</td>
+                                        <td class="">
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(4598,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_fygj123" class="balance">
+                                            0.0</td>
+                                        <td class="">
+                                            <a class="abutton" href="javascript:getContent(&#39;http://admin.k1zz.vip/ag/member/getParents.html?id=4598&amp;parentId=4002&#39;,&#39;&#39;,&#39;700&#39;)">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td class="">2</td>
+                                        <td class="">fygj147</td>
+                                        <td class="right">fy</td>
+                                        <td class="">人民币</td>
+                                        <td class="">
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(4759,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_fygj147" class="balance">
+                                            0.89</td>
+                                        <td class="">
+                                            <a class="abutton" href="javascript:getContent(&#39;http://admin.k1zz.vip/ag/member/getParents.html?id=4759&amp;parentId=4002&#39;,&#39;&#39;,&#39;700&#39;)">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td class="">3</td>
+                                        <td class="">fygj6688</td>
+                                        <td class="right">f y</td>
+                                        <td class="">人民币</td>
+                                        <td class="">
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(4003,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_fygj6688" class="balance">
+                                            0.0</td>
+                                        <td class="">
+                                            <a class="abutton" href="./Account-customers-deposit.html">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td>4</td>
+                                        <td>fygj789</td>
+                                        <td class="right">fygj</td>
+                                        <td>人民币</td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(5342,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_fygj789" class="balance">
+                                            0.0</td>
+                                        <td>
+                                            <a class="abutton" href="./Account-customers-deposit.html">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td>5</td>
+                                        <td>jg6688</td>
+                                        <td class="right">jg</td>
+                                        <td>人民币</td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(4641,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_jg6688" class="balance">
+                                            7.57</td>
+                                        <td>
+                                            <a class="abutton" href="./Account-customers-deposit.html">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td>6</td>
+                                        <td>mm1213</td>
+                                        <td class="right">mm</td>
+                                        <td>人民币</td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(5039,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_mm1213" class="balance">
+                                            0.0</td>
+                                        <td>
+                                            <a class="abutton" href="./Account-customers-deposit.html">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                            <td>7</td>
+                                        <td>qq3358</td>
+                                        <td class="right">qq3358</td>
+                                        <td>人民币</td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="green" onclick="changeStatusMember(4707,1, this)">
+                                                <span class="green">激活</span>
+                                                </a>
+                                        </td>
+                                        <td id="user_qq3358" class="balance">
+                                            0.0</td>
+                                        <td>
+                                            <a class="abutton" href="./Account-customers-deposit.html">
+                                                    </a>
+                                            </td>
+                                        <td class="cell">
+                                            <div class="action">
+                                                <a class="btn btn-info" href="./Account-customers-deposit.html">
+                                                        存款</a>
+                                                <a class="btn btn-danger" href="./Account-customers-withdraw.html">
+                                                        取款</a>
+                                                <a class="btn btn-info" href="./Account-customers-setting.html">
+                                                        设置</a>
+                                                <a class="btn btn-success" href="./Account-customers-setting.html">
+                                                        存/取记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-operateLog.html">
+                                                    操作记录</a>
+                                                <a class="btn btn-success" href="./Account-customers-loginLog.html">
+                                                    登入记录</a>
+                                                <a class="btn btn-info" href="./Account-customers-detail.html">
+                                                    详细信息</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                        </div>
+                </div>
+                <div class="content-pages">
+                    <div class="systemset-page">
+
+    <div class="pagination" id="pageDiv">
+        <a class="prev firstPage" href="javascript:void(0)">‹‹</a>
+        <a class="prev prevPage" href="javascript:void(0)">‹</a>
+        <a class="next nextPage" href="javascript:void(0)">›</a>
+        <a class="next lastPage" href="javascript:void(0)">››</a>
+        <select id="pageSize" name="pageSize">
+            <option value="10">10</option>
+            <option value="20" selected="">20</option>
+            <option value="30">30</option>
+            <option value="60">60</option>
+            <option value="100">100</option>
+<!--            <option value="200"  >200</option>
+            <option value="1000"  >1000</option>
+            <option value="2000"  >2000</option>-->
+            </select>
+            <span class="pcz">每页显示</span>
+            <span class="pcz">
+            <select class="za_select" name="pageNow" id="pageNow">
+                    <option value="1" selected="">1</option>
+                    </select>
+            页/0页</span>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#pageSize").change(function () {
+            $("#pageNow").val(1);
+            $("#fenye").submit();
+        });
+        $("#pageNow").change(function () {
+            if ($("#pageNow").val()) {
+                $("#fenye").submit();
+            }
+        });
+        $(".firstPage").click(function () {
+            $("#pageNow").val(1);
+            $("#fenye").submit();
+        });
+        $(".prevPage").click(function () {
+            $("#pageNow").val(1);
+            $("#fenye").submit();
+        });
+        $(".nextPage").click(function () {
+            $("#pageNow").val(2);
+            $("#fenye").submit();
+        });
+        $(".lastPage").click(function () {
+            $("#pageNow").val(0);
+            $("#fenye").submit();
+        });
+    });
+</script></div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function update(id, state, obj) {
+        layer.confirm('状态修改后所有下级账户将同步修改,确定修改？', {
+            offset: '100px',
+            title: "提示",
+            btn: ['确认', '取消'] //按钮
+        }, function () {
+            layer.closeAll();
+            $.post("ag/agent/changeStatus.html", {"id": id, "status": state}, function (json) {
+                if (json.codeId === 0) {
+                    revert(obj, id, state);
+                } else {
+                    layer.alert("操作失败！", {icon: 3, title: '提示', offset: "30%", btn: [$.i18n.prop("fenye.confirm.btn.yes")]}, function () {
+                        layer.closeAll();
+                        submitList();
+                    });
+                }
+            }, "json").fail(function (data) {
+                layer.alert("操作失败！", {icon: 3, title: '提示', offset: "30%", btn: [$.i18n.prop("fenye.confirm.btn.yes")]}, function () {
+                    layer.closeAll();
+                    submitList();
+                });
+            });
+        });
+    }
+    function revert(obj, id, state) {
+        var status = ["<span class=\"gray\">停用</span>", "<span class=\"green\">激活</span>", "<span class=\"red\">暂停</span>"];
+        $(obj).parent().parent().html('<a href="javascript:void(0);" onclick="changeStatus(' + id + ',' + state + ', this)">' + status[state] + '<i class="glyphicon glyphicon-edit"></i></a>');
+    }
+    function changeStatus(id, state, obj) {
+        $(obj).parent().html('<div style="padding:10px;">' +
+                '<input type="radio" class="radio" name="status" value="1"' + (state === 1 ? 'onclick="revert(this,' + id + ',1)" checked' : 'onclick="update(' + id + ',1,this)"') + '/>:<span class="green">激活</span><br/>' +
+                '<input type="radio" class="radio" name="status" value="2"' + (state === 2 ? 'onclick="revert(this,' + id + ',2)" checked' : 'onclick="update(' + id + ',2,this)"') + '/>:<span class="red">暂停</span><br/>' +
+                '<input type="radio" class="radio" name="status" value="0"' + (state === 0 ? 'onclick="revert(this,' + id + ',0)" checked' : 'onclick="update(' + id + ',0,this)"') + '/>:<span class="gray">停用</span>' +
+                '</div>');
+    }
+
+
+    function openIframe(url) {
+        layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: 0.8,
+            scrollbar: false,
+            area: ['780px', '60%'],
+            offset: '100px',
+            content: url //iframe的url
+        });
+    }
+    //第二版樣式
+//    $(function () {
+//        $('.title-lottery li').eq(window.sessionStorage.getItem("titleTab")).addClass('active').siblings().removeClass('active');
+    //        $('.title-lottery li').click(function () {
+    //            let index = $(this).index(); //            window.sessionStorage.setItem("titleTab", index);
+    //            $(this).addClass('active').siblings().removeClass('active'); //        })
+//    })
+</script>
+<script type="text/javascript">
+    //会员激活,暂停,停用操作
+    function memberUpdate(id, state, obj) {
+        $.post("http://admin.k1zz.vip/ag/member/changeStatus.html", {"id": id, "status": state}, function (json) {
+            if (json.codeId === 0) {
+                memberRevert(obj, id, state);
+            } else {
+                layer.alert("操作失败！", {icon: 3, title: '提示', offset: "30%", btn: [$.i18n.prop("fenye.confirm.btn.yes")]}, function () {
+                    layer.closeAll();
+                    submitList();
+                });
+            }
+        }, "json")
+    }
+    function memberRevert(obj, id, state) {
+        var status = ["<span class=\"gray\">停用</span>", "<span class=\"green\">激活</span>", "<span class=\"red\">暂停</span>"];
+        $(obj).parent().parent().html('<a href="javascript:void(0);" onclick="changeStatusMember(' + id + ',' + state + ', this)">' + status[state] + '<i class="glyphicon glyphicon-edit"></i></a>');
+    }
+    function changeStatusMember(id, state, obj) {
+        $(obj).parent().html('<div style="padding:10px;">' +
+                '<input type="radio" class="radio" name="status" value="1"' + (state === 1 ? 'onclick="memberRevert(this,' + id + ',1)" checked' : 'onclick="memberUpdate(' + id + ',1,this)"') + '/>:<span class="green">激活</span><br/>' +
+                '<input type="radio" class="radio" name="status" value="2"' + (state === 2 ? 'onclick="memberRevert(this,' + id + ',2)" checked' : 'onclick="memberUpdate(' + id + ',2,this)"') + '/>:<span class="red">暂停</span><br/>' +
+                '<input type="radio" class="radio" name="status" value="0"' + (state === 0 ? 'onclick="memberRevert(this,' + id + ',0)" checked' : 'onclick="memberUpdate(' + id + ',0,this)"') + '/>:<span class="gray">停用</span>' +
+                '</div>');
+    }
+    $(document).ready(function () {
+        $(".a_sx_show").mouseenter(function () {
+            var divsx = $(this).parent("td").children(".div_sx_detail");
+            divsx.show();
+            var sivsx_top = divsx.offset().top;
+            var winH = window.screen.height;
+            var s_top = $(document).scrollTop();
+            var result = sivsx_top - s_top;
+
+
+            if (winH >= 1080) {
+                if (result > 646) {
+                    divsx.css({top: -160});
+                }
+            } else {
+                if (result > 407) {
+                    divsx.css({top: -160});
+                }
+            }
+        }).mouseleave(function () {
+            $(this).parent("td").children(".div_sx_detail").hide();
+            $(this).parent("td").children(".div_sx_detail").css({top: 37});
+        });
+    });
+
+
+    function flushBalance(username) {
+        $.get("ag/member/loadBalances", {username: username}, function (json) {
+            var parent = $("td." + username);
+            for (var key in json) {
+                parent.find("span.balance_" + key).text(json[key]);
+            }
+        }, "json");
+    }
+//            //第二版樣式
+//     $(function () {
+//        $('.title-lottery li').eq(window.sessionStorage.getItem("titleTab")).addClass('active').siblings().removeClass('active');
+//        $('.title-lottery li').click(function () {
+//            let index = $(this).index();
+//            window.sessionStorage.setItem("titleTab", index);
+//            $(this).addClass('active').siblings().removeClass('active');
+//        })
+//    })
+</script>
+<div class="model" style="display: block;">
+    <div class="model-box">
+        <div class="model-table" id="model_content" style="width: 700px;">
+
+
+
+
+ 
+ 
+
+
+
+
+<div class="model-top">
+    <span class="sz-title">详细信息</span>
+</div>
+<form name="form1" id="form1" action="http://admin.k1zz.vip/#" method="post" onsubmit="return false;">
+    <div class="model-main">
+        <table>
+            <tbody><tr>
+                <td>
+                    <div align="right">账号:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        <span>fygj147</span>
+                    </div>
+                </td>
+                <td>
+                    <div align="right">名字:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        <span>fy</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right">在线 状态:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        
+                        
+                            <span class="gray">离线</span>
+                        
+                    </div>
+                </td>
+                <td>
+                    <div align="right">登录IP:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        <span>N/A</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right">最后登入时间:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        <span>N/A</span>
+                    </div>
+                </td>
+                <td>
+                    <div align="right">注册时间:</div>
+                </td>
+                <td>
+                    <div align="left">
+                        <span>2021/12/21 18:16:50</span>
+                    </div>
+                </td>
+            </tr>
+            
+            
+            
+
+
+        </tbody></table>
+    </div>
+</form>
+<div class="model-bom">
+    <button type="submit" class="closeModel">关闭</button>
+</div>
+<script>
+    function getContents(url, data, width, height) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            if (!width) {
+                width = '300px';
+                height = '300px'
+            }
+            if (data == "0") {
+                //layer.alert($.i18n.prop("取款成功"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+                // getContent('/ag/member/getDetail.html?id=4759')
+                //  location.reload();
+                layer.confirm($.i18n.prop("fenye.success"), {
+                    title: $.i18n.prop("fenye.confirm.title"),
+                    btn: [$.i18n.prop("fenye.confirm.btn.yes")]//按钮
+                }, function () {
+                    location.href = "ag/member/query.html?parentId=4002&userLevel=2&from=apimng";
+                });
+            } else {
+                // layer.alert($.i18n.prop("取款失败"), {btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+//                  location.reload();
+                layer.confirm($.i18n.prop("fenye.fail"), {
+                    title: $.i18n.prop("fenye.confirm.title"),
+                    btn: [$.i18n.prop("fenye.confirm.btn.yes")]//按钮
+                }, function () {
+                    location.href = "ag/member/query.html?parentId=4002&userLevel=2&from=apimng";
+                });
+            }
+
+        }, "text");
+    }
+</script>
+
+
+</div>
+    </div>
+</div>
+<div class="dialog flex" style="position: absolute; width: 80px; display: none;"></div>
+<div id="shareDetail" style="position: absolute; width: 120px;background: #fff;box-shadow: #a09b9b 0px 0px 0px;padding: 5px 0; justify-content: center; display: none;"></div>
+<script type="text/javascript" src="./assets/layer.js.download" charset="utf-8"></script>
+<script src="./assets/jquery.number.format.js.download"></script>
+<script src="./assets/messages_cn.js.download"></script>
+<script src="./assets/additional-methods.min.js.download"></script>
+<script type="text/javascript" src="./assets/laydate.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./assets/form2js.js.download"></script>
+<script type="text/javascript" src="./assets/jquery.table2excel.min.js.download"></script>
+<script src="./assets/jQuery.print.js.download"></script>
+<script type="text/javascript">
+    var sysTime = null;
+    $(function () {
+        getSysTime();//获取最新的系统时间
+    });
+    function getSysTime() {
+        $.ajax({
+            type: "POST",
+            url: "ag/open/sysDate.html",
+            dataType: "json",
+            success: function (json) {
+                sysTime = new Number(json.string);
+                $("#time_now").text(getDate(sysTime));
+            }
+        });
+    }
+    setInterval(function () {
+        sysTime += 1000;
+        $("#time_now").text(getDate(sysTime));
+    }, 1000);
+    function  getDate(systime) {
+        var dd = new Date(systime + 60 * 60 * 8 * 1000);
+        var y = dd.getUTCFullYear();
+        var m = dd.getUTCMonth() + 1;
+        var d = dd.getUTCDate();
+        var h = dd.getUTCHours();
+        var M = dd.getUTCMinutes();
+        var s = dd.getUTCSeconds();
+        m = m < 10 ? "0" + m : m;
+        d = d < 10 ? "0" + d : d;
+        h = h < 10 ? "0" + h : h;
+        M = M < 10 ? "0" + M : M;
+        s = s < 10 ? "0" + s : s;
+        var day = m + "-" + d + " " + h + ":" + M + ":" + s;
+        return day;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $("#print").click(function () {
+            $.print("table.excel");
+
+        });
+        reflashBalanceLazy();
+    });
+    function openIframe(url, data) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            $("div.model").css("display", "block");
+            $("div#model_content").html(data);
+        }, "text");
+    }
+    function openIframeP(url) {
+        valiateSession();
+        parent.layer.open({
+            type: 2,
+            title: false,
+            shadeClose: true,
+            shade: 0.8,
+            scrollbar: false,
+            area: ['780px', '60%'],
+            offset: '100px',
+            content: url, //iframe?url
+            end: function () {
+                if (parent.isSubmitForm === 1) {
+                    parent.isSubmitForm = 0;
+                    if (window.top !== window.self) {
+                        $("#fenye").submit();
+                    } else {
+                        parent.submitList();
+                    }
+                }
+            }
+        });
+    }
+
+    function getContent(url, data, width, height) {
+        valiateSession();
+        $.get(url, data, function (data) {
+            if (!width) {
+                width = '100%';
+            }
+            $("div#model_content").css({width: width, height: height}).html(data);
+            $("div.model").css("display", "block");
+        }, "text");
+    }
+
+    $(document).on("click", ".closeModel", function () {
+        closeModel();
+    });
+
+    function closeModel() {
+        $("div.model").css("display", "none");
+        $("div#model_content").html("");
+        $("div.dialog").css({display: "none"});
+    }
+
+    $(document).on("focus", "input.casInput", function () {
+        var offset = $(this).offset();
+        var id = $(this).attr("id");
+        var max = parseFloat($(this).attr("max"));
+        var step = parseFloat($(this).attr("step"));
+        var childEle = "";
+        for (var i = max; i > 0; i -= step) {
+            childEle += '<span class="dialogChild" target="' + id + '">' + i.toFixed(1) + '</span>';
+        }
+        $("div.dialog").html(childEle).css({top: offset.top + 26, left: offset.left, display: "flex"});
+    });
+
+    $(document).on("mouseenter", ".shareDetail", function () {
+        var offset = $(this).offset();
+        $("#shareDetail").css({top: offset.top + 26, left: offset.left + 30, display: "flex"});
+        $.post("ag/report/shares.html", {userId: parseInt($(this).attr("userid"))}, function (json) {
+            var ele = "<table>";
+            for (var i = 0; i < json.length; i++) {
+                var obj = json[i];
+                ele += '<tr><td style="text-align: left; width: 80px; padding-left: 5px;">' + $.i18n.prop("game.id." + obj.gameId) + ':</td><td>' + ("" + (obj.shareNum * 100)) + "%</td></tr>";
+            }
+            $("#shareDetail").html(ele + "</table>");
+        }, "json");
+    });
+
+    $(document).on("mouseleave", ".shareDetail", function () {
+        $("#shareDetail").html('').css("display", "none");
+    });
+
+    $("body").click(function (event) {
+        if (event.target.className !== 'dialogChild' && !$(event.target).hasClass("casInput")) {
+            $("div.dialog").hide();
+        }
+    });
+
+    $(document).on("keydown", "input.casInput", function () {
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".dialogChild", function () {
+        var target = $(this).attr("target");
+        var ele = $("#" + target).val($(this).text());
+        var field = ele.attr("field");
+        if (field === "share" || field === "comm") {
+            var gameId = ele.attr("gameId");
+            $("." + field + gameId).val($(this).text());
+        }
+        $("div.dialog").css({display: "none"});
+    });
+
+    $(document).on("click", ".back", function () {
+        window.history.back();
+    });
+
+    function valiateSession() {
+        $.get("http://admin.k1zz.vip/ag/sessionTest.html", {}, function (data) {
+            if (data !== "1") {
+                top.window.location.reload();
+            }
+        }, "text");
+    }
+
+    function exportCVS(name) {
+        $("table.excel").table2excel({
+            exclude: ".noExl",
+            name: name,
+            filename: name,
+            exclude_img: true,
+            exclude_links: true,
+            exclude_inputs: true
+        });
+    }
+
+    function input2Json(ele, devide) {
+        var inputs = $(ele).find("input.casInput");
+        var json = {};
+        for (var i = 0; i < inputs.length; i++) {
+            var value = parseFloat(inputs[i].value);
+            if (value) {
+                json[$(inputs[i]).attr("field")] = getRoundDd(value / devide, 4);
+            }
+        }
+        var select = $(ele).find("select.casInput");
+        if (select) {
+            for (var i = 0; i < select.length; i++) {
+                json[$(select[i]).attr("field")] = select[i].value;
+            }
+        }
+        return JSON.stringify(json);
+    }
+    function getRoundDd(num, len) {
+        return num.toFixed(len);
+    }
+    setInterval(function () {
+        updateOnlineCount();
+    }, 60000);
+
+    function onlineCount(json) {
+        if (!json) {
+            top.window.location.reload();
+            return;
+        }
+        $("font#onlineCount").text(json.total);
+    }
+
+    function updateOnlineCount() {
+        $.ajax({
+            type: "GET",
+            url: "/ag/memberOnline/onlineCount.html",
+            success: function (json) {
+                onlineCount(json);
+            },
+            dataType: "json"
+        });
+    }
+    $(document).ready(function () {
+        updateOnlineCount();
+    });
+
+    //将秒数转换为时分秒格式
+    function formatSeconds(value) {
+        var theTime = parseInt(value);// 秒
+        var middle = 0;// 分
+        var hour = 0;// 小时
+        if (theTime > 60) {
+            middle = parseInt(theTime / 60);
+            theTime = parseInt(theTime % 60);
+            if (middle > 60) {
+                hour = parseInt(middle / 60);
+                middle = parseInt(middle % 60);
+            }
+        }
+        var timeStr = theTime;
+        if (theTime < 10) {
+            timeStr = "0" + timeStr;
+        }
+        var middleStr = middle;
+        if (middle < 10) {
+            middleStr = "0" + middle;
+        }
+        var hourStr = hour;
+        if (hour < 10) {
+            hourStr = "0" + middle;
+        }
+        var result = middleStr + ":" + timeStr;
+        if (hour > 0) {
+            result = hourStr + ":" + result;
+        }
+        return result;
+    }
+//    function openCustomerWindow(url, width, height, title) {
+//        layer.open({
+//            type: 2,
+//            title: title,
+//            area: [width, height], fix: false, //不固定
+//            content: url
+//        });
+//    }
+
+    function reflashBalanceLazy() {
+        setTimeout(function () {
+            //定时刷新代理余额
+            setInterval(function () {
+                reflashBalance();
+            }, 5000);
+        }, 100000);
+    }
+
+    function reflashBalance() {
+        valiateSession();
+        $.get("http://admin.k1zz.vip/ag/reflashBalance.html", {}, function (data) {
+            if (data !== "error") {
+                $("#mybalance").html(data);
+            }
+        }, "text");
+    }
+    function convertNum(amount) {
+        //千位符号隔开
+        amount = amount + '';
+        var array = new Array();
+        array = amount.split(".");
+        var re = /(-?\d+)(\d{3})/;
+        while (re.test(array[0])) {
+            array[0] = array[0].replace(re, "$1,$2")
+        }
+        var returnV = array[0];
+        if (array.length > 1) {
+            returnV += "." + array[1].substring(0, 2);
+        } else {
+            returnV += "." + 0;
+        }
+        return returnV;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        $(".search-box a.searchMember").click(function () {
+            searchMember2($("input.searchInput").val());
+        });
+        $(".search-box .searchInput").keyup(function (event) {
+            if (event.keyCode === 13) {
+                searchMember2($(this).val());
+            }
+        });
+        $(".search-box .searchInput").click(function () {
+            $(".position").css("display", "none");
+        });
+        function initLanguages() {
+            var lang = 'cn';
+            $("li[title='" + lang + "']").remove();
+        }
+        initLanguages();
+        $('input').attr('autocomplete', 'off'); //去除所有输入框的记忆功能
+        $("#theme").change(function () {
+            $.post("ag/style.html", {webStyle: $(this).val()}, function () {
+                window.location.reload();
+            }, "json");
+        });
+    });
+    function searchMember2(username) {
+        var url = "/ag/search/queryall.html?username=" + encodeURI(encodeURI(username));
+        window.location.href = url;
+    }
+    function searchMember(username) {
+        if (!username) {
+            return;
+        }
+        $.post("ag/search/member.html", {username: username}, function (json) {
+            if (json.codeId === 0) {
+                var member = json.object;
+                var position = $(".position").css("display", "block");
+                position.find(".username").text(member.username);
+                position.find(".status").text(member.status === 0 ? "停用" : member.status === 1 ? "激活" : "暂停");
+                position.find(".balan").text(member.balance.toFixed(2) + "(" + member.currencyName + ")");
+                position.find(".parentName").text(member.parentName);
+                position.find(".ip").text(member.ip);
+                position.find(".lastLoginTime").text(member.lastLoginTime);
+                position.find(".report").attr("href", "ag/report/betDetail.html?memberId=" + member.id);
+                position.find(".info").attr("href", "ag/member/query.html?id=" + member.id);
+            } else {
+                layer.alert("账号没找到", {title: $.i18n.prop("fenye.notice"), btn: [$.i18n.prop("fenye.confirm.btn.yes")]});
+            }
+        }, 'json');
+    }
+    $("#language").change(function () {
+        $.get("ag/language.html", {language: $(this).val()}, function () {
+            location.reload();
+        }, "text");
+    });
+    function changeLanguage(language) {
+        $.ajax({
+            type: "POST",
+            url: "ag/languageNew.html",
+            data: {language: language},
+            async: true,
+            dataType: "json",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            success: function (data) {
+                location.reload();
+            }
+        });
+    }
+
+    $(function () {//左侧menu
+        $('.menu-main li').eq(window.sessionStorage.getItem("index")).addClass('active').siblings().removeClass('active');
+        $('.menu-main li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("index", index);
+            $(this).addClass('active').siblings().removeClass('active');
+            window.sessionStorage.setItem("indexTab", 0);
+            window.sessionStorage.setItem("indexDays", 0);
+        });
+    });
+    $(function () {   //顶部tab
+        $('.tab-touch li').eq(window.sessionStorage.getItem("indexTab")).addClass('active').siblings().removeClass('active');
+        $('.tab-touch li').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTab", index);
+            $(this).addClass('active').siblings().removeClass('active');
+//                            window.sessionStorage.setItem("indexDays", 0);
+            window.sessionStorage.setItem("titleTab", 0);
+        })
+    });
+    $(function () {   //查看报表时间
+//                    $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+        $('.title-days li').click(function () {
+            $('.title-days li').eq(window.sessionStorage.getItem("indexDays")).addClass('active').siblings().removeClass('active');
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexDays", index);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+
+    /* 移入表格变色 */
+    $(function () {
+        $("table tr:not(:first) td").not(".record-top table tr td").not(".em-table tr td").mouseover(function () {
+            $(this).parent().find("td").addClass("hoverColor");
+        }).mouseleave(function () {
+            $(this).parent().find("td").removeClass("hoverColor");
+        })
+    });
+    $(function () {//会员 高级会员
+        $('.title-tab a').eq(window.sessionStorage.getItem("indexTitle")).addClass('active').siblings().removeClass('active');
+        $('.title-tab a').click(function () {
+            let index = $(this).index();
+            window.sessionStorage.setItem("indexTitle", 0);
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    });
+    function signupToMT(id) {
+        $.post("http://admin.k1zz.vip/ag/member/signupToMT.html", {"id": id}, function (json) {
+            if (json.codeId === 0) {
+                layer.alert("操作成功！")
+            } else {
+                layer.alert("操作失败！")
+            }
+        }, "json")
+    }
+
+</script>
+
+</div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
